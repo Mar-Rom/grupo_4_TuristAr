@@ -9,3 +9,6 @@ https://www.kayak.com.ar/
 https://www.booking.com/index.es-ar.html?aid=397594&label=gog235jc-1DCAEoggI46AdILFgDaAyIAQGYASy4ARfIAQzYAQPoAQH4AQKIAgGoAgO4AqC2zKUGwAIB0gIkZDY4NWY4ODQtNTE1Yy00YzUwLTk0ZWEtZDU0ZGU3YzMyYzhk2AIE4AIB&sid=b114ea6e9f7e69e65be730552b953cc3&
 https://www.alquilerargentina.com
 https://es.lhw.com
+
+Integrantes:
+Rocio Alejandra Velazquez: Resido en capital estoy estudiando actualmente Analista Programador Universitario (APU) en la Facultad de Ingenieria, tengo 20 años siempre me intrigó lo que es la rama de la informatica, la logica y el por qué o como de ciertas cosas.
