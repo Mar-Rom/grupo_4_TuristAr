@@ -18,3 +18,5 @@ Rocio Alejandra Velazquez: Resido en capital, estoy estudiando actualmente Anali
 Josefina Carabajal: Soy estudiante de la carrera de Contador Publico, actualmente estoy viviendo en San Salvador de Jujuy, tengo 23 años y este año decidí incursionar en este nuevo mundo en el cual también estoy haciendo una carrera de diseño ux/ui y desarrollo web, por los cuales descubrí mi gran gusto en esta rama. 
 
 Jorge Rodrigo Lavayén: Tengo 25 años, vivo en San Salvador de Jujuy y actualmente me encuentro cerca de finalizar un profesorado de matemática. Paralelamente este año estaba decido a hacer algo relacionado a la programación, ya que es algo que me ha llamado la atención hacia ya mucho tiempo. Comencé sin casi ningún conocimiento sobre el tema, pero en este tiempo he aprendido bastante y espero seguir así.
+
+Martín Nicolás Romero: Estoy cursando el ultimo año de secundaria en la ETHA de Libertador, tengo 18 años y me anime a tomar el curso ya que me gustaron las clases de programacion que tuve en mi actual escuela usando arduino, por lo que queria seguir adquiriendo conocimientos relacionados a la rama de la informatica. 
