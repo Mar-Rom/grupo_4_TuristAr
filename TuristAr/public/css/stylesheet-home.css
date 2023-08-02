@@ -40,9 +40,15 @@ button {
 } */
 
 .contenedor-busqueda input{
+    height: 100%;
+    width: 100%;
     border: 0px 1px 0px 0px;
     border: none; /* Quitar los bordes en todos los lados */
     border-right: 1px solid;
     text-align:center;
-    border-radius: 15px;
+    margin-right: 5px; /* Espacio entre las barras de búsqueda y el icono */
+}
+
+.fa-magnifying-glass{
+    margin-right: 5px;
 }
