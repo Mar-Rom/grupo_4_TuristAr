@@ -1,0 +1,186 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/* -------------------header------------------ */
+header{
+    display: flex;
+    align-items: center;
+    background-color: #06334b;
+    justify-content: space-evenly;
+    height: 10vh
+}
+header .logo img {
+    width: 100px;
+    /* border:solid red; */
+    /* position:relative;
+    top:0;
+    left:0; */
+    padding-top: 10px;
+}
+header .botones{
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    height: 10vh;
+    /* border:solid red; */
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+header .register  a {
+    font-size: 50%;
+    text-decoration: none;
+    color: #06334b;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 10px;
+}
+header .login  a {
+    font-size: 50%;
+    text-decoration: none;
+    color: #06334b;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 10px;
+}
+header .register,.login {
+    width: 50%;
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    background-color: #7a8ea1;
+    border-radius: 10px;
+    /* border:solid red; */
+    
+    
+}
+header .botones i{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+.fa-user{
+    width:40%;
+    font-size: 30px;
+}
+
+main section {
+    background-image: url("../images/ARGENTINA-1024x551.jpg");
+    border: 1px solid red;
+    width: 100vw;
+    height: 78vh;
+    position: relative;
+}
+
+/* button{
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+} */
+
+.contenedor-busqueda {
+    display: flex;
+    position: relative;
+    top: 50%;
+    left: 20%;
+    align-items: center; /* Centrar verticalmente */
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 15px;
+}
+
+button {
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    border-radius: 15px;
+    height: 30px;
+}
+/* button input{
+    border: 0px 1px 0px 0px;
+} */
+
+.contenedor-busqueda input{
+    height: 100%;
+    width: 100%;
+    border: 0px 1px 0px 0px;
+    border: none; /* Quitar los bordes en todos los lados */
+    border-right: 1px solid;
+    text-align:center;
+    margin-right: 5px; /* Espacio entre las barras de búsqueda y el icono */
+}
+
+.fa-magnifying-glass{
+    margin-right: 5px;
+}
+
+
+@media (min-width: 768px){
+    /* ---------------------header-------------------- */
+    header .logo img{
+        width:200px
+    }
+    header .botones{
+        display: flex;
+        flex-direction: row;
+        /* border:solid red; */
+        align-items: center;
+        justify-content: right;
+        
+    }
+    header .botones .register{
+        width: 30%;
+        height: 4vh;
+        display: flex;
+        align-items: center;
+        background-color: #7a8ea1;
+        border-radius: 10px;
+        
+        
+        /* border:solid red; */
+        
+    }
+    /* .botones, .user{
+        flex-grow: 1;
+    } */
+    header .botones .login {
+        width: 30%;
+        height: 4vh;
+        display: flex;
+        align-items: center;
+        background-color: #7a8ea1;
+        border-radius: 10px;
+        margin-inline: 10px
+        
+    }
+    header .user{
+        display: flex;
+        align-items: center;
+        
+    }
+     header .fa-user{
+        width:40%;
+        font-size: 30px;
+        flex-direction: row-reverse;
+    }
+    header .register  a {
+        font-size: 70%;
+        text-decoration: none;
+        color: #06334b;
+        font-weight: bold;
+        text-align: center;
+        padding-left: 10px;
+    }
+    header .login  a {
+        font-size: 70%;
+        text-decoration: none;
+        color: #06334b;
+        font-weight: bold;
+        text-align: center;
+        padding-left: 10px;
+    }
+    
+}
