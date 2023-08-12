@@ -9,16 +9,15 @@ body{
     /* background-color: #ebebeb; */
 }
 
-/* -------------------header------------------ */
+/* -------------------Primer header------------------ */
 header{
     display: flex;
     align-items: center;
-    background-color: #06334b;
+    background-color: #222831;
     justify-content: space-evenly;
     height: 10vh
 }
-
-header .logo img {
+#primer-header .logo img {
     width: 100px;
     /* border:solid red; */
     /* position:relative;
@@ -26,6 +25,7 @@ header .logo img {
     left:0; */
     padding-top: 10px;
 }
+
 header .botones{
     display: flex;
     flex-direction: column;
@@ -75,14 +75,18 @@ header .botones i{
 
 /* ------------------- Primer Main ------------------ */
 
-
-main section {
+.sec-main {
     background-image: url("../images/ARGENTINA-1024x551.jpg");
     background-position: center top;
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
     border: 0.5px solid;
+}
+
+main .sec-main .contenedor-boton{
+    display: flex;
+    justify-content: center;
 }
 
 main #contenedor-de-inputs{
@@ -125,24 +129,21 @@ main .campo{
 
 #segundo-header .logo img {
     display: none;
-}
-
-/* border:solid red; */
+    /* border:solid red; */
     /* position:relative;
     top:0;
     left:0; */
-
+}
 
 #segundo-header .boton-de-inputs{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     background-color: white;
     border-radius: 15px;
     width: 75%;
     height: 30px;
-    /* padding: 2px; */
     /* border: 1px solid red; */
 }
 
@@ -157,7 +158,7 @@ main .campo{
 
 #segundo-header #boton-acceder-cuenta{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 14%;
     height: 34px;
     padding: 5px 2px 5px 2px;
@@ -170,6 +171,26 @@ main .campo{
 
 .fa-bars{
    font-size: 18px;
+}
+
+/* ------------------- Segundo Main ------------------ */
+.sec-carr{
+    background-color: rgb(169, 182, 195,0.5);
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sec-carr h2{
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+}
+.carruseluwu{
+    width: 90%;
+    height: 70%;
 }
 
 /* ------------------- Tercer Main ------------------ */
@@ -220,13 +241,23 @@ main .campo{
     font-size: 18px;
 }
 
-
+/* media auxiliar para movil */
 
 @media (min-width: 768px){
-    /* ---------------------header-------------------- */
-    header .logo img{
-        width:200px
+    /* ---------------------Primer header-------------------- */
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #222831;
+        height: 60px;
     }
+
+    #primer-header .logo img {
+        width:200px;
+        padding: 0px 0px 0px 0px;
+    }
+
     header .botones{
         display: flex;
         flex-direction: row;
@@ -242,10 +273,7 @@ main .campo{
         align-items: center;
         background-color: #7a8ea1;
         border-radius: 10px;
-        
-        
         /* border:solid red; */
-        
     }
     /* .botones, .user{
         flex-grow: 1;
@@ -269,6 +297,7 @@ main .campo{
         width:40%;
         font-size: 30px;
         flex-direction: row-reverse;
+        padding-right: 30px;
     }
     header .register  a {
         font-size: 70%;
@@ -286,9 +315,9 @@ main .campo{
         text-align: center;
         padding-left: 10px;
     }
-/* ------------------- Primer Main ------------------ */
 
-    section{
+      /* ------------------- Primer Main ------------------ */
+    .sec-main{
         background-image: url("../images/ARGENTINA-1024x551.jpg");
         background-position: center top;
         background-repeat: no-repeat;
@@ -311,7 +340,7 @@ main .campo{
         font-weight: bold;
         /* border: 1px solid red; */
     }
-    /* cnjoasguchijasñkpnsjak */
+
    
     main .boton-de-inputs .fa-magnifying-glass{
         width: 8%;
@@ -326,7 +355,7 @@ main .campo{
     #segundo-header .logo img {
         display: block;
         width: 140px;
-        height: 70px;
+        /* height: 70px; */
     }
 
     #segundo-header .boton-de-inputs{
@@ -346,22 +375,50 @@ main .campo{
     }
 
    #segundo-header #boton-acceder-cuenta{
-    display: flex;
     justify-content: space-evenly;
-    width: 12%;
-    height: 38px;
-    /* padding: 5px 2px 5px 2px; */
-    border-radius: 30px;
+    width: 90px;
+    height: 40px;
+    /* padding: 5px 0px 5px 20px; */
+
     }
 
-    #segundo-header .fa-user{
+    #segundo-header #boton-acceder-cuenta .fa-user{
         font-size: 28px;
     }
 
-    .fa-bars{
+    #segundo-header .fa-bars{
     font-size: 28px;
+    margin-left: 7px;
     }
-/* ------------------- Tercer Main ------------------ */
+
+    /* -------------------------2do main------------------------- */
+
+    .sec-carr{
+        background-color: rgb(169, 182, 195,0.5);
+        width: 100vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .sec-carr h2{
+        text-align: center;
+        font-size: 35px;
+        padding: 20px;
+    }
+    .carruseluwu{
+        width: 90%;
+        height: 70%;
+    }
+
+    .descrip{
+        position:relative;
+        bottom:100px;
+        color: white;
+    }
+
+    /* ------------------- Tercer Main ------------------ */
     #tercer-main .hospedajes{
         display: flex;
         flex-direction: row;
@@ -379,12 +436,25 @@ main .campo{
         margin: 10px;
         /* border: 1px solid red; */
     }
+    .fa-bars{
+    font-size: 24px;
+    }
+
 }
 
 @media (min-width: 1028px){
 
-/* ------------------- Primer Main ------------------ */
-    section{
+    /* --------------------2domain------------------- */
+    .sec-carr{
+        height: 850px;
+    }
+    .carruseluwu{
+        width :70%;
+        height: auto;
+    }
+
+    /* MAIN */
+    .sec-main{
         background-image: url("../images/ARGENTINA-1024x551.jpg");
         background-position: center top;
         background-repeat: no-repeat;
@@ -425,9 +495,7 @@ main .campo{
     }
 
     #segundo-header .logo img {
-        display: block;
-        width: 220px;
-        height: 100px;
+        width: 230px;
     }
 
     #segundo-header .boton-de-inputs{
@@ -453,12 +521,8 @@ main .campo{
     }
 
     #segundo-header #boton-acceder-cuenta{
-        display: flex;
-        justify-content: space-evenly;
         width: 12%;
         height: 55px;
-        /* padding: 5px 2px 5px 2px; */
-        border-radius: 30px;
         }
     
     #segundo-header .fa-user{
@@ -484,13 +548,13 @@ main .campo{
 @media (min-width: 1268px){
 
     /* ------------------- Primer Main ------------------ */
-        section{
+        main .sec-main{
             background-image: url("../images/ARGENTINA-1024x551.jpg");
             background-position: center top;
             background-repeat: no-repeat;
-            background-size: 100%;
+            /* background-size: 100%; */
             position: relative;
-            height: 1000px;
+            height: 700px;
             /* border: 1px solid red; */
         }
 
@@ -498,7 +562,7 @@ main .campo{
             display: flex;
             justify-self: center;
             align-items: center;
-            margin-top: 750px;
+            margin-top: 500px;
             width: 70%;
             height: 65px;
             padding-left: 0%;
@@ -525,7 +589,7 @@ main .campo{
     
         #segundo-header .campo{
             width: 22%;
-            font-size: 23px;
+            font-size: 18px;
             text-align: center;
             font-weight: bold;
             /* border: 1px solid red; */
@@ -534,8 +598,9 @@ main .campo{
         #segundo-header #boton-acceder-cuenta{
             display: flex;
             justify-content: space-evenly;
-            width: 8%;
-            height: 55px;
+            align-items: center;
+            width: 120px;
+            /* height: 55px; */
             /* padding: 5px 2px 5px 2px; */
             border-radius: 30px;
             }

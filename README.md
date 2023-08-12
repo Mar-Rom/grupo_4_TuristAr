@@ -22,3 +22,6 @@ Jorge Rodrigo Lavayén: Tengo 25 años, vivo en San Salvador de Jujuy y actualme
 Martín Nicolás Romero: Estoy cursando el ultimo año de secundaria en la ETHA de Libertador, tengo 18 años y me anime a tomar el curso ya que me gustaron las clases de programacion que tuve en mi actual escuela usando arduino, por lo que queria seguir adquiriendo conocimientos relacionados a la rama de la informatica. 
 
 Facundo Roselli: tengo 16 y estoy cursando 4 año secundaria, me inspiran los avances tecnologicos y aprender mas, tome este curso al querer aprender sobre lenguajes de programacion y estructuras de sitios web, aspiro a estudiar una carrera de ingenieria informatica desde que encontre sierto interes por los componentes electronicos y su funcionamiento al armar por mi mismo mi primer PC desde 0 , me encantaria estudiar en la provincia de Cordoba tanto para conocer nuevos lugares como para seguir aprendiendo.
+
+Trello:
+https://trello.com/b/CsPdgnAz/turistar

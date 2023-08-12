@@ -10,17 +10,11 @@ app.listen(PORT , () => {
     console.log('Servidor corriendo en el puerto: ' + PORT);
 });
 
-//Para probar que el servidor funciona
-
-/* app.get("/", (req, res) => {
-    res.send('Hola mundo')
-}) */
-//  app.get("/", (req, res) => {
-//     res.send('Hola mundo')
-// })
-
 app.get("/", (req, res) => {
     let htmlHome= path.resolve(__dirname, "./views/home.html");
     res.sendFile(htmlHome);
 })
 
+app.get("/productDetail", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "./views/productDetail.html"));
+})
