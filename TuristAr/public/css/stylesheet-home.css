@@ -3,15 +3,22 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
 /* -------------------header------------------ */
+/* #segundo-header{
+    position:absolute;
+    top: 12px;
+}
+.primer-header{ 
+} */
 header{
     display: flex;
     align-items: center;
-    background-color: #06334b;
+    background-color: #222831;
     justify-content: space-evenly;
     height: 10vh
 }
-header .logo img {
+ .logo img {
     width: 100px;
     /* border:solid red; */
     /* position:relative;
@@ -71,7 +78,7 @@ header .botones i{
 /* PRIMER MAIN */
 
 
-main section {
+ .sec-main {
     background-image: url("../images/ARGENTINA-1024x551.jpg");
     background-position: center top;
     background-repeat: no-repeat;
@@ -157,10 +164,44 @@ main .campo{
    font-size: 15px;
 }
 
+/* -------------------------2do main------------------------- */
+
+.sec-carr{
+    background-color: rgb(169, 182, 195,0.5);
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sec-carr h2{
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+}
+.carruseluwu{
+    width: 90%;
+    height: 70%;
+}
+
+/* media auxiliar para movil */
+
+
+
 @media (min-width: 768px){
     /* ---------------------header-------------------- */
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #222831;
+        height: 60px;
+        
+    }
     header .logo img{
-        width:200px
+        width:150px;
+        padding-left: 15px;
     }
     header .botones{
         display: flex;
@@ -204,6 +245,7 @@ main .campo{
         width:40%;
         font-size: 30px;
         flex-direction: row-reverse;
+        padding-right: 30px;
     }
     header .register  a {
         font-size: 70%;
@@ -223,8 +265,10 @@ main .campo{
     }
 
     /* MAIN*/
-
-    section{
+    /* main{
+        height: 500px;
+    } */
+    .sec-main{
         background-image: url("../images/ARGENTINA-1024x551.jpg");
         background-position: center top;
         background-repeat: no-repeat;
@@ -286,12 +330,49 @@ main .campo{
 .fa-bars{
    font-size: 24px;
 }
+
+/* -------------------------2do main------------------------- */
+
+.sec-carr{
+    background-color: rgb(169, 182, 195,0.5);
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sec-carr h2{
+    text-align: center;
+    font-size: 35px;
+    padding: 20px;
+}
+.carruseluwu{
+    width: 90%;
+    height: 70%;
+}
+
+.descrip{
+    position:relative;
+    bottom:100px;
+    color: white;
+}
+
 }
 
 @media (min-width: 1028px){
 
+    /* --------------------2domain------------------- */
+    .sec-carr{
+        height: 850px;
+    }
+    .carruseluwu{
+        width :70%;
+        height: auto;
+    }
+
     /* MAIN */
-    section{
+    .sec-main{
         background-image: url("../images/ARGENTINA-1024x551.jpg");
         background-position: center top;
         background-repeat: no-repeat;
