@@ -15,6 +15,7 @@ header{
     align-items: center;
     background-color: #222831;
     justify-content: space-evenly;
+    width: 100vw;
     height: 10vh
 }
 #primer-header .logo img {
@@ -57,7 +58,7 @@ header .register,.login {
     height: 4vh;
     display: flex;
     align-items: center;
-    background-color: #7a8ea1;
+    background-color: #2199ea;
     border-radius: 10px;
     /* border:solid red; */
 }
@@ -68,10 +69,27 @@ header .botones i{
     padding-right: 10px;
     
 }
-.fa-user{
-    width:40%;
-    font-size: 30px;
+.usuario{
+    /* width:40%;
+    font-size: 30px; */
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 70px;
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 20px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2199ea;
 }
+.usuario i {
+    font-size: 20px;
+    color: #222831;
+}
+/* .usuario .fa-solid {
+    display: none;
+} */
 
 /* ------------------- Primer Main ------------------ */
 
@@ -82,6 +100,7 @@ header .botones i{
     background-size: 100%;
     position: relative;
     border: 0.5px solid;
+    z-index: 10;
 }
 
 main .sec-main .contenedor-boton{
@@ -135,17 +154,17 @@ main .campo{
     left:0; */
 }
 
-#segundo-header .boton-de-inputs{
+/* #segundo-header .boton-de-inputs{
     display: flex;
     justify-content: center;
     align-items: center;
     /* flex-wrap: wrap; */
-    background-color: white;
-    border-radius: 15px;
-    width: 75%;
-    height: 30px;
+    /* background-color: white; */
+    /* border-radius: 15px; */
+    /* width: 75%; */
+    /* height: 30px; */
     /* border: 1px solid red; */
-}
+/* } */ */
 
 #segundo-header .campo{
     text-align: center;
@@ -172,10 +191,22 @@ main .campo{
 .fa-bars{
    font-size: 18px;
 }
+.boton-de-inputs{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    width: 15%;
+    height: 20px;
+    /* border: 1px solid red; */
+}
+.barra{
+    display: none;
+}
 
 /* ------------------- Segundo Main ------------------ */
 .sec-carr{
-    background-color: rgb(169, 182, 195,0.5);
+    background-color: #222831;
     width: 100vw;
     height: auto;
     display: flex;
@@ -192,11 +223,17 @@ main .campo{
     width: 90%;
     height: 70%;
 }
+.descrip{
+    color: white;
+    font-weight: bold;
+    background-color: rgb(34, 40, 49,0.5)
+    
+}
 
 /* ------------------- Tercer Main ------------------ */
 
 #tercer-main{
-    background-color: #ebebeb;;
+    background-color: #222831;
 }
 
 #tercer-main .hospedajes{
@@ -251,8 +288,24 @@ main .campo{
         justify-content: space-between;
         background-color: #222831;
         height: 60px;
+        z-index: 30;
+        position: fixed;
     }
-
+    .barra{
+        display: inline-flex;
+        align-items: baseline;
+        justify-content: flex-start;
+        height: 29px;
+        margin-top: 57px;
+        padding-left: 103px;
+    }
+    .barra input{
+        border-radius: 8px;
+    }
+    .fa-magnifying-glass{
+        color: aliceblue;
+        padding-left: 19px;
+    }
     #primer-header .logo img {
         width:200px;
         padding: 0px 0px 0px 0px;
@@ -271,7 +324,7 @@ main .campo{
         height: 4vh;
         display: flex;
         align-items: center;
-        background-color: #7a8ea1;
+        background-color: #2199ea;
         border-radius: 10px;
         /* border:solid red; */
     }
@@ -283,7 +336,7 @@ main .campo{
         height: 4vh;
         display: flex;
         align-items: center;
-        background-color: #7a8ea1;
+        background-color: #2199ea;
         border-radius: 10px;
         margin-inline: 10px
         
@@ -394,7 +447,7 @@ main .campo{
     /* -------------------------2do main------------------------- */
 
     .sec-carr{
-        background-color: rgb(169, 182, 195,0.5);
+        background-color:#222831;
         width: 100vw;
         height: auto;
         display: flex;
@@ -408,14 +461,17 @@ main .campo{
         padding: 20px;
     }
     .carruseluwu{
-        width: 90%;
-        height: 70%;
+        width:100vw;
+        height: 200%;
     }
 
     .descrip{
         position:relative;
         bottom:100px;
         color: white;
+        font-weight: bold;
+        background-color: rgb(34, 40, 49,0.5)
+        
     }
 
     /* ------------------- Tercer Main ------------------ */
@@ -446,12 +502,16 @@ main .campo{
 
     /* --------------------2domain------------------- */
     .sec-carr{
-        height: 850px;
-    }
-    .carruseluwu{
-        width :70%;
         height: auto;
     }
+    .carruseluwu{
+        width :100vw;
+        height: 90%;
+    }
+    .barra{
+        padding-left:250px ;
+    }
+
 
     /* MAIN */
     .sec-main{
@@ -512,7 +572,7 @@ main .campo{
         /* border: 1px solid red; */
     }
 
-    #segundo-header .boton-de-inputs .fa-magnifying-glass{
+    #primer-header .boton-de-inputs .fa-magnifying-glass{
         width: 8%;
         font-size: 20px;
         /* margin-right: 5px; */
@@ -545,7 +605,7 @@ main .campo{
    
 }
 
-@media (min-width: 1268px){
+@media (min-width: 1024px){
 
     /* ------------------- Primer Main ------------------ */
         main .sec-main{
