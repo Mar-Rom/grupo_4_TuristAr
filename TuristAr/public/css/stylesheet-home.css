@@ -101,27 +101,31 @@ header .botones i{
     position: relative;
     border: 0.5px solid;
     z-index: 10;
+    height: 200px;
 }
 
-main .sec-main .contenedor-boton{
+main .sec-main .contenedor-boton{ /* un contenedor que maneja el boton de inputs */
     display: flex;
     justify-content: center;
+    /* border: 1px red solid; */
+    /* margin-top: 10px; */
 }
 
 main #contenedor-de-inputs{
     display: flex;
     justify-content: center;
+    /* border: 1px red solid; */
 }
 
-main .boton-de-inputs{
+main .boton-de-inputs{ /* modifica el boton que contiene los imputs */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
+    height: 40px;
     margin-top: 150px;
     border-radius: 15px;
     background-color: white;
-    /* padding: 8px; */
     /* border: 1px solid red; */
 }
 
@@ -278,6 +282,9 @@ main .campo{
     font-size: 18px;
 }
 
+#primeros-cuatro-productos{
+    display: none;
+}
 /* media auxiliar para movil */
 
 @media (min-width: 768px){
@@ -377,12 +384,13 @@ main .campo{
         background-size: 100%;
         position: relative;
         /* border: 1px solid red; */
-        height: 400px;
+        height: 410px;
     }
 
-     main .boton-de-inputs{
+     main .boton-de-inputs{ /* modifica el boton que contiene los imputs */
         margin-top: 280px;
         width: 90%;
+        height: 50px;
         /* border: 1px solid red; */
     }
 
@@ -394,12 +402,13 @@ main .campo{
         /* border: 1px solid red; */
     }
 
-   
+    
     main .boton-de-inputs .fa-magnifying-glass{
         width: 8%;
         font-size: 20px;
         /* margin-right: 5px; */
         padding: 8px 0px 4px 0px;
+        color: black;
         
     }
 
@@ -496,6 +505,12 @@ main .campo{
     font-size: 24px;
     }
 
+    #primeros-cuatro-productos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 }
 
 @media (min-width: 1028px){
@@ -520,15 +535,15 @@ main .campo{
         background-repeat: no-repeat;
         background-size: 100%;
         position: relative;
-        height: 440px;
+        height: 555px;
         /* border: 1px solid red; */
-       
+
     }
     
      main .boton-de-inputs{
         margin-top: 380px;
         width: 90%;
-        height: 45px;
+        height: 50px;
         padding-left: 0%;
         /* border: 1px solid red; */
     }
@@ -539,14 +554,6 @@ main .campo{
         text-align: center;
         font-weight: bold;
         /* border: 1px solid red; */
-    }
-
-    main .boton-de-inputs .fa-magnifying-glass{
-        width: 8%;
-        font-size: 20px;
-        /* margin-right: 5px; */
-        padding: 10px 0px 2px 0px;
-        
     }
 
     /* ------------------- Segundo Header ------------------ */
@@ -605,7 +612,7 @@ main .campo{
    
 }
 
-@media (min-width: 1024px){
+@media (min-width: 1268px){
 
     /* ------------------- Primer Main ------------------ */
         main .sec-main{
@@ -614,7 +621,7 @@ main .campo{
             background-repeat: no-repeat;
             /* background-size: 100%; */
             position: relative;
-            height: 700px;
+            height: 680px;
             /* border: 1px solid red; */
         }
 
@@ -623,7 +630,7 @@ main .campo{
             justify-self: center;
             align-items: center;
             margin-top: 500px;
-            width: 70%;
+            width: 75%;
             height: 65px;
             padding-left: 0%;
             /* border: 1px solid red; */
@@ -639,10 +646,7 @@ main .campo{
     
         main .boton-de-inputs .fa-magnifying-glass{
             width: 8%;
-            font-size: 35px;
-            /* margin-right: 5px; */
-            padding: 10px 0px 2px 0px;
-            
+            font-size: 30px;
         }
 
          /* ------------------- Segundo Header ------------------ */
