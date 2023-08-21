@@ -65,8 +65,7 @@ header .header section button {
 header nav {
     display: none;
 }
-
- main{
+main{
     display: flex;
     width: 90%;
     margin: auto;
@@ -95,7 +94,3 @@ header nav {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
-    
- 
- 
