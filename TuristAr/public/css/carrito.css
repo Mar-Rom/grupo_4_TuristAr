@@ -1,0 +1,122 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    /* background-color: #ebebeb; */
+}
+
+/* -------------------Primer header------------------ */
+header{
+    display: flex;
+    align-items: center;
+    background-color: #222831;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 10vh
+}
+#primer-header .logo img {
+    width: 100px;
+    /* border:solid red; */
+    /* position:relative;
+    top:0;
+    left:0; */
+    padding-top: 10px;
+}
+
+header .botones{
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    height: 10vh;
+    /* border:solid red; */
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+header .register  a {
+    font-size: 50%;
+    text-decoration: none;
+    color: #06334b;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 10px;
+}
+header .login  a {
+    font-size: 50%;
+    text-decoration: none;
+    color: #06334b;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 10px;
+}
+header .register,.login {
+    width: 50%;
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    background-color: #2199ea;
+    border-radius: 10px;
+    /* border:solid red; */
+}
+header .botones i{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+.usuario{
+    /* width:40%;
+    font-size: 30px; */
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 70px;
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 20px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2199ea;
+}
+.usuario i {
+    font-size: 20px;
+    color: #222831;
+}
+ main{
+    display: flex;
+    width: 90%;
+    margin: auto;
+ }
+
+ .conteiner{
+   
+    
+    line-height: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: justify;
+
+ }
+
+ .valoracion{
+    font-weight: bold;
+
+}
+
+.formularios{
+   
+    display: flex;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+    
+ 
+ 
