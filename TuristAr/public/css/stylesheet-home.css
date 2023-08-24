@@ -14,7 +14,7 @@ header{
     display: flex;
     align-items: center;
     background-color: #222831;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100vw;
     height: 10vh
 }
@@ -303,15 +303,17 @@ main .campo{
         align-items: baseline;
         justify-content: flex-start;
         height: 29px;
-        margin-top: 57px;
-        padding-left: 103px;
+        width: 50%;
+        
+        
     }
     .barra input{
         border-radius: 8px;
+        width: 100px;
     }
     .fa-magnifying-glass{
         color: aliceblue;
-        padding-left: 19px;
+        padding-left: 10px;
     }
     #primer-header .logo img {
         width:200px;
@@ -412,46 +414,7 @@ main .campo{
         
     }
 
-    /* ------------------- Segundo Header ------------------ */
-
-    #segundo-header .logo img {
-        display: block;
-        width: 140px;
-        /* height: 70px; */
-    }
-
-    #segundo-header .boton-de-inputs{
-        width: 55%;
-        height: 30px;
-        padding-left: 0%;
-    }
-
-    #segundo-header .campo{
-        text-align: center;
-        width: 20%;
-        border: none; /* Quitar los bordes en todos los lados */
-        border-right: 1px solid; 
-        font-size: 12px;
-         margin-right: 2px; /* Espacio entre las barras de búsqueda y el icono */
-        /* border: 1px solid red; */
-    }
-
-   #segundo-header #boton-acceder-cuenta{
-    justify-content: space-evenly;
-    width: 90px;
-    height: 40px;
-    /* padding: 5px 0px 5px 20px; */
-
-    }
-
-    #segundo-header #boton-acceder-cuenta .fa-user{
-        font-size: 28px;
-    }
-
-    #segundo-header .fa-bars{
-    font-size: 28px;
-    margin-left: 7px;
-    }
+   
 
     /* -------------------------2do main------------------------- */
 
@@ -471,7 +434,7 @@ main .campo{
     }
     .carruseluwu{
         width:100vw;
-        height: 200%;
+        height: 100%;
     }
 
     .descrip{
@@ -523,11 +486,18 @@ main .campo{
         width :100vw;
         height: 90%;
     }
-    .barra{
-        padding-left:250px ;
+    .carruseluwu img{
+        height: 630px;
     }
+    /* .barra{
+        padding-left:250px ;
+    } */
 
 
+    .barra input{
+        border-radius: 8px;
+        width: 125px;
+    }
     /* MAIN */
     .sec-main{
         background-image: url("../images/ARGENTINA-1024x551.jpg");

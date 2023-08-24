@@ -13,34 +13,8 @@
 </head>
 
 <body>
-    <header id="primer-header">
-        
-        <div class="logo">
-            <a href="/"><img src="/img/TuristAr-logo2.png" alt="logo"></a>
-        </div>
-
-        <div class="botones">
-            <div class="login">
-                <a href="/LogIn">INICIAR SESION</a>
-            </div>
-            <div class="register">
-                <a href="/LogIn">REGISTRARSE</a>
-            </div>
-        </div>
-        <div class="usuario">
-            <i class="fas fa-bars"></i>
-            <i class="fa-solid fa-user"></i>
-        </div>
-    </header>
-    <header class="barra">
-        <button class="boton-de-inputs">
-            <input class="campo" type="text" name="destino" placeholder="¿A dónde vas?">
-            <input class="campo" type="date" name="fecha-entrada" placeholder="Fecha de entrada">
-            <input class="campo" type="date" name="fecha-salida" placeholder="Fecha de salida">
-            <input class="campo" type="number" name="viajeros" placeholder="Viajeros">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-    </header>
+   <%- include('./partials/header.ejs') %>
+    
     <main >
         <section class="sec-main">
             <div class="contenedor-boton">
@@ -54,24 +28,6 @@
             </div>
         </section>
     </main>
-
-    <!-- <header id="segundo-header">
-        <div class="logo">
-            <a href="/"> <img src="/img/TuristAr-logo2.png" alt="logo"></a>
-        </div>
-        <button class="boton-de-inputs">
-            <input class="campo" type="text" name="destino" placeholder="¿A dónde vas?">
-            <input class="campo" type="date" name="fecha-entrada" placeholder="Fecha de entrada">
-            <input class="campo" type="date" name="fecha-salida" placeholder="Fecha de salida">
-            <input class="campo" type="number" name="viajeros" placeholder="Viajeros">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-
-        <button id="boton-acceder-cuenta">
-            <i class="fa-solid fa-bars"></i>
-            <i class="fa-solid fa-user"></i>
-        </button>
-    </header> -->
 
     <section class="sec-carr">
         <!-- <h2>¡Elige los mejores lugares para hospedarte!</h2> -->
@@ -226,44 +182,8 @@
             </article> 
         </div>
     </main>
-
-    <footer class="footer">
-        <div class="columnas">
-            <div class="logo-f">
-                <a href="/"><img src="/img/TuristAr-logo2.png" alt="logo"></a>
-            </div>
-            <div class="contact">
-                <h6>Contactanos</h6>
-                <ul>
-                    <li><i class="fa-brands fa-facebook"></i><a href="/facebook">Facebook</a></li>
-                    <li><i class="fa-solid fa-envelope"></i><a href="/facebook">Correo</a></li>
-                    <li><i class="fa-brands fa-whatsapp"></i><a href="/facebook">Whatsapp</a></li>
-                    <li><i class="fa-brands fa-twitter"></i><a href="/facebook">Twitter</a></li>
-                    <li><i class="fa-brands fa-instagram"></i><a href="/facebook">Instagram</a></li>
-                </ul>
-            </div>
-            <div class="Nosotros">
-                <h6>Nosotros</h6>
-                <ul>
-                    <li><a href="/PreguntasFrec"> ¿Quienes somos?</a></li>
-                    <li><a href="/PreguntasFrec">¿Donde nos ubicamos?</a></li>
-                    <li><a href="/PreguntasFrec">¿Que hacemos?</a></li>
-                    <li><a href="/PreguntasFrec">Agregar hospedaje</a></li>
-                </ul>
-
-            </div>
-            <div class="iconitos">
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-solid fa-envelope"></i>
-                <i class="fa-brands fa-whatsapp"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-instagram"></i>
-    </div>
-        </div>
-        <div class="footer--date">
-            <p>Copyright &copy; 2023 TuristAr S.R.L<p>
-        </div>
-    </footer>
+    <%- include('./partials/footer.ejs')%>
+    
 </body>
 
 </html>

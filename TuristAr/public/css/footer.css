@@ -3,52 +3,74 @@
     padding: 0;
     margin: 0;
 }
-.footer {
-    margin: 0;
-    padding: 10px;
-    background-color: rgb(169, 182, 195,0.5);
+/* FOOTER */
+
+footer {
+    background-color: #222831;
+    display: flex;
+    width: 100vw;
+    background-color: #cfd3d8;
+    padding-top: 40px;
+    padding-left: 20px;
+}
+footer .logo-footer a img{
+    display: none;
+    max-width: 100px;
+}
+footer section {
     display: flex;
     flex-direction: column;
-    align-self: flex-end;
-    color: #222831;
-    font-size: 15px;
+    width: 90%;
 }
-.columnas {
-    display :flex;
-    flex-direction: column;
-    align-items: center;
-}
-.columnas ul{
-    padding: 10px;
-}
-.logo-f img{
-    width: 120px;
-    /* border: solid red; */
+footer section div {
+    margin-bottom: 20px;
+    width: 90%;
+    border-top: 1px solid #b8b5b5;
     padding-top: 10px;
 }
-.footer li a{
-    color: #222831;
+footer section div ul {
+    display: flex;
+    flex-direction: column;
+}
+footer section div ul a {
+    text-align: left;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 5px;
+}
+footer section div a {
+    text-align: left;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+footer section div p {
+    font-size: 15px ;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+footer section .redes {
+    display: flex;
+    justify-content: space-around;
+    width: 90vw;
+    padding-top: 20px;
+}
+footer section .redes a i {
+    font-size: 30px;
 }
 
-@media (min-width:768px){
-    .columnas{
-        display :flex;
+@media (min-width: 728px) {
+    footer {
+        padding-top: 20px;
+        padding-left: 0px;
+    }
+    footer section {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
+        width: 90vw;
+        margin: auto;
     }
-    .logo-f img{
-        width: 120px;
-        /* border: solid red; */
-        padding-top: 10px;
-        position: relative;
-        bottom: 50px;
-    }
-    .iconitos{
-        padding-left: 25px;
-    }
+}
+@media (min-width: 1024px) {
     
 }
-@media (min-width: 1024px){
-    
-}
-
