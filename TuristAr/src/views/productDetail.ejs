@@ -33,25 +33,6 @@
                 <i class="fa-solid fa-user"></i>
             </div>
         </div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/">Secciones</a>
-                </li>
-                <li>
-                    <a href="/">Secciones</a>
-                </li>
-                <li>
-                    <a href="/">Secciones</a>
-                </li>
-                <li>
-                    <a href="/">Secciones</a>
-                </li>
-                <li>
-                    <a href="/">Secciones</a>
-                </li>
-            </ul>
-        </nav>
     </header>
     <main>
         <article>
@@ -104,57 +85,19 @@
                 </h6>
             </div>
             <div class="inputs">
-                <input class="check" type="date" name= "fecha-entrada" placeholder="Check-In">
-                <input class="check" type="date" name="fecha-salida" placeholder="Check-Out">
+                <div class="check-in">
+                    <label for="Check-In">Check-In</label>
+                    <input class="check" id="Check-In" type="date" name= "fecha-entrada" placeholder="Check-In">
+                </div>
+                <div class="check-out">
+                    <label for="Check-Out">Check-Out</label>
+                    <input class="check" id="Check-Out" type="date" name="fecha-salida" placeholder="Check-Out">
+                </div>
             </div>
             <input class="huespedes" type="number" placeholder="Cantidad de huéspedes">
             <button>Cotizar</button>
         </section>
     </main>
-    <footer>
-        <div class="logo-footer">
-            <a  href="/"><img src="img/TuristAr-logo2.png" alt="logo" ></a>
-        </div>
-        <section>
-            <div class="Productos">
-                <p>Productos</p>
-                <ul>
-                    <a href="#">Enlace 1</a>
-                    <a href="#">Enlace 2</a>
-                    <a href="#">Enlace 3</a>
-                </ul>
-            </div>
-            <div class="Servicios">
-                    <p>Servicios</p>
-                <ul>
-                    <a href="#">Enlace 1</a>
-                    <a href="#">Enlace 2</a>
-                </ul>
-            </div>
-                <div class="contacto">
-                    <p>Contacto</p>
-                    <a href="#">Enlace 1</a>
-                </div>
-            <div class="nosotros">
-                <p>Nosotros</p>
-                <a href="#">Enlace 1</a>
-            </div>
-            <div class="redes">
-                    <a href="#">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fa-regular fa-envelope"></i>
-                    </a>
-                </i>
-            </div>
-        </section>
-    </footer>
+    <%- include('./partials/footer.ejs')%>
 </body>
 </html>

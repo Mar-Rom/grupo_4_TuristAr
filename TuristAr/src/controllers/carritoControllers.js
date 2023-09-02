@@ -1,6 +1,6 @@
 module.exports = {
     datos: (req, res) => {
-        res.render ('carrito')
+        res.render ('carrito1')
     },
     pago: (req, res) => {
         res.render ('carrito2')
