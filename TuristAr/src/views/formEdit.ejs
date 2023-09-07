@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include ('./partials/head.ejs') %>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+    
+        <main class="mainform">
+            <section class="form">
+                <h2>¡Estas editando un producto!</h2>
+                <form action="/products/edit?_method=PUT" method="POST" class="formu">
+                    <label for="name">Nombre de su hospedaje:</label>
+                    <div>
+                        <input type="text" id="name" name="name" placeholder="Ej: cabañas soñadas" class="form-input">
+                    </div>
+                   
+                    <label for="price">Precio por noche:</label>
+                    <div>
+                    <input type="text" id="price" name="price" placeholder="Ej: 200" class="form-input">
+                    </div>
+
+                    <label for="discount">Ubicacion:</label>
+                    <div>
+                    <input type="text" id="discount" name="discount" placeholder="Ej: Misiones" class="form-input">
+                    </div>
+                    
+                    <label for="cantDormitorios">Cantidad maxima de personas:</label>
+                    <div>
+                    <input type="text" id="cantDormitorios" name="cantDormitorios" placeholder="Ej: 1" class="form-input">
+                    </div>
+                
+                    <label for="description">Descipción:</label>
+                    <div>
+                    <textarea name="description" id="description" class="form-input" ></textarea>
+                    </div>
+                    
+                    <label for="name">Nombre de la persona a cargo:</label>
+                    <div>
+                    <input type="text" id="name" name="name" placeholder="Ej: Veronica Solis" class="form-input">
+                    </div>
+                    
+                    <label for="include">Que incluye:</label>
+                    <div class="check">
+                    <input type="checkbox" name="include" value="breakfaast"> <span>Desayuno</span>
+                    <input type="checkbox" name="include" value="wifi"> <span>Wi-fi</span>
+                    <input type="checkbox" name="include" value="aguaHot"> <span>Agua caliente</span>
+                    <input type="checkbox" name="include" value="baño"> <span>Baño individual</span>
+                    </div>
+                    
+
+                    <label for="image">Agregar imagen</label>
+                    <div>
+                    <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg">
+                    </div>
+                   
+
+                    <div>
+                    <button type="submit" class="buy-now-button">Guardar Hospedaje</button>
+                    </div>
+
+                </form>
+            </section>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        </main>
+        <%- include('./partials/footer.ejs')%>
+</body>
+
+</html>

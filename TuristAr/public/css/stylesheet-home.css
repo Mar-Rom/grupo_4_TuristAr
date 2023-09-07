@@ -527,27 +527,7 @@ main .campo{
     }
 
     /* ------------------- Segundo Header ------------------ */
-    #segundo-header{
-        height: 15vh
-    }
-
-    #segundo-header .logo img {
-        width: 230px;
-    }
-
-    #segundo-header .boton-de-inputs{
-        width: 55%;
-        height: 60px;
-        padding-left: 0%;
-    }
-
-    #segundo-header .campo{
-        width: 22%;
-        font-size: 17px;
-        text-align: center;
-        font-weight: bold;
-        /* border: 1px solid red; */
-    }
+   
 
     #primer-header .boton-de-inputs .fa-magnifying-glass{
         width: 8%;

@@ -1,9 +1,35 @@
 [
     {
-        "id": "prueba",
-        "name": "prueba",
-        "description": "prueba",
-        "image": "prueba",
-        "category": "prueba"
+        "id": "1",
+        "name": "Casita Purma",
+        "description": "APROVECHÁ PREVIAJE CON NOSOTROS!!! Casita Purma es una casita nueva dentro del casco histórico de Purmamarca.  Dos dormitorios, living-comedor-cocina, baño y patio. Desde las ventanas se puede disfrutar del Cerro de los Siete Colores y del pintoresco pueblo Patrimonio de la Humanidad. A tres cuadras de la Plaza y a una del Paseo de los Colorados, Casita Purma es ideal para hacer base y disfrutar en familia, pareja o amigos del hermoso paisaje andino de la Quebrada de Humahuaca. Te esperamos!!!",
+        "image": "casaPurma1,jpg",
+        "imageArray": ["casaPurma2,jpg","casaPurma3,jpg","casaPurma4,jpg"],
+        "price": "120000",
+        "dormitorios":"2",
+        "servicios":"prueba",
+        "anfitrion": "Pablo"
+    },
+    {
+        "id": "2",
+        "name": "ECOCABAÑA 3",
+        "description": "ECOCABAÑA es un concepto de alojamiento rural y ecológico ubicado en Purmamarca con una de las mejores vistas panorámicas del Cerro de los 7 Colores, aquí tendrás un gran espacio para conectar con la naturaleza. Estamos muy cerca de todo, pudiendo recorrer prácticamente toda la ciudad a pie.Te esperamos para que disfrutes de una experiencia inolvidable.",
+        "image": "ecocabaña1.jpg",
+        "imageArray": ["ecocabaña1.jpg","ecocabaña1.jpg","ecocabaña1.jpg"],
+        "price": "30000",
+        "dormitorios":"1",
+        "servicios":"prueba",
+        "anfitrion": "Liliana"
+    },
+    {
+        "id": "3",
+        "name": "Casa de artista con senderos & arroyo",
+        "description": "No es una casa cualquiera. De madera de cipres acerrado ahi mismo. Luminosa, amplia, bien aislada para asegurar el mínimo consumo de energía. Decoración de sencilla elegancia acorde al lugar, cuadros de fotos de Florian von der Fecht enmarcados con madera reciclada. sin vecinos, rodeada de bosque, de senderos y acceso privado al arroyo Blanco que limita la propiedad. El murmullo del Arroyo Blanco se interrumpe por el canto del huet-huet.",
+        "image": "casaArtista1.jpg",
+        "imageArray": ["casaArtista2.jpg","casaArtista3.jpg","casaArtista4.jpg"],
+        "price": "60000",
+        "personas":"2",
+        "servicios":"prueba",
+        "anfitrion": "Juan Perez"
     }
 ]
