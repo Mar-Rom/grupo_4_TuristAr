@@ -8,7 +8,7 @@
     
         <main class="mainform">
             <section class="form">
-                <h2>¡Estas editando un producto!</h2>
+                <h2>¡Estas editando tu hospedaje!</h2>
                 <form action="/products/edit?_method=PUT" method="POST" class="formu">
                     <label for="name">Nombre de su hospedaje:</label>
                     <div>
@@ -19,15 +19,40 @@
                     <div>
                     <input type="text" id="price" name="price" placeholder="Ej: 200" class="form-input">
                     </div>
-
-                    <label for="discount">Ubicacion:</label>
+                    <label for="prov">Provincia</label>
                     <div>
-                    <input type="text" id="discount" name="discount" placeholder="Ej: Misiones" class="form-input">
+                        <select name="prov">
+                            <option value="BuenosAires">Buenos Aires</option>
+                            <option value="Catamarca">Catamarca</option>
+                            <option value=Cordoba">Córdoba</option>
+                            <option value="Corrientes">Corrientes</option>
+                            <option value="Entre Rios">Entre Ríos</option>
+                            <option value="Formosa">Formosa</option>
+                            <option value="Jujuy">Jujuy</option>
+                            <option value="La Pampa">La Pampa</option>
+                            <option value="La Rioja">La Rioja</option>
+                            <option value="Mendoza">Mendoza</option>
+                            <option value="Misiones">Misiones</option>
+                            <option value="Neuquen">Neuquén</option>
+                            <option value="Rio Negro">Río Negro</option>
+                            <option value="Salta">Salta</option>
+                            <option value="San Juan">San Juan</option>
+                            <option value="San Luis">San Luis</option>
+                            <option value="Santa Cruz">Santa Cruz</option>
+                            <option value="Santa Fe">Santa Fe</option>
+                            <option value="Santiago Del Estero">Santiago del Estero</option>
+                            <option value="Tierra Del Fuego">Tierra del Fuego</option>
+                          </select>
+                    </div>
+
+                    <label for="localidad">Localidad:</label>
+                    <div>
+                    <input type="text" id="localidad" name="localidad" placeholder="Ej: San Salvador de Jujuy" class="form-input">
                     </div>
                     
-                    <label for="cantDormitorios">Cantidad maxima de personas:</label>
+                    <label for="personas">Cantidad maxima de personas:</label>
                     <div>
-                    <input type="text" id="cantDormitorios" name="cantDormitorios" placeholder="Ej: 1" class="form-input">
+                    <input type="text" id="personas" name="personas" placeholder="Ej: 1" class="form-input">
                     </div>
                 
                     <label for="description">Descipción:</label>
@@ -35,17 +60,18 @@
                     <textarea name="description" id="description" class="form-input" ></textarea>
                     </div>
                     
-                    <label for="name">Nombre de la persona a cargo:</label>
+                    <label for="anfitrion">Nombre de la persona a cargo:</label>
                     <div>
-                    <input type="text" id="name" name="name" placeholder="Ej: Veronica Solis" class="form-input">
+                    <input type="text" id="anfitrion" name="anfitrion" placeholder="Ej: Veronica Solis" class="form-input">
                     </div>
                     
                     <label for="include">Que incluye:</label>
                     <div class="check">
-                    <input type="checkbox" name="include" value="breakfaast"> <span>Desayuno</span>
+                    <input type="checkbox" name="include" value="breakfast"> <span>Desayuno</span>
+                    <input type="checkbox" name="include" value="cocina"> <span>Cocina</span>
                     <input type="checkbox" name="include" value="wifi"> <span>Wi-fi</span>
-                    <input type="checkbox" name="include" value="aguaHot"> <span>Agua caliente</span>
-                    <input type="checkbox" name="include" value="baño"> <span>Baño individual</span>
+                    <input type="checkbox" name="include" value="waterHot"> <span>Agua caliente</span>
+                    <input type="checkbox" name="include" value="banio"> <span>Baño individual</span>
                     </div>
                     
 

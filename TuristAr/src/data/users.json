@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "name": "Rocio",
+        "lastName":"Velazquez",
+        "email": "roo@gmail.com",
+        "password": "perrosygatos123",
+        "category":"administrador",
+        "image": "rocio.jpeg"
+    },
+    {
+        "id": "2",
+        "name": "Roberto",
+        "lastName":"Mamani",
+        "email": "roober@gmail.com",
+        "password": "perrosygatos123",
+        "category":"client",
+        "image": "roberto.jpg"
+    }
+]

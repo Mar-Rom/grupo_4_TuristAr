@@ -3,7 +3,7 @@ const products = require('../data/productsData.json');
 module.exports = {
     all: (req,res) => {
         res.render('productsAll',{
-            products: products
+            products
         });
     },
     detail: (req, res) => {
@@ -13,7 +13,9 @@ module.exports = {
         res.render('formCarga');
     },
     agregar: (req, res) => {
-        res.redirect('/')
+        // console.log(req.body);
+        
+        res.redirect('/products')
     },
     edit: (req,res)=>{
         res.render('formEdit');
