@@ -67,12 +67,16 @@ header nav {
 }
 
  main{
-    display: flex;
+    display: block;
     width: 90%;
     margin: auto;
  }
+ .conteiner{
+    display: block;
+ }
 
  .dates{
+    width: 50%;
     background-color:rgb(169, 182, 195,0.5);
     padding: 10px 10px;
     border-radius: 8px;
@@ -80,6 +84,9 @@ header nav {
  .dates i{
     color: gold;
     padding-right: 5px;
+ }
+ .formularios{
+    width: 70%;
  }
  .title{
     
@@ -129,6 +136,68 @@ header nav {
  .valoracion{
     font-weight: bold;
 
+}
+
+@media (min-width:768px){
+    /*header*/
+    header .header .button-back {
+        display: none;
+    }
+    header .header .logo {
+        margin-left: 30px;
+        max-width:  20px;
+    }
+    header .header .logo a img {
+        max-width: 270px;
+        padding: 15px 0px;
+    }
+    header .header .usuario {
+        margin-right: 40px;
+        background-color: #2199ea;
+    }
+    header .header .usuario i {
+        color: #222831;
+        font-size: 25px;
+    }
+    header .header .usuario .fa-solid {
+        display: block;
+    }
+    header .header section {
+        margin: auto;
+        width: 250px;
+    }
+    header .header section button {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 8px;
+        border-radius: 30px;
+        background-color: #222831;
+        border: #222831 solid 1px;
+    }
+    header .header section button input {
+        width: 90%;
+        padding: 3px;
+        border-radius: 15px;
+    }
+    header .header section button i {
+        margin: auto;
+        color: #2199ea;
+
+    }
+}
+@media (min-width: 1024px) {
+    /* Header */
+
+    header .header {
+        padding-top: 10px;
+    }
+    header .header .logo a img {
+        max-width: 200px;
+    }
+    header .header section {
+        width: 450px;
+    }
 }
     
  
