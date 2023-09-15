@@ -7,56 +7,57 @@
     <link rel="stylesheet" href="/css/carrito2.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <title>Carrito2</title>
+    <title>Carrito</title>
 </head>
 <body>
-    <header>
-        <div class="header">
-            <div class="button-back">
-                <a href="/">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </a>
+    <body>
+        <header>
+            <div class="header">
+                <div class="button-back">
+                    <a href="/carrito/datos">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </a>
+                </div>
+                <div class="logo">
+                    <a  href="/"><img src="/img/TuristAr-logo2.png" alt="logo" ></a>
+                </div>
+                <section class="barra-busqueda">
+                    <button class="boton-de-inputs">
+                    <input class="campo" type="text" name="destino" placeholder="¿A dónde vas?">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </section>
+                <div class="usuario">
+                    <i class="fas fa-bars"></i>
+                    <i class="fa-solid fa-user"></i>
+                </div>
             </div>
-            <div class="logo">
-                <a  href="/"><img src="/img/TuristAr-logo2.png" alt="logo" ></a>
-            </div>
-            <section class="barra-busqueda">
-                <button class="boton-de-inputs">
-                <input class="campo" type="text" name="destino" placeholder="¿A dónde vas?">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </section>
-            <div class="usuario">
-                <i class="fas fa-bars"></i>
-                <i class="fa-solid fa-user"></i>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/">Secciones</a>
-                </li>
-                <li>
-                    <a href="/">Secciones</a>
-                </li>
-                <li>
-                    <a href="/">Secciones</a>
-                </li>
-                <li>
-                    <a href="/">Secciones</a>
-                </li>
-                <li>
-                    <a href="/">Secciones</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Secciones</a>
+                    </li>
+                    <li>
+                        <a href="/">Secciones</a>
+                    </li>
+                    <li>
+                        <a href="/">Secciones</a>
+                    </li>
+                    <li>
+                        <a href="/">Secciones</a>
+                    </li>
+                    <li>
+                        <a href="/">Secciones</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
         <div class="conteiner">
             
                 <div class="conteiner-img">
-                    <img src="/images/bariloche.jpg" alt="bariloche" width="150px" height="170px">
+                    <img src="\images\cabañas.jpg"alt="bariloche" width="150px" height="170px">
                 </div>
                 <div class="dates">
                     <h4>Datos de tu reserva</h2>
@@ -67,111 +68,61 @@
                 </div>
                         
         </div>
-
+        
         <div class="formularios">
-            <div class="form">
-                <article class="container">
-                  <div class="title">Datos Personales</div>
-                  <form action="#"></form>
-                    <div class="user-details">
-                      <label for="Tarjeta">Tarjeta</label>
-                      <select name="" id="">
-                          <option value="Debito">Debito</option>
-                      <option value="Credito">Credito</option>
-                       </select>
-                      
-                      <div class="input-box">
-                          <span class="details">Numero de Tarjeta</span>
-                          <input type="text" placeholder="123456" required>
-              
-                      <div class="input-box">
-                          <span class="details">Tarjeta de Credito o Debito</span>
-                          <input type="text" placeholder="Escriba su nombre" required>
-              
-                      </div>
-                      <div class="input-box">
-                          <span class="details">Vencimiento</span>
-                          <input type="text" placeholder="012" required>
-                      
-                      </div>
-                    
-                      <div class="input-box">
-                          <span class="details">CVV</span>
-                          <input type="text" required>
-              
-                      </div>
-                      <div class="input-box">
-                          <span class="details">Codigo Pòstal</span>
-                          <input type="text" placeholder="Ej: 4600" required>
-              
-                      </div>
-                      <label for="Pais">Pais o Region</label>
-                      <select name="" id="">
-                          <option value="USA">Estados Unidos</option>
-                      <option value="Canada">Canadá</option>
-                      <option value="Mexico">México</option>
-                      <option value="Brazil">Brasil</option>
-                      <option value="Argentina">Argentina</option>
-                      <option value="Chile">Chile</option>
-                      <option value="Colombia">Colombia</option>
-                      <option value="Peru">Perú</option>
-                      <option value="Venezuela">Venezuela</option>
-                      <option value="Cuba">Cuba</option>
-                      </select>
-                      <div class="input-box">
-                          <span class="details">Nacionalidad</span>
-                          <input type="text" placeholder="nacionalidad" required>
-              
-                      </div>
-                      <div class="boton">
-                          <button>Siguiente</button>
-              
-                      </div>
-                  </div>
-                </article>
-              </div>
+            <h3 class="title">Datos personales</h3>
+            <form action="#" method="post" class="create-form">
+                <div class="control-formulario">
+                    <label>Tarjeta</label>
+                    <select name="" id="">
+                        <option value="Debito">Debito</option>
+                        <option value="credito">Credito</option>
+                    </select>
+                </div>
+                <div class="control-formulario">
+                    <label>Numero de Tarjeta</label>
+                    <input type="text" placeholder="1234" required class="control">
+                </div>
+                <div class="control-formulario">
+                    <label>Nombre del titular</label>
+                    <input type="text" placeholder="Nombre" required class="control">
+                </div>
+                <div class="control-formulario">
+                    <label>Vencimiento</label>
+                    <input type="text" placeholder="4/30" required class="control">
+                </div>
+                <div class="control-formulario">
+                    <label>CVV</label>
+                    <input type="text" placeholder="012" required class="control">
+                </div>
+                <div class="control-formulario">
+                    <label>CODIGO Postal</label>
+                    <input type="number" placeholder="Ej: 4600" required class="control">
+                </div>
+                <div class="control-formulario">
+                    <label>Pais</label>
+                    <select name="" id="" class="control">
+                    <option value="USA">Estados Unidos</option>
+                    <option value="Canada">Canadá</option>
+                    <option value="Mexico">México</option>
+                    <option value="Brazil">Brasil</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Peru">Perú</option>
+                    <option value="Venezuela">Venezuela</option>
+                    <option value="Cuba">Cuba</option>
+                    </select>
+                </div>
+                <div class="control-formulario">
+                    <label>Nacionalidad</label>
+                    <input type="text" placeholder="Argentino" required class="control">
+                </div>
+                <a class="buttom" href="/carrito/resumen" target="_blank"> Siguiente</a>
 
+            </form>
         </div>
-                        
-            
-
     </main>
-    <footer class="footer">
-        <div class="columnas">
-            <div class="logo-f">
-                <a href="/"><img src="/img/TuristAr-logo2.png" alt="logo"></a>
-            </div>
-            <div class="contact">
-                <h6>Contactanos</h6>
-                <ul>
-                    <li><i class="fa-brands fa-facebook"></i><a href="/facebook">Facebook</a></li>
-                    <li><i class="fa-solid fa-envelope"></i><a href="/facebook">Correo</a></li>
-                    <li><i class="fa-brands fa-whatsapp"></i><a href="/facebook">Whatsapp</a></li>
-                    <li><i class="fa-brands fa-twitter"></i><a href="/facebook">Twitter</a></li>
-                    <li><i class="fa-brands fa-instagram"></i><a href="/facebook">Instagram</a></li>
-                </ul>
-            </div>
-            <div class="Nosotros">
-                <h6>Nosotros</h6>
-                <ul>
-                    <li><a href="/PreguntasFrec"> ¿Quienes somos?</a></li>
-                    <li><a href="/PreguntasFrec">¿Donde nos ubicamos?</a></li>
-                    <li><a href="/PreguntasFrec">¿Que hacemos?</a></li>
-                    <li><a href="/PreguntasFrec">Agregar hospedaje</a></li>
-                </ul>
-
-            </div>
-            <div class="iconitos">
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-solid fa-envelope"></i>
-                <i class="fa-brands fa-whatsapp"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-instagram"></i>
-    </div>
-        </div>
-        <div class="footer--date">
-            <p>Copyright &copy; 2023 TuristAr S.R.L<p>
-        </div>
-    </footer>
+    <%- include('./partials/footer.ejs')%>
 </body>
 </html>
