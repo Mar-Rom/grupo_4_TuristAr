@@ -49,5 +49,62 @@
         "anfitrion": "Juan Perez",
         "prov": "Rio Negro",
         "localidad": "Bariloche"
+    },
+    {
+        "id": "4",
+        "name": "Un Chiringo entre el bosque y la montaña",
+        "description": "Cabaña de montaña, que consta de 1 ambiente en planta baja con cocina-comedor, equipado con heladera, anafe a gas, horno eléctrico, jarra eléctrica y vajilla para 4 personas. El baño ubicado en planta baja tiene ducha con mampara. En este ambiente hay un futón cama donde pueden dormir dos personas, y en la buhardilla que está alfombrada hay dos camas sommier individuales que pueden unir sus colchones y convertirse en cama matrimonial. Allí hay una cómoda con cajonera.",
+        "image": "casaUshuaia1",
+        "imageArray": [
+            "casaUshuaia2",
+            "casaUshuaia3",
+            "casaUshuaia4",
+            "casaUshuaia5",
+            "casaUshuaia6"
+        ],
+        "price": "30750",
+        "personas":"3",
+        "include":["cocina", "wi-fi", "televisor", "estacionamiento", "patio privado"],
+        "anfitrion": "Bruno",
+        "prov": "Tierra del Fuego",
+        "localidad": "Ushuaia"
+    },
+    {
+        "id":"5",
+        "name":"Departamento en Buesos Aires",
+        "description":"Espectacular apartamento de tres ambientes en Villa Crespo, muy bien conectado y cerca de Palermo.Torre con amenities y todas las comodidades de una casa: jardin, piscina, cancha de futbol, mucho verde y seguridad 24 hs. Espacios amplios, luminosos y equipados. Tiene escritorio de trabajo, habitación con cama enorme y un colchón super confortable. Lo mejor de todo: las vistas únicas y abiertas de la ciudad. De día y de noche, cada ventana es una postal. Todos los espacios tienen vista abierta.",
+        "image":"deptoBaires1.jpg",
+        "imageArray":[
+            "deptoBaires2.jpg",
+            "deptoBaires3.jpg",
+            "deptoBaires4.jpg",
+            "deptoBaires5.jpg",
+            "deptoBaires6.jpg"
+        ],
+        "price":"33750",
+        "personas":"3",
+        "include":["cocina", "wi-fi", "zona de trabajo", "estacionamiento", "pileta de uso compartido", "televisor"],
+        "anfitrion":"Gabriela",
+        "prov":"Buenos Aires",
+        "localidad":"CABA"
+    },
+    {
+        "id":"6",
+        "name":"Departamento HOME - Vista Lago y Bosque",
+        "description":"Relájate en este increíble alojamiento en un entorno único y pacifico, rodeado de un bosque nativo, aves autóctonas y una hermosa vista al lago Nahuel Huapi. Este departamento moderno y acogedor se encuentra dentro de un barrio cerrado a menos de 5 km del centro de Bariloche, cercano a un centro comercial, restaurantes, cervecerías y playa publica. Posee salida directa a las dos avenidas mas importantes de Bariloche, que conectan la ciudad con los principales atractivos y con el centro de ski.",
+        "image":"deptoBariloche1.jpg",
+        "imageArray":[
+            "deptoBariloche2.jpg",
+            "deptoBariloche3.jpg",
+            "deptoBariloche4.jpg",
+            "deptoBariloche5.jpg",
+            "deptoBariloche6.jpg"
+        ],
+        "price":"56250",
+        "personas":"3",
+        "include":["vista a las montañas","vista al lago", "wi-fi", "cocina", "cocina"],
+        "anfitrion":"Lucas",
+        "prov":"Rio Negro",
+        "localidad":"Bariloche"
     }
 ]
