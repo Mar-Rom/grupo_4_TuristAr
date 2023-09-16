@@ -106,5 +106,56 @@
         "anfitrion":"Lucas",
         "prov":"Rio Negro",
         "localidad":"Bariloche"
+    },
+    {
+    "id":"7",
+        "name": "Vivienda en Mendoza - Vista a las montañas" ,
+        "description":"la tierra del malbec, que alberga al imponente cerro Aconcagua, se fortalece como el Olimpo para los enófilos de todo el orbe al formar parte de la prestigiosa red global de las Great Wine Capitals.",
+        "image":"mendoza1.jpg",
+        "imageArray":[
+            "mendoza2.jpg",
+            "mendoza3.jpg",
+            "mendoza4.jpg"
+        ],
+        "price":"55000",
+        "personas":"7",
+        "include":["vista a las montañas","vista al lago", "wi-fi", "cocina", "patio privado"],
+        "anfitrion":"Martin",
+        "prov":"Mendoza",
+        "localidad":"Las Cuevas"
+    },
+    {
+        "id":"8",
+        "name": "Vieja casona en un pequeño pueblo" ,
+        "description":"A tan solo 25 kilómetros al oeste de la ciudad de Tucumán se encuentra, enclavada entre los cerros y la selva, la hermosa y pintoresca localidad de Villa Nougués.",
+        "image":"tucuman1.jpg",
+        "imageArray":[
+            "tucuman2.jpg",
+            "tucuman3.jpg",
+            "tucuman4.jpg"
+        ],
+        "price":"28000",
+        "personas":"3",
+        "include":["vista a las montañas","televisor", "cocina", "patio privado"],
+        "anfitrion":"Nicolas",
+        "prov":"Tucumán",
+        "localidad":"Villa Nougués"
+    },
+    {
+        "id":"9",
+        "name": "Hostería Villa del Lago " ,
+        "description":" se encuentra en Villa Carlos Paz y ofrece salón, dos habitaciones y pileta",
+        "image":"villaCarlosPaz1.jpg",
+        "imageArray":[
+            "villaCarlosPaz2.jpg",
+            "villaCarlosPaz3.jpg",
+            "villaCarlosPaz4.jpg"
+        ],
+        "price":"28000",
+        "personas":"5",
+        "include":["pileta","televisor", "cocina", "patio privado, wi-fi"],
+        "anfitrion":"Mateo",
+        "prov":"Cordoba",
+        "localidad":"Villa Carlos Paz"
     }
 ]
