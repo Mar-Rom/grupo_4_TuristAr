@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<%-include ('./partials/head.ejs') %>
+<link rel="stylesheet" href="css/styles-Register.css">
+
+<body>
+    <%-include ('./partials/header.ejs') %>
+
+ <div class="Reg">
+ <form action="register.php" method="POST">
+    <h1 id="tittle">CREA TU CUENTA</h1>
+    <label>Nombre</label>
+    <input type="text" name="name">
+
+    <label>E-mail</label>
+    <input type="text" name="email">
+
+    <label>Contraseña</label>
+
+    <input type="password" name="password">
+
+    <h6>Usa entre 8 y 16 Caracteres</h6>
+
+    <label>Confirmar Contraseña</label>
+
+    <input type="password" name="password">
+
+    <h6>debe coincidir con la Contraseña</h6>
+
+    <input type="submit" name="RESGISTRARSE">
+
+ </form>
+</div>
+    
+</body>
+
+<%-include ('./partials/footer.ejs') %>
+
+</html>
