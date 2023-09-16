@@ -7,7 +7,9 @@ module.exports = {
         });
     },
     detail: (req, res) => {
-        res.render('productDetail')
+        let productoId = req.params.id;
+        let producto = products.find((prod) => prod.id == productoId);
+        res.render('productDetail', {producto: producto})
     },
     crear: (req, res) => {
         res.render('formCarga');
