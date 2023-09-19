@@ -73,6 +73,8 @@ header nav {
 main {
     background-color: #222831;
     width: 100vw;
+    padding-top: 3%; 
+    /* puse este padding para que se vea mejor ya que inclui el partial de header */
 }
 main article {
     width: 100%;
