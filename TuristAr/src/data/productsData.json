@@ -207,5 +207,60 @@
         "anfitrion": "Mateo",
         "prov": "Cordoba",
         "localidad": "Villa Carlos Paz"
+    },
+    {
+        "id":"10",
+        "name": "Alojamiento Puerto Iguazu",
+        "description": "El alojamiento se encuentra en un lugar tranquilo rodeado de naturaleza, cerca de varios atractivos turisticos de la ciudad",
+        "image": "casaIguazu.jpg",
+        "imageArray": [
+            "casaIguazu2.jpg",
+            "casaIguazu3.jpg",
+            "casaIguazu4.jpg",
+            "casaIguazu5.jpg"
+        ],
+        "price": "27000",
+        "personas": "4",
+        "include": ["Cocina", "Wifi de 28 Mbps", "Estacionamiento gratis en la propiedad", "Televisión con Netflix", "Patio trasero compartido", "Heladera"],
+        "anfitrion": "Maria Elena",
+        "prov": "Misiones",
+        "localidad": "Puerto Iguazu"
+    },
+    {
+        "id":"11",
+        "name": "Hotel Mediterraneo",
+        "description": "Hotel centrico ubicado cerca de lugares turisticos",
+        "image": "hotelMediterraneo.jpg",
+        "imageArray": [
+            "hotelMediterraneo2.jpg",
+            "hotelMediterraneo3.jpg",
+            "hotelMediterraneo4.jpg"
+           
+        ],
+        "price": "28500",
+        "personas": "4",
+        "include": ["pileta","televisor", "cocina", "patio privado, wi-fi", "Heladera"],
+        "anfitrion": "Yanina",
+        "prov": "Misiones",
+        "localidad": "Puerto Iguazu"
+    },
+    {
+        "id":"12",
+        "name": "Cabañas Rincon Santa Maria",
+        "description": "Cabañas con piscina con cerca perimetral de seguridad, iluminación nocturna en quincho y área de barbacoa",
+        "image": "departamentoIguazu.jpg",
+        "imageArray": [
+            "departamentoIguazu2.jpg",
+            "departamentoIguazu3.jpg",
+            "departamentoIguazu4.jpg"
+           
+        ],
+        "price": "31500",
+        "personas": "8",
+        "include": ["pileta","televisor", "cocina", "patio privado, wi-fi", "Heladera", "quincho"],
+        "anfitrion": "Manuel",
+        "prov": "Misiones",
+        "localidad": "Puerto Iguazu"
     }
 ]
+
