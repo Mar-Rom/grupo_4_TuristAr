@@ -163,18 +163,18 @@ main section .huespedes {
     height: 60px;
     border: #222831 1px solid;
 }
-main section button {
-    border: #222831 solid 1px;
+.buttom {
     background-color: #2199ea;
-    width: 80%;
+    color: #dee2e9;
+    border: none;
+    font-size: 25px;
+    font-weight: bold;
     margin: auto;
     margin-top: 30px;
     margin-bottom: 20px;
-    height: 50px;
-    border-radius: 30px;
-    font-size: 25px;
-    font-weight: bold;
-    color: #222831;
+    padding: 10px 30px;
+    border-radius: 10px;
+    text-decoration: none;
 }
 
 /* FOOTER */
