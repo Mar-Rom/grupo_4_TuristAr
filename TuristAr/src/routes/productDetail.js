@@ -9,8 +9,8 @@ router.get('/detail/:id', productControllers.detail);
 router.get('/create', productControllers.crear);
 router.post('/',productControllers.agregar);
 //editar
-router.get('/edit', productControllers.edit)
-router.put('/edit',productControllers.guardarCambios);
+router.get('/edit/:id', productControllers.edit)
+router.put('/edit/:id',productControllers.guardarCambios);
 
 
 module.exports = router;

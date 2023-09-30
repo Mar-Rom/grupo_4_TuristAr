@@ -31,9 +31,34 @@ module.exports = {
         res.redirect('/products')
     },
     edit: (req,res)=>{
-        res.render('formEdit');
+        const {id} = req.params;
+        const alojamiento = products.find((prod) => prod.id == id);
+
+        res.render('formEdit', {alojamiento});
     },
     guardarCambios: (req, res) => {
-        res.redirect('/');
+        const {id} = req.params;
+
+        const indexProduct = products.findIndex((prod) => prod.id == id);
+        let productoAEditar = products[indexProduct];
+
+        let editado = req.body;
+        editado.id = parseInt(id);
+        editado.image = req.file?.filename || productoAEditar.image ;
+        editado.imageArray = productoAEditar.imageArray;
+        editado.description = editado.description  != '' ? editado.description : productoAEditar.description; 
+        //por ahora... igual todo esto quedará obsoleto cuando implementemos base de datos jaja
+
+        console.log(req.body);
+
+        for(let propiedad in productoAEditar){
+            if(productoAEditar.hasOwnProperty(propiedad)){
+                productoAEditar[propiedad] = editado[propiedad];
+            }
+        }
+
+        fs.writeFileSync(productsFilePath,JSON.stringify(products));
+
+        res.redirect('/products'); //redireccionar al producto
     }
 }
