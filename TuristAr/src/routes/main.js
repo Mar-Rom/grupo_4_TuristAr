@@ -13,6 +13,8 @@ router.get('/login', mainControlles.login)
 router.get('/register', mainControlles.register)
 router.post('/register', mainControlles.register)
 
-router.get('/valid', mainControlles.valid)
+router.get('/valid', mainControlles.valid)  
+
+router.get('/formCarga', mainControlles.formCar)
 
 module.exports = router;

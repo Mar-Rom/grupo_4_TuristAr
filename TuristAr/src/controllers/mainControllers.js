@@ -14,5 +14,8 @@ module.exports = {
         },
         valid: (req, res) => {
         res.render('Valid')
+        },
+        formCar: (req, res) =>{
+        res.render('formCarga')
         }
 }

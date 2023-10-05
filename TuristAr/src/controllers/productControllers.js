@@ -1,4 +1,13 @@
+const express = require('express');
+const app = express();
+
 const products = require('../data/productsData.json');
+
+const path = require('path');
+const fs = require('fs');
+
+
+//const groupsModel = jsonTable('groups');
 
 module.exports = {
     all: (req,res) => {
@@ -24,5 +33,41 @@ module.exports = {
     },
     guardarCambios: (req, res) => {
         res.redirect('/');
+    },
+
     }
-}
+
+    
+    
+      
+      
+    
+
+
+    
+/*     upload: (req, res) => {
+    //perdon por los cambios, atte = martin y facu :)
+    const uploadFile = req.files.map((file) => ({
+        
+            "id": ,
+            "name": ,
+            "description": ,
+            "image": ".jpg",
+            "imageArray": [
+                ".jpg",
+                ".jpg",
+                ".jpg"
+            ],
+            "price": ,
+            "personas": ,
+            "include": ["cocina","banio","wifi","waterHot"],
+            "anfitrion": ,
+            "provin": "",
+            "localidad":""
+        })}
+
+
+    upload: (req, res) => {
+        // ???
+    } */
+

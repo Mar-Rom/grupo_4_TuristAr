@@ -1,6 +1,8 @@
 const express = require('express');
-const path = require('path');
 const app = express();
+
+const path = require('path');
+
 const routesMain = require('./src/routes/main');
 const routesProduct = require('./src/routes/productDetail');
 const routesCarrito = require('./src/routes/carrito');
@@ -24,3 +26,4 @@ app.use(routesMain);
 app.use('/products', routesProduct);
 
 app.use('/carrito', routesCarrito);
+
