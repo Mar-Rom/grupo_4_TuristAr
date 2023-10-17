@@ -1,13 +1,11 @@
-const express = require('express');
-const app = express();
+/* const express = require('express');
+const app = express(); */
 
 const products = require('../data/productsData.json');
 
-const path = require('path');
 const fs = require('fs');
-
-
-//const groupsModel = jsonTable('groups');
+const path = require('path');
+const productsFilePath = path.join(__dirname, '..','data','productsData.json');
 
 module.exports = {
     all: (req,res) => {
@@ -24,50 +22,47 @@ module.exports = {
         res.render('formCarga');
     },
     agregar: (req, res) => {
-        // console.log(req.body);
+        const newProduct= req.body;
+        newProduct.id= `${products.length + 1}`
+        newProduct.image=  req.files.length > 0 ? req.files.map(file => file.filename) : "default-image.webp";
+        console.log(newProduct);
+        console.log(req.files);
+        //agrego al array
+        products.push(newProduct);
+        //actualizo el json
+        fs.writeFileSync(productsFilePath,JSON.stringify(products));
         
         res.redirect('/products')
     },
     edit: (req,res)=>{
-        res.render('formEdit');
+        const {id} = req.params;
+        const alojamiento = products.find((prod) => prod.id == id);
+
+        res.render('formEdit', {alojamiento});
     },
     guardarCambios: (req, res) => {
-        res.redirect('/');
-    },
+        const {id} = req.params;
 
+        const indexProduct = products.findIndex((prod) => prod.id == id);
+        let productoAEditar = products[indexProduct];
+
+        let editado = req.body;
+        editado.id = parseInt(id);
+        editado.image = req.file?.filename || productoAEditar.image ;
+        editado.imageArray = productoAEditar.imageArray;
+        editado.description = editado.description  != '' ? editado.description : productoAEditar.description; 
+        //por ahora... igual todo esto quedará obsoleto cuando implementemos base de datos jaja
+
+        console.log(req.body);
+
+        for(let propiedad in productoAEditar){
+            if(productoAEditar.hasOwnProperty(propiedad)){
+                productoAEditar[propiedad] = editado[propiedad];
+            }
+        }
+
+        fs.writeFileSync(productsFilePath,JSON.stringify(products));
+
+        res.redirect('/products'); //redireccionar al producto
     }
-
-    
-    
-      
-      
-    
-
-
-    
-/*     upload: (req, res) => {
-    //perdon por los cambios, atte = martin y facu :)
-    const uploadFile = req.files.map((file) => ({
-        
-            "id": ,
-            "name": ,
-            "description": ,
-            "image": ".jpg",
-            "imageArray": [
-                ".jpg",
-                ".jpg",
-                ".jpg"
-            ],
-            "price": ,
-            "personas": ,
-            "include": ["cocina","banio","wifi","waterHot"],
-            "anfitrion": ,
-            "provin": "",
-            "localidad":""
-        })}
-
-
-    upload: (req, res) => {
-        // ???
-    } */
-
+}

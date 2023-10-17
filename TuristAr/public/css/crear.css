@@ -7,17 +7,18 @@ h2{
     
 }
 .mainform{
-    background-color: #222831;
+    background-image: url('../images/fondo-formu.jpg');
 }
 .form{
-    background-color: #222831;
+    /* background-color: #222831; */
+    background-image: url('../images/fondo-formu.jpg');
     padding-bottom: 40px;
+    
 
 }
 .formu{
     background-color: #cfd3d8;
     width: 80vw;
-    
     display: flex;
     flex-direction: column;
     position: relative;
@@ -26,11 +27,12 @@ h2{
     border-radius: 20px;
 
 }
-.formu div{
+.input{
     padding-bottom: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    
 
 }
 .formu label{
@@ -44,13 +46,19 @@ h2{
 }
 
 span{
-    padding-right: 10px;
+    padding-right: 25px;
 }
 .buy-now-button{
     width:50%;
     height: 45px;
     border-radius: 30px;
     background-color: #2199ea;
+    margin: 20px 25%;
+}
+.check{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 @media (min-width: 768px){
@@ -62,6 +70,19 @@ span{
     h2{
         padding-top: 60px;
     }
+    .formu{
+        width: 50vw;
+        flex-direction: column;
+        position: relative;
+        justify-content: center;
+        left: 25%;
+        top:5%;
+        border-radius: 20px;
+    }
+    .check{
+        padding: 0px 15px;
+    }
+
 }
 @media (min-width: 1024px){
     h2{
@@ -71,12 +92,12 @@ span{
 
     .formu{
         background-color: #cfd3d8;
-        width: 50vw;
+        width: 45vw;
         display: flex;
         flex-direction: column;
         position: relative;
         justify-content: center;
-        left: 25%;
+        left: 27%;
         top:5%;
         border-radius: 20px;
     
@@ -86,10 +107,13 @@ span{
     }
     .formu label{
         position:relative;
-        left: 3%;
+        left: 4%;
     }
     .buy-now-button{
         margin-top: 20px;
        margin-bottom: 20px;
+    }
+    .check{
+        padding: 0px 15px;
     }
 }

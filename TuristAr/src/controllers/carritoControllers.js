@@ -1,11 +1,23 @@
+const products = require('../data/productsData.json');
 module.exports = {
     datos: (req, res) => {
-        res.render ('carrito1')
+        let productoId = req.params.id;
+        let producto = products.find((prod) => prod.id == productoId);
+  
+        res.render ('carrito1', {producto: producto})
     },
     pago: (req, res) => {
-        res.render ('carrito2')
+        let productoId = req.params.id;
+        let producto = products.find((prod) => prod.id == productoId);
+        res.render ('carrito2', {
+            producto: producto
+        })
     },
     resumen: (req, res) => {
-        res.render ('carrito3')
+        let productoId = req.params.id;
+        let producto = products.find((prod) => prod.id == productoId);
+        res.render ('carrito3', {
+            producto: producto
+        })
     }
 }

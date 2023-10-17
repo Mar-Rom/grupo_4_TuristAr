@@ -9,22 +9,22 @@
         <main class="mainform">
             <section class="form">
                 <h2>¡Agrega un Hospedaje ya!</h2>
-                <form action="/products/create" action="/productsData.json" method="POST" class="formu">
+                <form action="/products" method="POST" class="formu" enctype="multipart/form-data" >
                     <label for="name">Nombre de su hospedaje:</label>
-                    <div>
+                    <div class="input">
                         <input type="text" id="name" name="name" placeholder="Ej: cabañas soñadas" class="form-input">
                     </div>
                    
                     <label for="price">Precio por noche:</label>
-                    <div>
+                    <div class="input">
                     <input type="text" id="price" name="price" placeholder="Ej: 200" class="form-input">
                     </div>
                     <label for="prov">Provincia</label>
-                    <div>
+                    <div class="input">
                         <select name="prov">
                             <option value="BuenosAires">Buenos Aires</option>
                             <option value="Catamarca">Catamarca</option>
-                            <option value=Cordoba">Córdoba</option>
+                            <option value="Cordoba">Córdoba</option>
                             <option value="Corrientes">Corrientes</option>
                             <option value="Entre Rios">Entre Ríos</option>
                             <option value="Formosa">Formosa</option>
@@ -46,38 +46,55 @@
                     </div>
 
                     <label for="localidad">Localidad:</label>
-                    <div>
+                    <div class="input">
                     <input type="text" id="localidad" name="localidad" placeholder="Ej: San Salvador de Jujuy" class="form-input">
                     </div>
                     
                     <label for="personas">Cantidad maxima de personas:</label>
-                    <div>
+                    <div class="input">
                     <input type="text" id="personas" name="personas" placeholder="Ej: 1" class="form-input">
                     </div>
                 
                     <label for="description">Descipción:</label>
-                    <div>
+                    <div class="input">
                     <textarea name="description" id="description" class="form-input" ></textarea>
                     </div>
                     
                     <label for="anfitrion">Nombre de la persona a cargo:</label>
-                    <div>
+                    <div class="input">
                     <input type="text" id="anfitrion" name="anfitrion" placeholder="Ej: Veronica Solis" class="form-input">
                     </div>
                     
                     <label for="include">Que incluye:</label>
                     <div class="check">
-                    <input type="checkbox" name="include" value="breakfast"> <span>Desayuno</span>
-                    <input type="checkbox" name="include" value="cocina"> <span>Cocina</span>
-                    <input type="checkbox" name="include" value="wifi"> <span>Wi-fi</span>
-                    <input type="checkbox" name="include" value="waterHot"> <span>Agua caliente</span>
-                    <input type="checkbox" name="include" value="banio"> <span>Baño individual</span>
+                        <div>
+                            <input type="checkbox" name="include" value="Cocina"> <span>Cocina</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="include" value="Wi-fi"> <span>Wi-fi</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="include" value="Agua caliente"> <span>Agua caliente</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="include" value="Baño"> <span>Baño individual</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="include" value="Televisor"> <span>Televisor</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="include" value="Estacionamiento"> <span>Estacionmiento</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="include" value="Pileta"> <span>Pileta</span>
+                        </div>
+                    
                     </div>
                     
 
                     <label for="image">Agregar imagen</label>
-                    <div>
-                    <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg">
+                    <div class="input">
+                    <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg" multiple>
                     </div>
                    
 
