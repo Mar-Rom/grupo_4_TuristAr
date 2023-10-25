@@ -9,17 +9,20 @@ module.exports = {
     },
     login : (req, res) => {
         res.render('login')
-        },
-        register: (req, res) => {
-        res.render('Register')
-        },
-        user: (req, res) => {
-        res.redirect('home')
-        },
-        valid: (req, res) => {
-        res.render('Valid')
-        },
-        formCar: (req, res) =>{
-        res.render('formCarga')
-        }
+    },
+    processLogin: (req, res) =>  {
+        res.redirect('/')
+    },
+    register: (req, res) => {
+    res.render('Register')
+    },
+    user: (req, res) => {
+    res.redirect('home')
+    },
+    valid: (req, res) => {
+    res.render('Valid')
+    },
+    formCar: (req, res) =>{
+    res.render('formCarga')
+    }
 }
