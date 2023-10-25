@@ -5,7 +5,8 @@
         "lastName":"Velazquez",
         "email": "roo@gmail.com",
         "password": "perrosygatos123",
-        "category":"administrador",
+        "password2": "perrosygatos123",
+        "role":"administrador",
         "image": "rocio.jpeg"
     },
     {
@@ -14,7 +15,8 @@
         "lastName":"Mamani",
         "email": "roober@gmail.com",
         "password": "perrosygatos123",
-        "category":"client",
+        "password2": "perrosygatos123",
+        "role":"client",
         "image": "roberto.jpg"
     }
 ]
