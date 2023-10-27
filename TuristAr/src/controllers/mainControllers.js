@@ -3,7 +3,7 @@ const path = require('path');
 const data = require("../data/productsData.json");
 const users = require("../data/users.json");
 const bcrypt = require('bcryptjs');
-const productsFilePath = path.join(__dirname, '..','data','users.json');
+const productsFilePath = path.join(__dirname, '..', 'data', 'users.json');
 
 module.exports = {
     home: (req, res) => {
@@ -15,19 +15,21 @@ module.exports = {
     login: (req, res) => {
         res.render('login')
     },
-<<<<<<< HEAD
+    processLogin: (req, res) => {
+        res.redirect('/')
+    },
     register: (req, res) => {
         res.render('Register')
     },
     createUser: (req, res) => {
         const hashPass = bcrypt.hashSync(req.body.password, 10)
         let avatar;
-        if (req.body.genre == "Mujer"){
-            avatar= "women-default.png"
-        }else if (req.body.genre == "Hombre"){
-            avatar= "man-default.png"
-        }else{
-            avatar= "default.webp"
+        if (req.body.genre == "Mujer") {
+            avatar = "women-default.png"
+        } else if (req.body.genre == "Hombre") {
+            avatar = "man-default.png"
+        } else {
+            avatar = "default.webp"
         }
         if (bcrypt.compareSync(req.body.password2, hashPass)) {
             const newUser = {
@@ -42,7 +44,7 @@ module.exports = {
 
             users.push(newUser)
             console.log(users)
-            fs.writeFileSync(productsFilePath,JSON.stringify(users));
+            fs.writeFileSync(productsFilePath, JSON.stringify(users));
         }
         return res.redirect('/login')
 
@@ -57,21 +59,5 @@ module.exports = {
         res.render('formCarga')
     }
 }
-=======
-    processLogin: (req, res) =>  {
-        res.redirect('/')
-    },
-    register: (req, res) => {
-    res.render('Register')
-    },
-    user: (req, res) => {
-    res.redirect('home')
-    },
-    valid: (req, res) => {
-    res.render('Valid')
-    },
-    formCar: (req, res) =>{
-    res.render('formCarga')
-    }
-}
->>>>>>> 9744739517acc022b60a3a2a6d773fbeeb931683
+
+
