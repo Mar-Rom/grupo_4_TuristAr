@@ -27,6 +27,18 @@
         "password": "$2a$10$3aAQ/wr7VjpSWqxHNcemc.E8XqmI63GZ.aYRx6p416coT9koBbHaS",
         "password2": "holaquehace",
         "genre": "Hombre",
-        "image": "man-default.png"
+        "image": "man-default.png",
+        "role":"administrador",
+        "image": "rocio.jpeg"
+    },
+    {
+        "id": "2",
+        "name": "Roberto",
+        "lastName":"Mamani",
+        "email": "roober@gmail.com",
+        "password": "perrosygatos123",
+        "password2": "perrosygatos123",
+        "role":"client",
+        "image": "roberto.jpg"
     }
 ]

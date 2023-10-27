@@ -1,10 +1,13 @@
 
+
 <!DOCTYPE html>
 <html>
 
-<%-include ('./partials/head.ejs') %>
 
 <link rel="stylesheet" href="/css/styles-login.css">
+<%-include ('./partials/head.ejs') %>
+
+
 
 <body>
 
@@ -12,16 +15,26 @@
 
     <h1 id="tittle">Ingresa a tu Cuenta</h1>
     <div class="fox">
-    <form>
+    <form action="/login" method="POST">
 
         <label>E-mail</label>
-        <input type="text" name="email">
+        <input type="text" name="email" value="<%= locals.old && old.email ? old.email : ''%>">
+        <% if(locals.errors && locals.errors.email){ %>
+            <div class="text-danger">
+                <%= errors.email.msg %>
+            </div>
+        <% } %>
 
         <label>Contraseña</label>
-
         <input type="password" name="password">
+        <% if(locals.errors && locals.errors.password){ %>
+            <div class="text-danger">
+                <%= errors.password.msg %>
+            </div>
+         <% } %>
 
-        <button type="submit" name="Ingresa"> ingresa</button>
+
+        <button type="submit" name="Ingresa"><a href="/">Ingresar</a></button>
         
 
     <button>olvidé mi Contraseña</button>

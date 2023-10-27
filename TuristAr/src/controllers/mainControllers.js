@@ -15,6 +15,7 @@ module.exports = {
     login: (req, res) => {
         res.render('login')
     },
+<<<<<<< HEAD
     register: (req, res) => {
         res.render('Register')
     },
@@ -56,3 +57,21 @@ module.exports = {
         res.render('formCarga')
     }
 }
+=======
+    processLogin: (req, res) =>  {
+        res.redirect('/')
+    },
+    register: (req, res) => {
+    res.render('Register')
+    },
+    user: (req, res) => {
+    res.redirect('home')
+    },
+    valid: (req, res) => {
+    res.render('Valid')
+    },
+    formCar: (req, res) =>{
+    res.render('formCarga')
+    }
+}
+>>>>>>> 9744739517acc022b60a3a2a6d773fbeeb931683
