@@ -9,7 +9,7 @@
         <main class="mainform">
             <section class="form">
                 <h2>¡Agrega un Hospedaje ya!</h2>
-                <form action="/products" method="POST" class="formu">
+                <form action="/products" method="POST" class="formu" enctype="multipart/form-data" >
                     <label for="name">Nombre de su hospedaje:</label>
                     <div class="input">
                         <input type="text" id="name" name="name" placeholder="Ej: cabañas soñadas" class="form-input">
@@ -24,7 +24,7 @@
                         <select name="prov">
                             <option value="BuenosAires">Buenos Aires</option>
                             <option value="Catamarca">Catamarca</option>
-                            <option value=Cordoba">Córdoba</option>
+                            <option value="Cordoba">Córdoba</option>
                             <option value="Corrientes">Corrientes</option>
                             <option value="Entre Rios">Entre Ríos</option>
                             <option value="Formosa">Formosa</option>
@@ -94,7 +94,7 @@
 
                     <label for="image">Agregar imagen</label>
                     <div class="input">
-                    <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg">
+                    <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg" multiple>
                     </div>
                    
 

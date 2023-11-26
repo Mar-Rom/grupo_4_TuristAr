@@ -1,1 +1,29 @@
-[{"id":"1","name":"Rocio","lastName":"Velazquez","email":"roo@gmail.com","password":"perrosygatos123","category":"administrador","image":"rocio.jpeg"},{"id":"2","name":"Roberto Juan Gustavo","lastName":"Mamani","email":"roober@gmail.com","password":"perrosygatos123","category":"client","image":"roberto.jpg"},{"id":3,"name":"Jorge Rodrigo","lastName":"Lavayén","email":"jrl_020598@hotmail.com","password":"holamundo","category":"admin","image":"roberto.jpg"}]
+[
+  {
+    "id": "1",
+    "name": "Rocio",
+    "lastName": "Velazquez",
+    "email": "roo@gmail.com",
+    "password": "perrosygatos123",
+    "category": "administrador",
+    "image": "rocio.jpeg"
+  },
+  {
+    "id": "2",
+    "name": "Roberto Juan Gustavo",
+    "lastName": "Mamani",
+    "email": "roober@gmail.com",
+    "password": "perrosygatos123",
+    "category": "client",
+    "image": "roberto.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Jorge Rodrigo",
+    "lastName": "Lavayén",
+    "email": "jrl_020598@hotmail.com",
+    "password": "holamundo",
+    "category": "admin",
+    "image": "roberto.jpg"
+  }
+]

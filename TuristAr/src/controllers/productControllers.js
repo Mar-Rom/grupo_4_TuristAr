@@ -1,3 +1,6 @@
+/* const express = require('express');
+const app = express(); */
+
 const products = require('../data/productsData.json');
 
 const fs = require('fs');
@@ -21,8 +24,9 @@ module.exports = {
     agregar: (req, res) => {
         const newProduct= req.body;
         newProduct.id= `${products.length + 1}`
-        newProduct.image= "default-img.webp"
+        newProduct.image=  req.files.length > 0 ? req.files.map(file => file.filename) : "default-image.webp";
         console.log(newProduct);
+        console.log(req.files);
         //agrego al array
         products.push(newProduct);
         //actualizo el json
