@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles-editProfile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+    <title>Editar Perfil</title>
+    <%-include ('./partials/head.ejs') %>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+        <h1 class="title">Editar Perfil</h1>
+        <form action="/usuario/edit/<%= usuario.id %>?_method=PUT" method="post" class="formEdit">
+            <label for="name">Nombre </label>
+            <input type="text" id="name" name="name" value="<%= usuario.name %>">
+
+            <label for="lastName">Apellido </label>
+            <input type="text" id="lastName" name="lastName" value="<%= usuario.lastName %>">
+
+            <label for="email">Email </label>
+            <input type="email" id="email" name="email" value="<%= usuario.email %>"> 
+<!-- Revisar value -->
+            <label for="cel">Cel. </label>
+            <input type="number" id="cel" name="cel" value=" "> 
+<!-- Revisar value -->            
+            <label for="prov">Provincia</label>
+            <select name="prov" id="prov" value=" ">
+                <option value="BuenosAires">Buenos Aires</option>
+                <option value="Catamarca">Catamarca</option>
+                <option value=Cordoba">Córdoba</option>
+                <option value="Corrientes">Corrientes</option>
+                <option value="Entre Rios">Entre Ríos</option>
+                <option value="Formosa">Formosa</option>
+                <option value="Jujuy">Jujuy</option>
+                <option value="La Pampa">La Pampa</option>
+                <option value="La Rioja">La Rioja</option>
+                <option value="Mendoza">Mendoza</option>
+                <option value="Misiones">Misiones</option>
+                <option value="Neuquen">Neuquén</option>
+                <option value="Rio Negro">Río Negro</option>
+                <option value="Salta">Salta</option>
+                <option value="San Juan">San Juan</option>
+                <option value="San Luis">San Luis</option>
+                <option value="Santa Cruz">Santa Cruz</option>
+                <option value="Santa Fe">Santa Fe</option>
+                <option value="Santiago Del Estero">Santiago del Estero</option>
+                <option value="Tierra Del Fuego">Tierra del Fuego</option>
+              </select>
+<!-- Revisar value -->
+            <label for="address">Domicilio </label>
+            <input type="text" id="address" name="address" value=" "> 
+
+            <label for="dob">Fecha de nacimiento </label>
+            <input type="date" id="dob" name="dob" value=" "> 
+<!-- agregar campo de nueva cotraseña si se considera necesario -->
+            <label for="password">Contraseña </label>
+            <input type="password" id="password" name="password" value="<%= usuario.password %>">
+
+            <label for="caterogy">Categoría </label>
+            <select name="category" id="category">
+                <option value="admin">Administrador</option>
+                <option value="client">Cliente</option>
+            </select>
+
+            <label for="image">Foto de pefil </label>
+            <input type="file" id="image" name="image">
+
+            <button class="confirm" type="submit"> CONFIRMAR </button>
+        </form>
+    </main>
+
+    <%- include('./partials/footer.ejs')%>
+</body>
+</html>

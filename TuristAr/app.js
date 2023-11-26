@@ -5,6 +5,7 @@ const app = express();
 const routesMain = require('./src/routes/main');
 const routesProduct = require('./src/routes/productDetail');
 const routesCarrito = require('./src/routes/carrito');
+const routesUsers = require('./src/routes/users');
 const PORT = 3030;
 
 app.set("view engine", "ejs");
@@ -26,3 +27,5 @@ app.use(routesMain);
 app.use('/products', routesProduct);
 
 app.use('/carrito', routesCarrito);
+
+app.use('/usuario', routesUsers)

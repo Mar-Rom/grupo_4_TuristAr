@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles-userProfile.css">
+    <link rel="stylesheet" href="/css/stylesheet-home.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+    <title><%= usuario.name + " " +usuario.lastName %></title>
+    <%-include ('./partials/head.ejs') %>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <main class="main">
+        <div class="userHeader">
+            <img class="portada" src="/images/userPortada/portadaDefault.jpg" alt="">
+            <img class="fotoPerfil" src="/images/users/<%= usuario.image %>" alt="">
+            <!-- Revisar que pasa cuando hay nombres muy largos -->
+            <h1 class="userName"><%= usuario.name + ' ' + usuario.lastName %></h1>
+        </div>
+        <div class="userMain">
+            <div class="container1">
+                <section class="datos">
+                    <h4>Tus datos:</h4>
+                    <p>Nombre y apellido: <%= usuario.name + ' ' + usuario.lastName %></p>
+                    <p>Teléfono: </p>
+                    <p>Provincia: </p>
+                    <p>Domicilio: </p>
+                    <p>Fecha de nacimiento: </p>
+                </section>
+                <ul class="burger-menu">
+                    <li class="item">
+                        <!-- revisar la direccion del formulario de creacion -->
+                        <a href="/create">Publicar Hospedaje</a>
+                    </li>
+                    <li class="item">
+                        <!-- revisar direccion del formulario de edicion de perfil -->
+                        <a href="/usuario/edit/<%= usuario.id %>">Editar Perfil</a>
+                    </li>
+                    <li class="item">
+                        <!-- Revisar funcionalidad de cerrar sesion -->
+                        <a href="/home">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="container2">
+                <section class="reservas">
+                    <h4>Reservas Actuales: </h4>
+                    <div>Aqui va una imagen y descripcion de la reserva del usuario</div>
+                </section>
+                <section class="favoritos">
+                    <h4>Favoritos: </h4>
+                    <div>Aqui van algunos de los hospedajes que el cliente ha marcado como favoritos</div>
+                </section>
+                <section class="historial">
+                    <h4>Historial de reservas</h4>
+                    <div>Aqui va un resumen de los hospedajes que el cliente ya ha reservado anteriormente</div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <%- include('./partials/footer.ejs')%>
+    <script src="/js/userProfile.js"></script>
+</body>
+</html>
