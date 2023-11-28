@@ -41,8 +41,10 @@ module.exports = {
         res.render('formEdit', {alojamiento});
     },
     guardarCambios: (req, res) => {
+        
+        
         const {id} = req.params;
-
+        console.log(req.params);
         const indexProduct = products.findIndex((prod) => prod.id == id);
         let productoAEditar = products[indexProduct];
 

@@ -3,6 +3,8 @@ const router = express.Router();
 const productControllers = require('../controllers/productControllers');
 const multers = require("multer");
 const upload = require('../middleware/multer');
+const {arrayValidaciones, validateCreateForm}=require("../middleware/validationProductsCreate");
+const {validacionesEdit, validate}=require("../middleware/validationProductsEdit");
 
 router.get('/', productControllers.all);
 
@@ -14,10 +16,10 @@ router.get('/detail/:id', productControllers.detail);
 // crar un producto y guardarlo
 
 router.get('/create', productControllers.crear);
-router.post('/', upload.array("image", 10 ),productControllers.agregar);
+router.post('/', upload.array("image", 10 ),arrayValidaciones, validateCreateForm,productControllers.agregar);
 //editar
 
 router.get('/edit/:id', productControllers.edit)
-router.put('/edit/:id',productControllers.guardarCambios)
+router.put('/edit/:id',upload.array("image", 10 ),validacionesEdit, validate,productControllers.guardarCambios)
 
 module.exports = router;
