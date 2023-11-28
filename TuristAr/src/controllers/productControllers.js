@@ -53,7 +53,7 @@ module.exports = {
         editado.description = editado.description  != '' ? editado.description : productoAEditar.description; 
         //por ahora... igual todo esto quedará obsoleto cuando implementemos base de datos jaja
 
-        console.log(req.body);
+        //console.log(req.body);
 
         for(let propiedad in productoAEditar){
             if(productoAEditar.hasOwnProperty(propiedad)){

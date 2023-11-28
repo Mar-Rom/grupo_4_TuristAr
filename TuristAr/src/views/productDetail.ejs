@@ -75,8 +75,16 @@
             </div>
         </article>
         <section>
+            <div class="precio">
+                <p>
+                    Precio por noche
+                </p>
+                <h4>
+                    $ <%= producto.price %>
+                </h4>
+            </div>
             <div class="cotizar">
-                <h3> $ Cotizar Alojamiento</h3>
+                <h3> Reservar Alojamiento</h3>
                 <h6>
                     <i class="fa-solid fa-circle-exclamation"></i>
                     Este precio incluye impuestos
@@ -93,7 +101,7 @@
                 </div>
             </div>
             <input class="huespedes" type="number" placeholder="Cantidad de huéspedes">
-            <a class="buttom" href="/carrito/datos/<%= producto.id %>">Cotizar</a>
+            <a class="button" href="/carrito/datos/<%= producto.id %>">Reservar</a>
         </section>
     </main>
     <%- include('./partials/footer.ejs')%>
