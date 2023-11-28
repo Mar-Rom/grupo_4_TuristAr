@@ -20,4 +20,6 @@ router.post('/', upload.array("image", 10 ),productControllers.agregar);
 router.get('/edit/:id', productControllers.edit)
 router.put('/edit/:id',productControllers.guardarCambios)
 
+router.get("/delete/:id", productControllers.delete)
+
 module.exports = router;

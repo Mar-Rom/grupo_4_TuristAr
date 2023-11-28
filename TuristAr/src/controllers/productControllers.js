@@ -64,5 +64,12 @@ module.exports = {
         fs.writeFileSync(productsFilePath,JSON.stringify(products));
 
         res.redirect('/products'); //redireccionar al producto
+    },
+    delete: (req,res)=>{
+        const {id} = req.params;
+        // const alojamiento = products.find((prod) => prod.id == id);
+
+        // res.render('formDelete', {alojamiento});  
+        res.render("formDelete")
     }
 }
