@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/styles-editProfile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet" enctype="multipart/form-data">
     <title>Editar Perfil</title>
     <%-include ('./partials/head.ejs') %>
 </head>
@@ -15,7 +15,7 @@
 
     <main>
         <h1 class="title">Editar Perfil</h1>
-        <form action="/usuario/edit/<%= usuario.id %>?_method=PUT" method="post" class="formEdit">
+        <form action="/usuario/edit/<%= usuario.id %>?_method=PUT" method="post" class="formEdit" enctype="multipart/form-data">
             <label for="name">Nombre </label>
             <input type="text" id="name" name="name" value="<%= usuario.name %>">
 
@@ -59,12 +59,19 @@
             <input type="date" id="dob" name="dob" value=" "> 
 <!-- agregar campo de nueva cotraseña si se considera necesario -->
             <label for="password">Contraseña </label>
-            <input type="password" id="password" name="password" value="<%= usuario.password %>">
+            <input type="password" id="password" name="password" value="<%= usuario.password2 %>">
 
             <label for="caterogy">Categoría </label>
             <select name="category" id="category">
                 <option value="admin">Administrador</option>
                 <option value="client">Cliente</option>
+            </select>
+
+            <label for="genre">Sexo</label>
+            <select name="genre">
+               <option value="Mujer">Femenino</option>
+               <option value="Hombre">Masculino</option>
+               <option value="-">Prefiero no decir</option>
             </select>
 
             <label for="image">Foto de pefil </label>
