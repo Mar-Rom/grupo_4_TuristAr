@@ -20,6 +20,7 @@ module.exports = {
         const {id} = req.params;
         let usuariIndex = dataUsers.findIndex((user)=> user.id == id);
         let usuarioAEditar = dataUsers[usuariIndex];
+        //volvemos a hashear en caso de que la contraseña haya sido cambiada
 
         let usuarioEditado = req.body;
         usuarioEditado.id = parseInt(id);
