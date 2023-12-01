@@ -25,5 +25,25 @@
     "password": "holamundo",
     "category": "admin",
     "image": "roberto.jpg"
+  },
+  {
+    "id": 4,
+    "name": "cristian",
+    "lastName": "velazquez",
+    "email": "cris@gmail.com",
+    "password": "$2a$10$ZWnRanAVyu7k/Ocp6YXWQ.2Y7xP0RGxuX8Slye3FY02Pr7DoMpP8e",
+    "password2": "123123",
+    "genre": "Hombre",
+    "image": "man-default.png"
+  },
+  {
+    "id": 5,
+    "name": "roberta",
+    "lastName": "monzon",
+    "email": "rober@gmail.com",
+    "password": "$2a$10$OlZXwvn7uVlXgzGwZX9VDOn.rdxL3iUjyHBK9FfUYZXFYFCWx3m7C",
+    "password2": "456456",
+    "genre": "Mujer",
+    "image": "image-1701374288393.jpg"
   }
 ]

@@ -103,6 +103,11 @@
             <input class="huespedes" type="number" placeholder="Cantidad de huéspedes">
             <a class="button" href="/carrito/datos/<%= producto.id %>">Reservar</a>
         </section>
+        <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="post">
+            <button type="submit">
+                borrar
+            </button>
+        </form>
     </main>
     <%- include('./partials/footer.ejs')%>
 </body>

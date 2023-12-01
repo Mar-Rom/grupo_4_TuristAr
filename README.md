@@ -25,3 +25,5 @@ Facundo Roselli: tengo 16 y estoy cursando 4 año secundaria, me inspiran los av
 
 Trello:
 https://trello.com/b/CsPdgnAz/turistar
+
+https://trello.com/b/IsNBwucD/sprint-6 

@@ -41,8 +41,10 @@ module.exports = {
         res.render('formEdit', {alojamiento});
     },
     guardarCambios: (req, res) => {
+        
+        
         const {id} = req.params;
-
+        console.log(req.params);
         const indexProduct = products.findIndex((prod) => prod.id == id);
         let productoAEditar = products[indexProduct];
 
@@ -64,12 +66,16 @@ module.exports = {
         fs.writeFileSync(productsFilePath,JSON.stringify(products));
 
         res.redirect('/products'); //redireccionar al producto
-    },
-    delete: (req,res)=>{
+    },    
+    delete: (req, res) => {
         const {id} = req.params;
-        // const alojamiento = products.find((prod) => prod.id == id);
 
-        // res.render('formDelete', {alojamiento});  
-        res.render("formDelete")
-    }
+        const indexProducto = products.findIndex((prod) => prod.id == id);
+        
+       products.splice(indexProducto, 1);
+   
+       fs.writeFileSync(productsFilePath,JSON.stringify(products));
+
+       res.redirect("/products")
+   }
 }

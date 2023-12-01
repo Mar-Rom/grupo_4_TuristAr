@@ -7,6 +7,16 @@ const routesProduct = require('./src/routes/productDetail');
 const routesCarrito = require('./src/routes/carrito');
 const routesUsers = require('./src/routes/users');
 const PORT = 3030;
+const session= require("express-session")
+const logedMiddleware= require("./src/middleware/logedMiddleware")
+
+app.use(session({
+    secret: 'tu_secreto_aqui',
+    resave: false, // establecer a false
+    saveUninitialized: false // establecer a false
+  }));
+
+app.use(logedMiddleware)
 
 app.set("view engine", "ejs");
 app.set('views','./src/views');
@@ -29,3 +39,4 @@ app.use('/products', routesProduct);
 app.use('/carrito', routesCarrito);
 
 app.use('/usuario', routesUsers)
+

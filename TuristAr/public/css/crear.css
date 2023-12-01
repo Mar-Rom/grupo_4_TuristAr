@@ -6,6 +6,10 @@ h2{
     
     
 }
+.text-danger{
+    text-align: center;
+    font-style: bold;
+}
 .mainform{
     background-image: url('../images/fondo-formu.jpg');
 }

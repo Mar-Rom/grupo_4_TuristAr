@@ -8,23 +8,35 @@
     
         <main class="mainform">
             <section class="form">
-                <h2>¡Agrega un Hospedaje ya!</h2>
-                <form action="/products/edit/<%=alojamiento.id%>?_method=PUT" method="POST" class="formu">
+                <h2>¡Edita tu Hospedaje !</h2>
+
+                <form action="/products/edit/<%= locals.old && old.id ? old.id : alojamiento.id %> ?_method=PUT" method="POST" class="formu" >
                     <label for="name">Nombre de su hospedaje:</label>
                     <div class="input">
-                        <input type="text" id="name" name="name" placeholder="Ej: cabañas soñadas" value="<%=alojamiento.name%>" class="form-input">
+                        <input type="text" id="name" name="name" placeholder="Ej: cabañas soñadas" value="<%= locals.old && old.name ? old.name : alojamiento.name %>" class="form-input">
                     </div>
+                    <% if(locals.errors && locals.errors.name){ %>
+                        <div class="text-danger">
+                            <p class="error"><%= errors.name.msg %></p>
+                        </div>
+                    <% } %>
                    
                     <label for="price">Precio por noche:</label>
                     <div class="input">
-                    <input type="text" id="price" name="price" placeholder="Ej: 200" value="<%=alojamiento.price%>" class="form-input">
+                    <input type="text" id="price" name="price" placeholder="Ej: 200" value="<%= locals.old && old.price ? old.price :alojamiento.price%>" class="form-input">
                     </div>
+                    <% if(locals.errors && locals.errors.price){ %>
+                        <div class="text-danger">
+                            <p class="error"><%= errors.price.msg %></p>
+                        </div>
+                    <% } %>
+
                     <label for="prov">Provincia</label>
                     <div class="input">
-                        <select name="prov" value="<%=alojamiento.prov%>">
-                            <option value="BuenosAires">Buenos Aires</option>
+                        <select name="prov" value="<%=locals.old && old.prov ? old.prov :alojamiento.prov%>">
+                            <option value="Buenos Aires">Buenos Aires</option>
                             <option value="Catamarca">Catamarca</option>
-                            <option value=Cordoba">Córdoba</option>
+                            <option value="Cordoba">Córdoba</option>
                             <option value="Corrientes">Corrientes</option>
                             <option value="Entre Rios">Entre Ríos</option>
                             <option value="Formosa">Formosa</option>
@@ -47,23 +59,44 @@
 
                     <label for="localidad">Localidad:</label>
                     <div class="input">
-                    <input type="text" id="localidad" name="localidad" placeholder="Ej: San Salvador de Jujuy" value="<%=alojamiento.localidad%>" class="form-input">
+                    <input type="text" id="localidad" name="localidad" placeholder="Ej: San Salvador de Jujuy" value="<%=locals.old && old.localidad ? old.localidad :alojamiento.localidad%>" class="form-input">
                     </div>
-                    
+                    <% if(locals.errors && locals.errors.localidad){ %>
+                        <div class="text-danger">
+                            <p class="error"><%= errors.localidad.msg %></p>
+                        </div>
+                    <% } %>
+
                     <label for="personas">Cantidad maxima de personas:</label>
                     <div class="input">
-                    <input type="text" id="personas" name="personas" placeholder="Ej: 1" value="<%=alojamiento.personas%>" class="form-input">
+                    <input type="text" id="personas" name="personas" placeholder="Ej: 1" value="<%=locals.old && old.personas ? old.personas :alojamiento.personas%>" class="form-input">
                     </div>
+                    <% if(locals.errors && locals.errors.personas){ %>
+                        <div class="text-danger">
+                            <p class="error"><%= errors.personas.msg %></p>
+                        </div>
+                    <% } %>
                 
                     <label for="description">Descipción:</label>
                     <div class="input">
-                    <textarea name="description" id="description" class="form-input" value="<%=alojamiento.description%>" ></textarea>
+                        <textarea name="description" id="description" class="form-input"><%=locals.old && old.description ? old.description :alojamiento.description%></textarea>
+
                     </div>
+                    <% if(locals.errors && locals.errors.description){ %>
+                        <div class="text-danger">
+                            <p class="error"><%= errors.description.msg %></p>
+                        </div>
+                    <% } %>
                     
                     <label for="anfitrion">Nombre de la persona a cargo:</label>
                     <div class="input">
-                    <input type="text" id="anfitrion" name="anfitrion" placeholder="Ej: Veronica Solis" value="<%=alojamiento.anfitrion%>" class="form-input">
+                    <input type="text" id="anfitrion" name="anfitrion" placeholder="Ej: Veronica Solis" value="<%=locals.old && old.anfitrion ? old.anfitrion :alojamiento.anfitrion%>" class="form-input">
                     </div>
+                    <% if(locals.errors && locals.errors.anfitrion){ %>
+                        <div class="text-danger">
+                            <p class="error"><%= errors.anfitrion.msg %></p>
+                        </div>
+                    <% } %>
                     
                     <label for="include">Que incluye:</label>
                     <div class="check">
@@ -99,7 +132,7 @@
                    
 
                     <div>
-                    <button type="submit" class="buy-now-button">Guardar Hospedaje</button>
+                    <button type="submit" class="buy-now-button">Guardar Cambios</button>
                     </div>
 
 
