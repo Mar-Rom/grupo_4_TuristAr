@@ -20,6 +20,8 @@ router.post('/', upload.array("image", 10 ),arrayValidaciones, validateCreateFor
 //editar
 
 router.get('/edit/:id', productControllers.edit)
-router.put('/edit/:id',upload.array("image", 10 ),validacionesEdit, validate,productControllers.guardarCambios)
+router.put('/edit/:id',upload.array("image", 10 ),validacionesEdit, validate,productControllers.guardarCambios);
+
+router.delete("/delete/:id", productControllers.delete);
 
 module.exports = router;

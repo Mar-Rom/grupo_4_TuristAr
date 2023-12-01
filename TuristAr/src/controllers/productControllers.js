@@ -66,5 +66,16 @@ module.exports = {
         fs.writeFileSync(productsFilePath,JSON.stringify(products));
 
         res.redirect('/products'); //redireccionar al producto
-    }
+    },    
+    delete: (req, res) => {
+        const {id} = req.params;
+
+        const indexProducto = products.findIndex((prod) => prod.id == id);
+        
+       products.splice(indexProducto, 1);
+   
+       fs.writeFileSync(productsFilePath,JSON.stringify(products));
+
+       res.redirect("/products")
+   }
 }
