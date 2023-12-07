@@ -18,10 +18,10 @@ const arrayValidaciones = [
         .isLength({ min: 20 }) 
         .withMessage("El Apellido debe tener minimo 3 caracteres"),
         
-    body("anfitrion")
-        .notEmpty()
-        .withMessage("El nombre a cargo es obligatorio"),
-    body ("localidad")
+    // body("anfitrion")
+    //     .notEmpty()
+    //     .withMessage("El nombre a cargo es obligatorio"),
+    body ("locality")
         .notEmpty()
         .withMessage("El campo no deber estar vacio")
         .isLength({min: 5})
@@ -30,9 +30,9 @@ const arrayValidaciones = [
 ];
 
 const validateCreateForm = (req, res, next) => {
-    console.log(req.body);
+    // console.log(req.body);
     const errors = validationResult(req);
-    console.log(errors.mapped());
+    // console.log(errors.mapped());
     if (errors.isEmpty()) {
         next();
     } else {
