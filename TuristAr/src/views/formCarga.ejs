@@ -65,6 +65,12 @@
                             <p class="error"><%= errors.locality.msg %></p>
                         </div>
                     <% } %>
+                    
+                    <label for="street">Calle:</label>
+                    <div class="input">
+                    <input type="text" id="street" name="street" placeholder="Ej: Veronica Solis" class="form-input">
+                    </div>
+
                     <label for="persons">Cantidad maxima de personas:</label>
                     <div class="input">
                     <input type="text" id="persons" name="persons" placeholder="Ej: 1" class="form-input">
@@ -84,10 +90,6 @@
                         </div>
                     <% } %>
 
-                    <!-- <label for="id_user">Nombre de la persona a cargo:</label>
-                    <div class="input">
-                    <input type="text" id="id_user" name="id_user" placeholder="Ej: Veronica Solis" class="form-input">
-                    </div> -->
                     
                     <label for="include">Que incluye:</label>
                     <div class="check">
@@ -125,10 +127,7 @@
                     <button type="submit" class="buy-now-button">Guardar Hospedaje</button>
                     </div>
 
-                    <label for="street">Calle:</label>
-                    <div class="input">
-                    <input type="text" id="street" name="street" placeholder="Ej: Veronica Solis" class="form-input">
-                    </div>
+                    
                     
 
                 </form>

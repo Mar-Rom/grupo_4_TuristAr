@@ -9,7 +9,7 @@
                 <section class="cards">
                     <% products.forEach((hosp) => { %>
                         <div class="card" style="width: 18rem;">
-                            <img src="/images/products/<%= hosp.images.name %>" class="card-img-top" alt="...">
+                            <img src="/images/products/<%= hosp.images[0].name %>" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title"><%= hosp.name %></h5>
                                 <p class="card-text">

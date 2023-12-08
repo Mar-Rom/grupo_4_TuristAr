@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
-    <title><%= usuario.name + " " +usuario.lastName %></title>
+    <title><%= usuario.name + " " +usuario.last_name %></title>
     <%-include ('./partials/head.ejs') %>
 </head>
 <body>
@@ -18,17 +18,15 @@
             <img class="portada" src="/images/userPortada/portadaDefault.jpg" alt="">
             <img class="fotoPerfil" src="/images/users/<%= usuario.image %>" alt="">
             <!-- Revisar que pasa cuando hay nombres muy largos -->
-            <h1 class="userName"><%= usuario.name + ' ' + usuario.lastName %></h1>
+            <h1 class="userName"><%= usuario.name + ' ' + usuario.last_name %></h1>
         </div>
         <div class="userMain">
             <div class="container1">
                 <section class="datos">
                     <h4>Tus datos:</h4>
-                    <p>Nombre y apellido: <%= usuario.name + ' ' + usuario.lastName %></p>
-                    <p>Teléfono: </p>
-                    <p>Provincia: </p>
-                    <p>Domicilio: </p>
-                    <p>Fecha de nacimiento: </p>
+                    <p>Nombre y apellido: <%= usuario.name + ' ' + usuario.last_name %></p>
+                    <p>Teléfono:  <%= usuario.phone %> </p>
+                    <p>Fecha de nacimiento: <%= usuario.birth_day %></p>
                 </section>
                 <ul class="burger-menu">
                     <li class="item">

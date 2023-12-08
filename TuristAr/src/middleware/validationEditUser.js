@@ -1,10 +1,12 @@
 const { check, body, validationResult } = require("express-validator");
 // const users = require('../data/users.json')
+
 /////////BASE DE DATOS///////////
 const db= require("../database/models")
 const {Op}= require("sequelize");
+
 /* Validaciones */
-const arrayValidaciones = [
+const validaciones = [
     body('name')
         .notEmpty()
         .withMessage("El campo nombre no debe estar vacio")
@@ -39,30 +41,28 @@ const arrayValidaciones = [
             min: 6,
           })
         .withMessage("Tu constraseña debe tener minimo 6 caracteres")  ,
-    body('password2')
-            .custom((value,{req}) => {
-                if(value !== req.body.password){
-                    return false
-                }
-                return true
-            }).withMessage('Las contraseñas no coinciden'),
 ];
 
-const validateCreateForm = (req, res, next) => {
+const validacion = (req, res, next) => {
     console.log(req.body);
     const errors = validationResult(req);
     console.log(errors.mapped());
     if (errors.isEmpty()) {
         next();
     } else {
-        res.render("Register", {
-            errors: errors.mapped(),
-            old:req.body
-        });
+        db.User.findOne({where: {email:req.body.email}})
+        .then(user=>{
+            res.render("editProfile", {
+                errors: errors.mapped(),
+                old:req.body,
+                usuario:user
+            });
+        })
+        
     }
 };
 
 module.exports = {
-    arrayValidaciones,
-    validateCreateForm
+    validaciones,
+    validacion
 };

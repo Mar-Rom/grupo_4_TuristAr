@@ -39,4 +39,3 @@ app.use('/products', routesProduct);
 app.use('/carrito', routesCarrito);
 
 app.use('/usuario', routesUsers)
-

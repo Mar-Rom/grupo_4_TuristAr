@@ -4,6 +4,9 @@ const data = require("../data/productsData.json");
 const users = require("../data/users.json");
 const bcrypt = require('bcryptjs');
 const productsFilePath = path.join(__dirname, '..', 'data', 'users.json');
+/////////BASE DE DATOS///////
+const db= require("../database/models")
+const {Op}= require("sequelize");
 
 module.exports = {
     home: (req, res) => {
@@ -13,7 +16,8 @@ module.exports = {
         });
     },
     login: (req, res) => {
-        res.render('login')
+        const error = req.query.error;
+        res.render('login',{error})
     },
     processLogin: (req, res) => {
         res.redirect('/')
@@ -21,7 +25,7 @@ module.exports = {
     register: (req, res) => {
         res.render('Register')
     },
-    createUser: (req, res) => {
+    createUser:async (req, res) => {
         const hashPass = bcrypt.hashSync(req.body.password, 10)
         let avatar;
         if (req.body.genre == "Mujer") {
@@ -32,19 +36,10 @@ module.exports = {
             avatar = "default.webp"
         }
         if (bcrypt.compareSync(req.body.password2, hashPass)) {
-            const newUser = {
-                id: users.length + 1,
-                ...req.body,
-                password: hashPass,
-                image: req.file?.filename || avatar
+            const newUser = await db.User.create({...req.body,
+            password:hashPass,
+            image: req.file?.filename || avatar})
 
-
-            }
-            delete (req.body.password2)
-
-            users.push(newUser)
-            console.log(users)
-            fs.writeFileSync(productsFilePath, JSON.stringify(users));
         }
         return res.redirect('/login')
 

@@ -16,7 +16,11 @@
     <h1 id="tittle">Ingresa a tu Cuenta</h1>
     <div class="fox">
     <form action="/login" method="POST">
-
+        <% if (error === 'notLoggedIn') { %>
+            <div class="text-danger">
+            <p class="text-danger">Debes iniciar sesión previamente, para crear un hospedaje</p>
+            </div>
+        <% } %>
         <label>E-mail</label>
         <input type="text" name="email" value="<%= locals.old && old.email ? old.email : ''%>">
         <% if(locals.errors && locals.errors.email){ %>

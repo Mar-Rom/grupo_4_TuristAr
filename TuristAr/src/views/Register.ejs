@@ -20,12 +20,22 @@
 
 
                <label>Apellido</label>
-               <input type="text" name="lastName" value="<%= locals.old && old.lastName ? old.lastName : ''%>">
-               <% if(locals.errors && locals.errors.lastName){ %>
+               <input type="text" name="last_name" value="<%= locals.old && old.last_name ? old.last_name : ''%>">
+               <% if(locals.errors && locals.errors.last_name){ %>
                   <div class="text-danger">
-                      <p class="error"><%= errors.lastName.msg %></p>
+                      <p class="error"><%= errors.last_name.msg %></p>
                   </div>
               <% } %>
+
+              <label>Telefono</label>
+              <input type="text" name="phone" value="<%= locals.old && old.phone ? old.phone : ''%>">
+              <% if(locals.errors && locals.errors.phone){ %>
+                 <div class="text-danger">
+                     <p class="error"><%= errors.phone.msg %></p>
+                 </div>
+             <% } %>
+             <label for="birth_day">Fecha de nacimiento </label>
+             <input type="date" id="birth_day" name="birth_day" value="<%= locals.old && old.birth_day ? (new Date(old.birth_day)).toISOString().substring(0, 10) : '' %>"> 
 
                <label>E-mail</label>
                <input type="email" name="email" value="<%= locals.old && old.email ? old.email : ''%>">
