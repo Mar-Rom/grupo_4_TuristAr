@@ -14,14 +14,25 @@
                     <div class="input">
                         <input type="text" id="name" name="name" placeholder="Ej: cabañas soñadas" class="form-input">
                     </div>
+                    <% if(locals.errors && locals.errors.name){ %>
+                        <div class="text-danger">
+                            <p class="error"><%= errors.name.msg %></p>
+                        </div>
+                    <% } %>
                    
                     <label for="price">Precio por noche:</label>
                     <div class="input">
                     <input type="text" id="price" name="price" placeholder="Ej: 200" class="form-input">
                     </div>
-                    <label for="prov">Provincia</label>
+                     
+                    <% if(locals.errors && locals.errors.price){ %>
+                        <div class="text-danger">
+                            <p class="error"><%= errors.price.msg %></p>
+                        </div>
+                    <% } %>
+                    <label for="province">Provincia</label>
                     <div class="input">
-                        <select name="prov">
+                        <select name="province">
                             <option value="BuenosAires">Buenos Aires</option>
                             <option value="Catamarca">Catamarca</option>
                             <option value="Cordoba">Córdoba</option>
@@ -45,25 +56,40 @@
                           </select>
                     </div>
 
-                    <label for="localidad">Localidad:</label>
+                    <label for="locality">Localidad:</label>
                     <div class="input">
-                    <input type="text" id="localidad" name="localidad" placeholder="Ej: San Salvador de Jujuy" class="form-input">
+                    <input type="text" id="locality" name="locality" placeholder="Ej: San Salvador de Jujuy" class="form-input">
                     </div>
+                    <% if(locals.errors && locals.errors.locality){ %>
+                        <div class="text-danger">
+                            <p class="error"><%= errors.locality.msg %></p>
+                        </div>
+                    <% } %>
                     
-                    <label for="personas">Cantidad maxima de personas:</label>
+                    <label for="street">Calle:</label>
                     <div class="input">
-                    <input type="text" id="personas" name="personas" placeholder="Ej: 1" class="form-input">
+                    <input type="text" id="street" name="street" placeholder="Ej: Veronica Solis" class="form-input">
                     </div>
-                
+
+                    <label for="persons">Cantidad maxima de personas:</label>
+                    <div class="input">
+                    <input type="text" id="persons" name="persons" placeholder="Ej: 1" class="form-input">
+                    </div>
+                    <% if(locals.errors && locals.errors.persons){ %>
+                        <div class="text-danger">
+                            <p class="error"><%= errors.persons.msg %></p>
+                        </div>
+                    <% } %>
                     <label for="description">Descipción:</label>
                     <div class="input">
                     <textarea name="description" id="description" class="form-input" ></textarea>
                     </div>
-                    
-                    <label for="anfitrion">Nombre de la persona a cargo:</label>
-                    <div class="input">
-                    <input type="text" id="anfitrion" name="anfitrion" placeholder="Ej: Veronica Solis" class="form-input">
-                    </div>
+                    <% if(locals.errors && locals.errors.description){ %>
+                        <div class="text-danger">
+                            <p class="error"><%= errors.description.msg %></p>
+                        </div>
+                    <% } %>
+
                     
                     <label for="include">Que incluye:</label>
                     <div class="check">
@@ -90,7 +116,6 @@
                         </div>
                     
                     </div>
-                    
 
                     <label for="image">Agregar imagen</label>
                     <div class="input">
@@ -102,6 +127,8 @@
                     <button type="submit" class="buy-now-button">Guardar Hospedaje</button>
                     </div>
 
+                    
+                    
 
                 </form>
             </section>

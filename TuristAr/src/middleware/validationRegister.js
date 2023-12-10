@@ -1,6 +1,8 @@
 const { check, body, validationResult } = require("express-validator");
-const users = require('../data/users.json')
-
+// const users = require('../data/users.json')
+/////////BASE DE DATOS///////////
+const db= require("../database/models")
+const {Op}= require("sequelize");
 /* Validaciones */
 const arrayValidaciones = [
     body('name')
@@ -8,9 +10,11 @@ const arrayValidaciones = [
         .withMessage("El campo nombre no debe estar vacio")
         .isLength({ min: 3 }) 
         .withMessage("El Nombre debe tener minimo 3 caracteres"),
-        
-
-    body('lastName')
+    body("phone")
+        .isLength({min :6})
+        .withMessage("El numero de telefono debe tener mas de 3 digitos"),
+    
+    body('last_name')
         .notEmpty()
         .withMessage("El campo apellido no debe estar vacio")
         .isLength({ min: 3 }) 
@@ -21,8 +25,8 @@ const arrayValidaciones = [
         .withMessage("El email es obligatorio")
         .isEmail()
         .withMessage("Formato inválido")
-        .custom((value, { req }) => {
-          const user = users.find((user) => user.email === value);
+        .custom(async(value, { req }) => {
+            const user = await db.User.findOne({where: {email:req.body.email}})
     
           if (user) {
             return false;

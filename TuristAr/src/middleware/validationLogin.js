@@ -1,41 +1,53 @@
 const { body,validationResult} = require('express-validator')
-const users = require('../data/users.json')
+// const users = require('../data/users.json')
+const bcrypt = require('bcryptjs');
+
+const db= require("../database/models")
+const {Op}= require("sequelize");
+
 const validacion = [
     body('email')
     .notEmpty()
     .withMessage('Debes escribir un correo electronico')
     .isEmail()
     .withMessage('Esto no es un correo')
-    .custom((value, { req}) => {
-        const user = users.find((user) => user.email === value);
-        if (user) {
-            return true;
-        }else {
-            return false;
-        }
-
+    .custom(async (value, {req}) => {
+        const user = await db.User.findOne({where: {email:req.body.email}})
+                if(user){
+                    return true;
+                }else{
+                    return false;
+                }
     })
     .withMessage('El correo no se encuentra registrado'),
 
     body('password')
     .notEmpty()
     .withMessage('Debes escribir una contraseña')
-    .custom((value, { req }) => {
-        const user = req.user; // Obtiene el usuario almacenado en la solicitud
-        if (user && user.password === value) {
-            return true; // La contraseña coincide
-        } else {
-            return false; // La contraseña no coincide o no hay usuario registrado
+    .custom( async (value, { req }) => {
+         // Obtiene el usuario almacenado en la solicitud
+        const user = await db.User.findOne({where: {email:req.body.email}})
+        
+        if(user && bcrypt.compareSync(req.body.password ,user.password)){
+            return true
+        }else{
+            return false
         }
+        
     })
     .withMessage('La contraseña no coincide con el usuario registrado')
 ]
 
-const result = (req, res, next) => {
-            console.log(req.body);
+
+const result = async (req, res, next) => {
+            // console.log(req.body);
                 const errors = validationResult(req);
-                console.log(errors.mapped());
+                // console.log(errors.mapped());
                 if (errors.isEmpty()) {
+                    const user= await db.User.findOne({where: {email:req.body.email}})
+                        req.session.userLoged= user
+                        console.log(req.session.userLoged)
+                    
                     next();
                 } else {
                     res.render("Login", {
@@ -47,4 +59,3 @@ const result = (req, res, next) => {
            
 
 module.exports = {validacion, result}
- 
