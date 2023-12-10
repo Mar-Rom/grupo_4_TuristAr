@@ -13,7 +13,7 @@
 <body>
     <%- include('./partials/header.ejs') %>
 
-    <main>
+    <main class="debajo-header-editProfile">
         <h1 class="title">Editar Perfil</h1>
         <form action="/usuario/edit/<%= usuario.id %>?_method=PUT" method="post" class="formEdit">
             <label for="name">Nombre </label>

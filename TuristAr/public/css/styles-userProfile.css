@@ -68,7 +68,7 @@ body {
     -webkit-box-shadow: 15px 23px 31px -6px rgba(0,0,0,0.77);
     -moz-box-shadow: 15px 23px 31px -6px rgba(0,0,0,0.77);
 }
-.burger-menu {
+/* .burger-menu-user {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -79,7 +79,7 @@ body {
     backdrop-filter: blur(5px);
     z-index: 20;
     position: absolute;
-    top: 75px;
+    top: 60px;
     right: -50%;
     transition: right 0.5s;
 }
@@ -87,7 +87,7 @@ body {
     display: flex;
     right: 0;
     transition: right 0.5s;
-  }
+  } */
 .item {
     border-bottom: white solid 1px;
     padding: 15px 0px 15px;
@@ -100,12 +100,16 @@ body {
 }
 
 @media (min-width: 768px) {
-    #primer-header{
-        position: relative;
+    .debajo-header-user {
+        margin-top: 108px;
     }
 }
 
 @media (min-width: 1024px) {
+
+    .debajo-header-user {
+        margin-top: 96px;
+    }
     .userMain {
         display: flex;
         justify-content: space-between;

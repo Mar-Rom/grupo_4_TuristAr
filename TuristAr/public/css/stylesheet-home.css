@@ -6,90 +6,11 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    /* background-color: #ebebeb; */
+    overflow-x: hidden;
 }
 
 /* -------------------Primer header------------------ */
-header{
-    display: flex;
-    align-items: center;
-    background-color: #222831;
-    justify-content: space-between;
-    width: 100vw;
-    height: 10vh
-}
-#primer-header .logo img {
-    width: 100px;
-    /* border:solid red; */
-    /* position:relative;
-    top:0;
-    left:0; */
-    padding-top: 10px;
-}
 
-header .botones{
-    display: flex;
-    flex-direction: column;
-    width: 45vw;
-    height: 10vh;
-    /* border:solid red; */
-    align-items: center;
-    justify-content: space-evenly;
-    
-}
-header .register  a {
-    font-size: 50%;
-    text-decoration: none;
-    color: #06334b;
-    font-weight: bold;
-    text-align: center;
-    padding-left: 10px;
-}
-header .login  a {
-    font-size: 50%;
-    text-decoration: none;
-    color: #06334b;
-    font-weight: bold;
-    text-align: center;
-    padding-left: 10px;
-}
-header .register,.login {
-    width: 50%;
-    height: 4vh;
-    display: flex;
-    align-items: center;
-    background-color: #2199ea;
-    border-radius: 10px;
-    /* border:solid red; */
-}
-header .botones i{
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    
-}
-.usuario{
-    /* width:40%;
-    font-size: 30px; */
-    padding: 5px;
-    display: flex;
-    flex-direction: row;
-    width: 70px;
-    height: 40px;
-    border-radius: 20px;
-    margin-right: 20px;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #2199ea;
-}
-.usuario i {
-    font-size: 20px;
-    color: #222831;
-}
-/* .usuario .fa-solid {
-    display: none;
-} */
 
 /* ------------------- Primer Main ------------------ */
 
@@ -306,93 +227,8 @@ main .campo{
 
 @media (min-width: 768px){
     /* ---------------------Primer header-------------------- */
-    header{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #222831;
-        height: 60px;
-        z-index: 30;
-        position: fixed;
-    }
-    .barra{
-        display: inline-flex;
-        align-items: baseline;
-        justify-content: flex-start;
-        height: 29px;
-        width: 50%;
-        
-        
-    }
-    .barra input{
-        border-radius: 8px;
-        width: 100px;
-    }
-    .fa-magnifying-glass{
-        color: aliceblue;
-        padding-left: 10px;
-    }
-    #primer-header .logo img {
-        width:200px;
-        padding: 0px 0px 0px 0px;
-    }
-
-    header .botones{
-        display: flex;
-        flex-direction: row;
-        /* border:solid red; */
-        align-items: center;
-        justify-content: right;
-        
-    }
-    header .botones .register{
-        width: 30%;
-        height: 4vh;
-        display: flex;
-        align-items: center;
-        background-color: #2199ea;
-        border-radius: 10px;
-        /* border:solid red; */
-    }
-    /* .botones, .user{
-        flex-grow: 1;
-    } */
-    header .botones .login {
-        width: 30%;
-        height: 4vh;
-        display: flex;
-        align-items: center;
-        background-color: #2199ea;
-        border-radius: 10px;
-        margin-inline: 10px
-        
-    }
-    header .user{
-        display: flex;
-        align-items: center;
-        
-    }
-     header .fa-user{
-        width:40%;
-        font-size: 30px;
-        flex-direction: row-reverse;
-        padding-right: 30px;
-    }
-    header .register  a {
-        font-size: 70%;
-        text-decoration: none;
-        color: #06334b;
-        font-weight: bold;
-        text-align: center;
-        padding-left: 10px;
-    }
-    header .login  a {
-        font-size: 70%;
-        text-decoration: none;
-        color: #06334b;
-        font-weight: bold;
-        text-align: center;
-        padding-left: 10px;
+    .debajo-header-home {
+        margin-top: 108px;
     }
 
       /* ------------------- Primer Main ------------------ */
@@ -495,6 +331,9 @@ main .campo{
 
 @media (min-width: 1028px){
 
+    .debajo-header-home {
+        margin-top: 95px;
+    }
     /* --------------------2domain------------------- */
     .sec-carr{
         height: auto;
@@ -579,7 +418,7 @@ main .campo{
    
 }
 
-@media (min-width: 1268px){
+@media (min-width: 1024px){
 
     /* ------------------- Primer Main ------------------ */
         main .sec-main{

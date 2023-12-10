@@ -8,36 +8,14 @@
     <link rel="stylesheet" href="/css/carrito1.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <%-include ('./partials/head.ejs') %>
     <title>carrito</title>
 </head>
 <body>
     
-    <header>
-        <%- include('./partials/header.ejs') %>
-        <!--
-        <div class="header">
-            <div class="button-back">
-                <a href="/">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </a>
-            </div>
-            <div class="logo">
-                <a  href="/"><img src="/img/TuristAr-logo2.png" alt="logo" ></a>
-            </div>
-            <section class="barra-busqueda">
-                <button class="boton-de-inputs">
-                <input class="campo" type="text" name="destino" placeholder="¿A dónde vas?">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </section>
-            <div class="usuario">
-                <i class="fas fa-bars"></i>
-                <i class="fa-solid fa-user"></i>
-            </div>
-        </div>
-    -->
-    </header>
-    <main>
+    <%- include('./partials/header.ejs') %>
+    
+    <main class="debajo-header">
         <!-- <div class="barra-progreso">
             <div class="uno">1</div>
             <div class="dos">2</div>

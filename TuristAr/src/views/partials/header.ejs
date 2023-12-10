@@ -1,29 +1,53 @@
-<header id="primer-header">
-        
-    <div class="logo">
-        <a href="/"><img src="/img/TuristAr-logo2.png" alt="logo"></a>
-    </div>
-<!-- 
-    <div class="botones">
-        <div class="login">
-            <a href="/login">INICIAR SESION</a>
+<link rel="stylesheet" href="/css/header.css">
+
+<header id="primer-header" class="container-header">
+    <div class="header">
+        <div class="logo">
+            <a href="/"><img src="/img/TuristAr-logo2.png" alt="logo"></a>
         </div>
-        <div class="register">
-            <a href="/Register">REGISTRATE</a>
+            
+            
+        <div class="barra-busqueda">
+            <button class="boton-de-inputs">
+                    <input class="campo" type="text" name="destino" placeholder="Destino">
+                    <input class="campo" type="date" name="fecha-entrada" placeholder="Fecha de entrada">
+                    <input class="campo" type="date" name="fecha-salida" placeholder="Fecha de salida">
+                    <input class="campo" type="number" name="viajeros" placeholder="Viajeros">
+            </button>
+            <i class="fa-solid fa-magnifying-glass lupa"></i>
         </div>
-    </div>
-     -->
-    <div class="barra">
-        <button class="boton-de-inputs">
-            <input class="campo" type="text" name="destino" placeholder="¿A dónde vas?">
-            <input class="campo" type="date" name="fecha-entrada" placeholder="Fecha de entrada">
-            <input class="campo" type="date" name="fecha-salida" placeholder="Fecha de salida">
-            <input class="campo" type="number" name="viajeros" placeholder="Viajeros">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-    </div>
-    <div class="usuario">
-        <i class="fas fa-bars"></i>
-        <i class="fa-solid fa-user"></i>
+        <div class="user">
+            <div class="botones burger-menu">
+                <div class="login">
+                    <a href="/login">Iniciar Sesión</a>
+                </div>
+                <div class="register">
+                    <a href="/Register">Registrarse</a>
+                </div>
+            </div>
+            
+            <div class="usuario">
+                <i class="fas fa-bars burger"></i>
+                <!-- <i class="fa-solid fa-user user"></i> -->
+            </div>
+        </div>
+        <div class="nav">
+            <ul class="bar">
+                <li>
+                    <a href="/">Inicio</a>
+                </li>
+                <li>
+                    <a href="/products">Todos los hospedajes</a>
+                </li>
+                <li class="carrito-header">
+                    <a href="/carrito/datos/1">Carrito</a>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </li>
+                <li>
+                    <a href="/usuario/1">Mi perfil</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </header>
+<script src="/js/userProfile.js"></script>

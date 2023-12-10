@@ -14,8 +14,10 @@ body {
 }
 
 /* HEADER */
-
-header {
+.bar{
+    padding-left: 30px;
+}
+/* header {
     background-color: #222831;
 }
 header .header {
@@ -71,13 +73,12 @@ header .header section button {
 }
 header nav {
     display: none;
-}
+} */
 
 /* MAIN */
 
 main {
     width: 100vw;
-    padding-top: 3%; 
     /* puse este padding para que se vea mejor ya que inclui el partial de header */
 }
 main article {
@@ -270,7 +271,11 @@ footer section .redes a i {
 @media (min-width: 772px) {
 
     /* HEADER */
-
+    .debajo-header {
+        margin-top: 108px;
+    }
+    
+/*     
     header .header .button-back {
         display: none;
     }
@@ -327,7 +332,7 @@ footer section .redes a i {
     header nav ul li a{
         text-decoration: none;
         color: #2199ea;
-    }
+    } */
 
     /* MAIN */
 
@@ -405,22 +410,14 @@ footer section .redes a i {
     }
 }
 
-@media (min-width: 1160px) {
+@media (min-width: 1024px) {
 
     /* Header */
+    .debajo-header {
+        margin-top: 92px;
+    } 
 
-    #primer-header {
-        width: 100vw;
-    }
-    header .header {
-        padding-top: 10px;
-    }
-    header .header .logo a img {
-        max-width: 200px;
-    }
-    header .header section {
-        width: 450px;
-    }
+    
 
     /* Main */
 

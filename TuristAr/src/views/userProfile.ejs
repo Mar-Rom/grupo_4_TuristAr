@@ -13,7 +13,7 @@
 </head>
 <body>
     <%- include('./partials/header.ejs') %>
-    <main class="main">
+    <main class="main debajo-header-user">
         <div class="userHeader">
             <img class="portada" src="/images/userPortada/portadaDefault.jpg" alt="">
             <img class="fotoPerfil" src="/images/users/<%= usuario.image %>" alt="">
@@ -30,7 +30,7 @@
                     <p>Domicilio: </p>
                     <p>Fecha de nacimiento: </p>
                 </section>
-                <ul class="burger-menu">
+                <ul class="burger-menu-user">
                     <li class="item">
                         <!-- revisar la direccion del formulario de creacion -->
                         <a href="/create">Publicar Hospedaje</a>
