@@ -42,14 +42,14 @@
             <div class="carousel">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <% for (let i = 0; i < producto.image.length; i++) { %>
+                        <% for (let i = 0; i < producto.images.length; i++) { %>
                         <li data-target="#carouselExampleIndicators" data-slide-to=<%= i %> <%= i === 0 ? 'class="active"' : '' %>></li>
                         <% } %>
                     </ol>
                     <div class="carousel-inner">
-                        <% for (let i = 0; i < producto.image.length; i++) { %>
+                        <% for (let i = 0; i < producto.images.length; i++) { %>
                         <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
-                            <img src="/images/products/<%= producto.image[i] %>"
+                            <img src="/images/products/<%= producto.images[i].name %>"
                                 class="d-block w-100" alt="Slide <%= i + 1 %>">
                         </div>
                         <% } %>
@@ -101,8 +101,13 @@
                 </div>
             </div>
             <input class="huespedes" type="number" placeholder="Cantidad de huéspedes">
-            <a class="button" href="/carrito/datos/<%= producto.id %>">Reservar</a>
+            <a class="button" href="/carrito/datos/<%= producto.id_lodging %>">Reservar</a>
         </section>
+        <form action="/products/delete/<%= producto.id_lodging %>?_method=DELETE" method="post">
+            <button type="submit">
+                borrar
+            </button>
+        </form>
     </main>
     <%- include('./partials/footer.ejs')%>
 </body>

@@ -14,28 +14,32 @@
     <%-include ('./partials/header.ejs') %>
     <main class="debajo-header-login">
 
-        <h1 id="tittle">Ingresa a tu Cuenta</h1>
-        <div class="fox">
-            <form action="/login" method="POST">
-                
-                <label>E-mail</label>
-                <input type="text" name="email" value="<%= locals.old && old.email ? old.email : ''%>">
-                <% if(locals.errors && locals.errors.email){ %>
-                    <div class="text-danger">
-                        <%= errors.email.msg %>
-                    </div>
-                    <% } %>
+    <h1 id="tittle">Ingresa a tu Cuenta</h1>
+    <div class="fox">
+    <form action="/login" method="POST">
+        <% if (error === 'notLoggedIn') { %>
+            <div class="text-danger">
+            <p class="text-danger">Debes iniciar sesión previamente, para crear un hospedaje</p>
+            </div>
+        <% } %>
+        <label>E-mail</label>
+        <input type="text" name="email" value="<%= locals.old && old.email ? old.email : ''%>">
+        <% if(locals.errors && locals.errors.email){ %>
+            <div class="text-danger">
+                <%= errors.email.msg %>
+            </div>
+        <% } %>
 
-                    <label>Contraseña</label>
-                    <input type="password" name="password">
-                    <% if(locals.errors && locals.errors.password){ %>
-                        <div class="text-danger">
-                            <%= errors.password.msg %>
-                        </div>
+        <label>Contraseña</label>
+        <input type="password" name="password">
+        <% if(locals.errors && locals.errors.password){ %>
+            <div class="text-danger">
+                <%= errors.password.msg %>
+            </div>
          <% } %>
          
 
-        <button type="submit" name="Ingresa"><a href="/">Ingresar</a></button>
+         <button type="submit" name="Ingresa">INGRESAR</button>
         
         
         <button>olvidé mi Contraseña</button>

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/styles-editProfile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet" enctype="multipart/form-data">
     <title>Editar Perfil</title>
     <%-include ('./partials/head.ejs') %>
 </head>
@@ -15,21 +15,26 @@
 
     <main class="debajo-header-editProfile">
         <h1 class="title">Editar Perfil</h1>
-        <form action="/usuario/edit/<%= usuario.id %>?_method=PUT" method="post" class="formEdit">
+        <form action="/usuario/edit/<%= locals.old && old.id ? old.id : usuario.id %> ?_method=PUT" method="post" class="formEdit" enctype="multipart/form-data">
             <label for="name">Nombre </label>
             <input type="text" id="name" name="name" value="<%= usuario.name %>">
-
-            <label for="lastName">Apellido </label>
-            <input type="text" id="lastName" name="lastName" value="<%= usuario.lastName %>">
+            <% if(locals.errors && locals.errors.name){ %>
+                <div class="text-danger">
+                    <p class="error"><%= errors.name.msg %></p>
+                </div>
+            <% } %>
+            
+            <label for="last_name">Apellido </label>
+            <input type="text" id="last_name" name="last_name" value="<%= locals.old && old.id ? old.last_name : usuario.last_name %>">
 
             <label for="email">Email </label>
-            <input type="email" id="email" name="email" value="<%= usuario.email %>"> 
+            <input type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email :usuario.email %>"> 
 <!-- Revisar value -->
-            <label for="cel">Cel. </label>
-            <input type="number" id="cel" name="cel" value=" "> 
+            <label for="phone">Cel. </label>
+            <input type="text" id="phone" name="phone" value=" <%= locals.old && old.phone ? old.phone : usuario.phone %>"> 
 <!-- Revisar value -->            
-            <label for="prov">Provincia</label>
-            <select name="prov" id="prov" value=" ">
+            <!-- <label for="province">Pora</label>
+            <select name="province" id="province" value=" ">
                 <option value="BuenosAires">Buenos Aires</option>
                 <option value="Catamarca">Catamarca</option>
                 <option value=Cordoba">Córdoba</option>
@@ -50,21 +55,23 @@
                 <option value="Santa Fe">Santa Fe</option>
                 <option value="Santiago Del Estero">Santiago del Estero</option>
                 <option value="Tierra Del Fuego">Tierra del Fuego</option>
-              </select>
+              </select> -->
 <!-- Revisar value -->
-            <label for="address">Domicilio </label>
-            <input type="text" id="address" name="address" value=" "> 
+            <!-- <label for="address">Domicilio </label>
+            <input type="text" id="address" name="address" value=" ">  -->
 
-            <label for="dob">Fecha de nacimiento </label>
-            <input type="date" id="dob" name="dob" value=" "> 
+            <label for="birth_day">Fecha de nacimiento</label>
+            <input type="date" id="birth_day" name="birth_day" value="<%= locals.old && old.birth_day ? old.birth_day : (new Date(usuario.birth_day)).toISOString().substring(0, 10) %>">
+
 <!-- agregar campo de nueva cotraseña si se considera necesario -->
             <label for="password">Contraseña </label>
-            <input type="password" id="password" name="password" value="<%= usuario.password %>">
+            <input type="password" id="password" name="password" value="<%= locals.old && old.password2 ? old.password2 :usuario.password2 %>">
 
-            <label for="caterogy">Categoría </label>
-            <select name="category" id="category">
-                <option value="admin">Administrador</option>
-                <option value="client">Cliente</option>
+            <label for="genre">Sexo</label>
+            <select name="genre">
+               <option value="Mujer">Femenino</option>
+               <option value="Hombre">Masculino</option>
+               <option value="-">Prefiero no decir</option>
             </select>
 
             <label for="image">Foto de pefil </label>
