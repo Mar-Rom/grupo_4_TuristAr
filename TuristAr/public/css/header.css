@@ -116,23 +116,29 @@
         padding: 0px 5px;
     }
     .campo {
-        width: 25%;
-        height: 30px;
+        width: 100%;
+        height: 35px;
         border: none;
         margin: 0px 2px;
         padding: 0px 0px  5px 5px;
     }
+    .campo:focus {
+        outline: none;
+    }
+    .search {
+        background-color: transparent;
+        height: 40px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+    }
     .lupa {
+        border: none;
         color: #2199ea;
-        font-size: 30px;
-        margin-left: 5px;     
-    }
-    .boton-de-inputs input[name="fecha-entrada"] {
-        border-left: 1px solid rgba(0, 0, 0, 0.5);
-        border-right: 1px solid rgba(0, 0, 0, 0.5);
-    }
-    .boton-de-inputs input[name="fecha-salida"] {
-        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        font-size: 25px;
+        margin-left: 0px;     
     }
     .user {
         display: flex;

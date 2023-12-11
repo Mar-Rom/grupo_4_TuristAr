@@ -13,6 +13,11 @@ router.get('/', productControllers.all);
 
 
 router.get('/detail/:id', productControllers.detail);
+
+//econtrar producto
+
+router.get('/search', productControllers.search);
+
 // crar un producto y guardarlo
 
 router.get('/create', productControllers.crear);

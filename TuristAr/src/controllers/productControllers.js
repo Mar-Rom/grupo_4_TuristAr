@@ -35,6 +35,18 @@ module.exports = {
         
         res.render('productDetail', {producto: producto})
     },
+
+    search: async (req, res) => {
+        /* console.log(req.query.destino); */
+        const destino = req.query.destino;
+        let productos = await db.Lodging.findAll({
+            include: ["images", "services"]
+        })
+        let busquedas = productos.filter((prod) => prod.locality.toLowerCase() == destino.toLowerCase() || prod.province.toLowerCase() == destino.toLowerCase());
+        /* console.log(busquedas[0].images[0].name); */
+        res.render('busquedas', {busquedas})
+    }, 
+    
     crear: (req, res) => {
         
         res.render('formCarga');

@@ -16,13 +16,12 @@
              -->
             
         <div class="barra-busqueda">
-            <button class="boton-de-inputs">
+            <form class="boton-de-inputs" action="/products/search" method="get">
                     <input class="campo" type="text" name="destino" placeholder="Destino">
-                    <input class="campo" type="date" name="fecha-entrada" placeholder="Fecha de entrada">
-                    <input class="campo" type="date" name="fecha-salida" placeholder="Fecha de salida">
-                    <input class="campo" type="number" name="viajeros" placeholder="Viajeros">
-            </button>
-            <i class="fa-solid fa-magnifying-glass lupa"></i>
+                    <button type="submit" class="search">
+                        <i class="fa-solid fa-magnifying-glass lupa"></i>
+                    </button>
+            </form>
         </div>
         <div class="user">
             <div class="botones burger-menu">
