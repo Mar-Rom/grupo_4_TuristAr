@@ -6,11 +6,10 @@ const logedMiddleware = (req, res, next) => {
         res.locals.anUser = true;
         res.locals.userData = req.session.userLoged;
 
-        console.log(res.locals)
+        // console.log(res.locals)
     }else{
         console.log("no se inicio session")
     }
-
     next();
 };
 

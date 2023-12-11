@@ -17,9 +17,9 @@
     <h1 id="tittle">Ingresa a tu Cuenta</h1>
     <div class="fox">
     <form action="/login" method="POST">
-        <% if (error === 'notLoggedIn') { %>
+        <% if (typeof error !== 'undefined' && error === 'notLoggedIn') { %>
             <div class="text-danger">
-            <p class="text-danger">Debes iniciar sesión previamente, para crear un hospedaje</p>
+                <p class="text-danger">Debes iniciar sesión previamente para crear un hospedaje</p>
             </div>
         <% } %>
         <label>E-mail</label>

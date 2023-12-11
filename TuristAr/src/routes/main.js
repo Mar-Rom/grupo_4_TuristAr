@@ -15,7 +15,7 @@ router.get('/', mainControlles.home);
 
 router.get('/login', mainControlles.login)
 router.post('/login', validacion, result, mainControlles.processLogin)
-
+router.get("/logOut", mainControlles.logout)
 
 router.get('/register', mainControlles.register)
 router.post('/register',upload.single('image'),arrayValidaciones,validateCreateForm, mainControlles.createUser)
@@ -23,5 +23,7 @@ router.post('/register',upload.single('image'),arrayValidaciones,validateCreateF
 router.get('/valid', mainControlles.valid)  
 
 router.get('/formCarga', mainControlles.formCar)
+
+
 
 module.exports = router;
