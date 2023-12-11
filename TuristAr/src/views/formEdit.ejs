@@ -34,19 +34,28 @@
                     <label for="province">Provincia</label>
                     <div class="input">
                         <select name="province">
-                            <% const selectedProvince = locals.old && locals.old.prov ? locals.old.prov : alojamiento.prov; %>
-                            <% const provinces = [
-                                "Buenos Aires", "Catamarca", "Córdoba", "Corrientes", "Entre Ríos",
-                                "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones",
-                                "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz",
-                                "Santa Fe", "Santiago del Estero", "Tierra del Fuego"
-                            ]; %>
-                            <% for (let i = 0; i < provinces.length; i++) { %>
-                                <option value="<%= provinces[i] %>" <% if (provinces[i] === selectedProvince) { %> selected <% } %>>
-                                    <%= provinces[i] %>
-                                </option>
-                            <% } %>
+                            <option value="BuenosAires" <%= locals.old && old.province === 'BuenosAires' ? 'selected' : alojamiento.province %>>Buenos Aires</option>
+                            <option value="Catamarca" <%= locals.old && old.province === 'Catamarca' ? 'selected' : alojamiento.province %>>Catamarca</option>
+                            <option value="Cordoba" <%= locals.old && old.province === 'Cordoba' ? 'selected' : alojamiento.province %>>Córdoba</option>
+                            <option value="Corrientes" <%= locals.old && old.province === 'Corrientes' ? 'selected' : alojamiento.province %>>Corrientes</option>
+                            <option value="Entre Rios" <%= locals.old && old.province === 'Entre Rios' ? 'selected' : alojamiento.province %>>Entre Ríos</option>
+                            <option value="Formosa" <%= locals.old && old.province === 'Formosa' ? 'selected' : alojamiento.province %>>Formosa</option>
+                            <option value="Jujuy" <%= locals.old && old.province === 'Jujuy' ? 'selected' : alojamiento.province %>>Jujuy</option>
+                            <option value="La Pampa" <%= locals.old && old.province === 'La Pampa' ? 'selected' : alojamiento.province %>>La Pampa</option>
+                            <option value="La Rioja" <%= locals.old && old.province === 'La Rioja' ? 'selected' : alojamiento.province %>>La Rioja</option>
+                            <option value="Mendoza" <%= locals.old && old.province === 'Mendoza' ? 'selected' : alojamiento.province %>>Mendoza</option>
+                            <option value="Misiones" <%= locals.old && old.province === 'Misiones' ? 'selected' : alojamiento.province %>>Misiones</option>
+                            <option value="Neuquen" <%= locals.old && old.province === 'Neuquen' ? 'selected' : alojamiento.province %>>Neuquén</option>
+                            <option value="Rio Negro" <%= locals.old && old.province === 'Rio Negro' ? 'selected' : alojamiento.province %>>Río Negro</option>
+                            <option value="Salta" <%= locals.old && old.province === 'Salta' ? 'selected' : alojamiento.province %>>Salta</option>
+                            <option value="San Juan" <%= locals.old && old.province === 'San Juan' ? 'selected' : alojamiento.province %>>San Juan</option>
+                            <option value="San Luis" <%= locals.old && old.province === 'San Luis' ? 'selected' : alojamiento.province %>>San Luis</option>
+                            <option value="Santa Cruz" <%= locals.old && old.province === 'Santa Cruz' ? 'selected' : alojamiento.province %>>Santa Cruz</option>
+                            <option value="Santa Fe" <%= locals.old && old.province === 'Santa Fe' ? 'selected' : alojamiento.province %>>Santa Fe</option>
+                            <option value="Santiago Del Estero" <%= locals.old && old.province === 'Santiago Del Estero' ? 'selected' : alojamiento.province %>>Santiago del Estero</option>
+                            <option value="Tierra Del Fuego" <%= locals.old && old.province === 'Tierra Del Fuego' ? 'selected' : alojamiento.province %>>Tierra del Fuego</option>
                         </select>
+                        
                     </div>
 
                     <label for="locality">Localidad:</label>
@@ -62,12 +71,12 @@
 
                     <label for="street">Calle:</label>
                     <div class="input">
-                    <input type="text" id="street" name="street" placeholder="Ej: Av. Siempre viva 645" class="form-input">
+                    <input type="text" id="street" name="street" placeholder="Ej: Av. Siempre viva 645" class="form-input" value="<%=locals.old && old.street ? old.street :alojamiento.street%>">
                     </div>
 
                     <label for="persons">Cantidad maxima de personas:</label>
                     <div class="input">
-                    <input type="text" id="persons" name="persons" placeholder="Ej: 1" value="<%=locals.old && old.persons ? old.persons :alojamiento.persons%>" class="form-input">
+                    <input type="number" id="persons" name="persons" placeholder="Ej: 1" value="<%=locals.old && old.persons ? old.persons :alojamiento.persons%>" class="form-input">
                     </div>
                     <% if(locals.errors && locals.errors.persons){ %>
                         <div class="text-danger">
@@ -86,40 +95,45 @@
                         </div>
                     <% } %>
                     
-                    <label for="anfitrion">Nombre de la persona a cargo:</label>
-                    <div class="input">
-                    <input type="text" id="anfitrion" name="anfitrion" placeholder="Ej: Veronica Solis" value="<%=locals.old && old.anfitrion ? old.anfitrion :alojamiento.anfitrion%>" class="form-input">
-                    </div>
-                    <% if(locals.errors && locals.errors.anfitrion){ %>
-                        <div class="text-danger">
-                            <p class="error"><%= errors.anfitrion.msg %></p>
-                        </div>
-                    <% } %>
                     
                     <label for="include">Que incluye:</label>
-                    <div class="check">
+                    <div class="check" value="<%=locals.old && old.persons ? old.persons :alojamiento.persons%>">
                         <div>
-                            <input type="checkbox" name="include" value="Cocina"> <span>Cocina</span>
+                            <input type="checkbox" name="include" value="1" <%= locals.old && old.include && old.include.includes('1') ? 'checked' : alojamiento.includes && alojamiento.include.includes('1') ? 'checked' : "" %>> <span>Cocina</span>
                         </div>
                         <div>
-                            <input type="checkbox" name="include" value="Wi-fi"> <span>Wi-fi</span>
+                            <input type="checkbox" name="include" value="2" <%= locals.old && old.include && old.include.includes('2') ? 'checked' :  alojamiento.includes && alojamiento.include.includes('2') ? 'checked' : "" %>> <span>Heladera</span>
                         </div>
                         <div>
-                            <input type="checkbox" name="include" value="Agua caliente"> <span>Agua caliente</span>
+                            <input type="checkbox" name="include" value="3" <%= locals.old && old.include && old.include.includes('3') ? 'checked' :  alojamiento.includes && alojamiento.include.includes('3') ? 'checked' : "" %>> <span>Freezer</span>
                         </div>
                         <div>
-                            <input type="checkbox" name="include" value="Baño"> <span>Baño individual</span>
+                            <input type="checkbox" name="include" value="4" <%= locals.old && old.include && old.include.includes('4') ? 'checked' :  alojamiento.includes && alojamiento.include.includes('4') ? 'checked' : "" %>> <span>Lavarropa</span>
                         </div>
                         <div>
-                            <input type="checkbox" name="include" value="Televisor"> <span>Televisor</span>
+                            <input type="checkbox" name="include" value="5" <%= locals.old && old.include && old.include.includes('5') ? 'checked' :  alojamiento.includes && alojamiento.include.includes('5') ? 'checked' : "" %>> <span>Wi-fi</span>
                         </div>
                         <div>
-                            <input type="checkbox" name="include" value="Estacionamiento"> <span>Estacionmiento</span>
+                            <input type="checkbox" name="include" value="6" <%= locals.old && old.include && old.include.includes('6') ? 'checked' :  alojamiento.includes && alojamiento.include.includes('6') ? 'checked' : "" %>> <span>Agua caliente</span>
                         </div>
                         <div>
-                            <input type="checkbox" name="include" value="Pileta"> <span>Pileta</span>
+                            <input type="checkbox" name="include" value="7" <%= locals.old && old.include && old.include.includes('7') ? 'checked' :  alojamiento.includes && alojamiento.include.includes('7') ? 'checked' : "" %>> <span>Baño privado</span>
                         </div>
-                    
+                        <div>
+                            <input type="checkbox" name="include" value="8" <%= locals.old && old.include && old.include.includes('8') ? 'checked' :  alojamiento.includes && alojamiento.include.includes('8') ? 'checked' : "" %>> <span>Baño compartido</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="include" value="9" <%= locals.old && old.include && old.include.includes('9') ? 'checked' :  alojamiento.includes && alojamiento.include.includes('9') ? 'checked' : "" %>> <span>Televisor</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="include" value="10" <%= locals.old && old.include && old.include.includes('10') ? 'checked' :  alojamiento.includes && alojamiento.include.includes('10') ? 'checked' : "" %>> <span>Estacionamiento</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="include" value="11" <%= locals.old && old.include && old.include.includes('11') ? 'checked' :  alojamiento.includes && alojamiento.include.includes('11') ? 'checked' : "" %>> <span>Garage</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="include" value="12" <%= locals.old && old.include && old.include.includes('12') ? 'checked' :  alojamiento.includes && alojamiento.include.includes('12') ? 'checked' : "" %>> <span>Pileta</span>
+                        </div>
                     </div>
                     
 

@@ -31,6 +31,9 @@
                 <div class="register">
                     <a href="/Register">Registrarse</a>
                 </div>
+                <!-- <div class="register">
+                    <a href="/logOut">LogOut</a>
+                </div> -->
             </div>
             
             <div class="usuario">
@@ -50,9 +53,12 @@
                     <a href="/carrito/datos/1">Carrito</a>
                     <i class="fa-solid fa-cart-shopping"></i>
                 </li>
-                <li>
-                    <a href="/usuario/1">Mi perfil</a>
-                </li>
+                <%if (locals.anUser) {%>
+                    <li>
+                        <a href="/usuario/<%=locals.userData.id  %>">Mi perfil</a>
+                    </li>
+                <%}%>
+                
             </ul>
         </div>
     </div>

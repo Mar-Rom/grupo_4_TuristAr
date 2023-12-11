@@ -12,7 +12,7 @@
                 <form action="/products" method="POST" class="formu" enctype="multipart/form-data" >
                     <label for="name">Nombre de su hospedaje:</label>
                     <div class="input">
-                        <input type="text" id="name" name="name" placeholder="Ej: cabañas soñadas" class="form-input">
+                        <input type="text" id="name" name="name" placeholder="Ej: cabañas soñadas" class="form-input" value="<%= locals.old && old.name ? old.name : '' %>" >
                     </div>
                     <% if(locals.errors && locals.errors.name){ %>
                         <div class="text-danger">
@@ -22,7 +22,7 @@
                    
                     <label for="price">Precio por noche:</label>
                     <div class="input">
-                    <input type="text" id="price" name="price" placeholder="Ej: 200" class="form-input">
+                    <input type="text" id="price" name="price" placeholder="Ej: 200" class="form-input" value="<%= locals.old && old.price ? old.price : '' %>">
                     </div>
                      
                     <% if(locals.errors && locals.errors.price){ %>
@@ -33,32 +33,33 @@
                     <label for="province">Provincia</label>
                     <div class="input">
                         <select name="province">
-                            <option value="BuenosAires">Buenos Aires</option>
-                            <option value="Catamarca">Catamarca</option>
-                            <option value="Cordoba">Córdoba</option>
-                            <option value="Corrientes">Corrientes</option>
-                            <option value="Entre Rios">Entre Ríos</option>
-                            <option value="Formosa">Formosa</option>
-                            <option value="Jujuy">Jujuy</option>
-                            <option value="La Pampa">La Pampa</option>
-                            <option value="La Rioja">La Rioja</option>
-                            <option value="Mendoza">Mendoza</option>
-                            <option value="Misiones">Misiones</option>
-                            <option value="Neuquen">Neuquén</option>
-                            <option value="Rio Negro">Río Negro</option>
-                            <option value="Salta">Salta</option>
-                            <option value="San Juan">San Juan</option>
-                            <option value="San Luis">San Luis</option>
-                            <option value="Santa Cruz">Santa Cruz</option>
-                            <option value="Santa Fe">Santa Fe</option>
-                            <option value="Santiago Del Estero">Santiago del Estero</option>
-                            <option value="Tierra Del Fuego">Tierra del Fuego</option>
-                          </select>
+                            <option value="BuenosAires" <%= locals.old && old.province === 'BuenosAires' ? 'selected' : '' %>>Buenos Aires</option>
+                            <option value="Catamarca" <%= locals.old && old.province === 'Catamarca' ? 'selected' : '' %>>Catamarca</option>
+                            <option value="Cordoba" <%= locals.old && old.province === 'Cordoba' ? 'selected' : '' %>>Córdoba</option>
+                            <option value="Corrientes" <%= locals.old && old.province === 'Corrientes' ? 'selected' : '' %>>Corrientes</option>
+                            <option value="Entre Rios" <%= locals.old && old.province === 'Entre Rios' ? 'selected' : '' %>>Entre Ríos</option>
+                            <option value="Formosa" <%= locals.old && old.province === 'Formosa' ? 'selected' : '' %>>Formosa</option>
+                            <option value="Jujuy" <%= locals.old && old.province === 'Jujuy' ? 'selected' : '' %>>Jujuy</option>
+                            <option value="La Pampa" <%= locals.old && old.province === 'La Pampa' ? 'selected' : '' %>>La Pampa</option>
+                            <option value="La Rioja" <%= locals.old && old.province === 'La Rioja' ? 'selected' : '' %>>La Rioja</option>
+                            <option value="Mendoza" <%= locals.old && old.province === 'Mendoza' ? 'selected' : '' %>>Mendoza</option>
+                            <option value="Misiones" <%= locals.old && old.province === 'Misiones' ? 'selected' : '' %>>Misiones</option>
+                            <option value="Neuquen" <%= locals.old && old.province === 'Neuquen' ? 'selected' : '' %>>Neuquén</option>
+                            <option value="Rio Negro" <%= locals.old && old.province === 'Rio Negro' ? 'selected' : '' %>>Río Negro</option>
+                            <option value="Salta" <%= locals.old && old.province === 'Salta' ? 'selected' : '' %>>Salta</option>
+                            <option value="San Juan" <%= locals.old && old.province === 'San Juan' ? 'selected' : '' %>>San Juan</option>
+                            <option value="San Luis" <%= locals.old && old.province === 'San Luis' ? 'selected' : '' %>>San Luis</option>
+                            <option value="Santa Cruz" <%= locals.old && old.province === 'Santa Cruz' ? 'selected' : '' %>>Santa Cruz</option>
+                            <option value="Santa Fe" <%= locals.old && old.province === 'Santa Fe' ? 'selected' : '' %>>Santa Fe</option>
+                            <option value="Santiago Del Estero" <%= locals.old && old.province === 'Santiago Del Estero' ? 'selected' : '' %>>Santiago del Estero</option>
+                            <option value="Tierra Del Fuego" <%= locals.old && old.province === 'Tierra Del Fuego' ? 'selected' : '' %>>Tierra del Fuego</option>
+                        </select>
+                        
                     </div>
 
                     <label for="locality">Localidad:</label>
                     <div class="input">
-                    <input type="text" id="locality" name="locality" placeholder="Ej: San Salvador de Jujuy" class="form-input">
+                    <input type="text" id="locality" name="locality" placeholder="Ej: San Salvador de Jujuy" class="form-input" value="<%= locals.old && old.locality ? old.locality : '' %>">
                     </div>
                     <% if(locals.errors && locals.errors.locality){ %>
                         <div class="text-danger">
@@ -68,12 +69,12 @@
                     
                     <label for="street">Calle:</label>
                     <div class="input">
-                    <input type="text" id="street" name="street" placeholder="Ej: Veronica Solis" class="form-input">
+                    <input type="text" id="street" name="street" placeholder="Ej: Veronica Solis" class="form-input" value="<%= locals.old && old.street ? old.street : '' %>">
                     </div>
 
                     <label for="persons">Cantidad maxima de personas:</label>
                     <div class="input">
-                    <input type="text" id="persons" name="persons" placeholder="Ej: 1" class="form-input">
+                    <input type="number" id="persons" name="persons" placeholder="Ej: 1" class="form-input" value="<%= locals.old && old.persons ? old.persons : '' %>">
                     </div>
                     <% if(locals.errors && locals.errors.persons){ %>
                         <div class="text-danger">
@@ -82,7 +83,7 @@
                     <% } %>
                     <label for="description">Descipción:</label>
                     <div class="input">
-                    <textarea name="description" id="description" class="form-input" ></textarea>
+                    <textarea name="description" id="description" class="form-input" ><%= locals.old && old.description ? old.description : '' %></textarea>
                     </div>
                     <% if(locals.errors && locals.errors.description){ %>
                         <div class="text-danger">
@@ -94,28 +95,44 @@
                     <label for="include">Que incluye:</label>
                     <div class="check">
                         <div>
-                            <input type="checkbox" name="include" value="Cocina"> <span>Cocina</span>
+                            <input type="checkbox" name="include" value=1 <%= locals.old && locals.old.include && locals.old.include.includes('1') ? 'checked' : '' %>> <span>Cocina</span>
                         </div>
                         <div>
-                            <input type="checkbox" name="include" value="Wi-fi"> <span>Wi-fi</span>
+                            <input type="checkbox" name="include" value=2 <%= locals.old && locals.old.include && locals.old.include.includes('2') ? 'checked' : '' %>> <span>Heladera</span>
                         </div>
                         <div>
-                            <input type="checkbox" name="include" value="Agua caliente"> <span>Agua caliente</span>
+                            <input type="checkbox" name="include" value=3 <%= locals.old && locals.old.include && locals.old.include.includes('3') ? 'checked' : '' %>> <span>Freezer</span>
                         </div>
                         <div>
-                            <input type="checkbox" name="include" value="Baño"> <span>Baño individual</span>
+                            <input type="checkbox" name="include" value=4 <%= locals.old && locals.old.include && locals.old.include.includes('4') ? 'checked' : '' %>> <span>Lavarropa</span>
                         </div>
                         <div>
-                            <input type="checkbox" name="include" value="Televisor"> <span>Televisor</span>
+                            <input type="checkbox" name="include" value=5 <%= locals.old && locals.old.include && locals.old.include.includes('5') ? 'checked' : '' %>> <span>Wi-fi</span>
                         </div>
                         <div>
-                            <input type="checkbox" name="include" value="Estacionamiento"> <span>Estacionmiento</span>
+                            <input type="checkbox" name="include" value=6 <%= locals.old && locals.old.include && locals.old.include.includes('6') ? 'checked' : '' %>> <span>Agua caliente</span>
                         </div>
                         <div>
-                            <input type="checkbox" name="include" value="Pileta"> <span>Pileta</span>
+                            <input type="checkbox" name="include" value=7 <%= locals.old && locals.old.include && locals.old.include.includes('7') ? 'checked' : '' %>> <span>Baño privado</span>
                         </div>
-                    
+                        <div>
+                            <input type="checkbox" name="include" value=8 <%= locals.old && locals.old.include && locals.old.include.includes('8') ? 'checked' : '' %>> <span>Baño compartido</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="include" value=9 <%= locals.old && locals.old.include && locals.old.include.includes('9') ? 'checked' : '' %>> <span>Televisor</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="include" value=10 <%= locals.old && locals.old.include && locals.old.include.includes('10') ? 'checked' : '' %>> <span>Estacionamiento</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="include" value=11 <%= locals.old && locals.old.include && locals.old.include.includes('11') ? 'checked' : '' %>> <span>Garage</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="include" value=12 <%= locals.old && locals.old.include && locals.old.include.includes('12') ? 'checked' : '' %>> <span>Pileta</span>
+                        </div>
                     </div>
+                    
+                    
 
                     <label for="image">Agregar imagen</label>
                     <div class="input">
