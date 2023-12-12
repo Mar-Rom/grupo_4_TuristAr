@@ -9,6 +9,8 @@ const routesCarrito = require('./src/routes/carrito');
 const routesUsers = require('./src/routes/users');
 const routesFav= require('./src/routes/favoritos');
 
+const routesUserAPI = require('./src/routes/routesApis/userApi')
+const routesProductsAPI = require('./src/routes/routesApis/productsApi')
 
 const PORT = 3030;
 
@@ -54,6 +56,9 @@ app.use('/carrito', routesCarrito);
 
 app.use('/usuario', routesUsers);
 app.use('/favorite', routesFav);
+
+app.use ('/api', routesUserAPI)
+app.use ('/api', routesProductsAPI)
 
 
 

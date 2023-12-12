@@ -206,8 +206,14 @@ main section .huespedes {
     padding: 10px 30px;
     border-radius: 10px;
     text-decoration: none;
+    
 }
 .button:hover {
+    text-decoration: none;
+    color: white;
+
+}
+.button1:hover{
     text-decoration: none;
     color: white;
 }
