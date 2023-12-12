@@ -1,0 +1,103 @@
+.main-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.primero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image:url(/images/Gif/iguazu-falls.gif);
+    background-size: cover;
+    width: 100vw;
+    height: 50vh;
+}
+
+.logo-home {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 0px;
+}
+.logo-principal {
+    min-width: 30px;
+    max-width: 400px;
+    padding: 0px 30px;
+    filter: drop-shadow(4px 6px 6px rgba(0, 0, 0, 0.9));
+}
+.barra-busqueda-home {
+    width: 100%;
+    height: 40%;
+}
+.boton-de-inputs-home {
+    width: 90%;
+    height: 40px;
+    border: none;
+    padding: 0px auto;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+}
+.campo-home {
+    width: 90%;
+    height: 35px;
+    border: none;
+    margin: 0px 2px;
+    padding: 0px 0px  5px 5px;
+}
+.campo-home:focus {
+    outline: none;
+}
+.lupa-home {
+    border: none;
+    color: #2199ea;
+    font-size: 20px;
+    margin-left: 0px;     
+}
+.search-home {
+    background-color: transparent;
+    height: 40px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+@media (min-width: 768px) {
+    .debajo-header-home1 {
+        margin-top: 110px;
+    }
+    .primero {
+        height: 80vh;
+    }
+    .logo-principal {
+        min-width: 500px;
+    }
+    .boton-de-inputs-home {
+        width: 70%;
+        height: 50px;
+    }
+}
+@media (min-width: 1024px) {
+    .debajo-header-home1 {
+        margin-top: 100px;
+    }
+    .primero {
+        height: 90vh;
+    }
+    .logo-principal {
+        min-width: 650px;
+    }
+    .boton-de-inputs-home {
+        width: 60%;
+        height: 40px;
+    }
+}

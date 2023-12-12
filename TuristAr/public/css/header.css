@@ -37,6 +37,9 @@
 .burger-menu {
     display: none;
 }
+.name-user{
+    display: none;
+}
 .nav {
     position: fixed;
     display: flex;
@@ -152,8 +155,26 @@
         align-items: center;
         gap: 10px;
     }
+    .name-user {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 60px;
+    }
+    .fotoUser {
+        width: 35px;
+        border-radius: 50%;
+    }
+    .userName {
+        color: white;
+        font-size: 18px;
+        padding: 15px 15px 0px;
+    }
     .login a , .register a {
         color: white;
+    }
+    .login-bar, .register-bar {
+        display: none;
     }
     
     .nav{
@@ -209,6 +230,15 @@
         font-size: 20px;
         padding-bottom: 15px;
     }
+    .userName {
+        transition: all .5s ease;
+    }
+    .userName:hover {
+        color: #2199ea;
+        text-decoration: none;
+        font-size: 20px;
+        letter-spacing: 0.5px;
+    }
     .login a , .register a {
         font-size: 14px;
         transition: all .5s ease;
@@ -239,12 +269,10 @@
         box-shadow: #0a365a 0px 7px 29px 0px;
     }
     .bar li:hover i{
-        /* color: #2199ea; */
         text-decoration: none;
         transition: color 0.3s;
     }
     .bar li:hover a {
-        /* color: #2199ea; */
         text-decoration: none;
         transition: color 0.3s;
     }

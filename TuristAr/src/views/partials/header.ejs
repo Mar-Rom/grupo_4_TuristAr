@@ -5,16 +5,9 @@
     <div class="logo">
         <a href="/"><img src="/img/TuristAr-logo2.png" alt="logo"></a>
     </div>
-    <% if(locals.anUser){ %>
+    <!-- <% if(locals.anUser){ %>
          <p> <%= locals.userData.name %></p> 
-   <% } %>
-
-    <!-- <div class="botones">
-        <div class="login">
-            <a href="/login">INICIAR SESION</a>
-        </div>
-             -->
-            
+    <% } %> -->
         <div class="barra-busqueda">
             <form class="boton-de-inputs" action="/products/search" method="get">
                     <input class="campo" type="text" name="destino" placeholder="Destino">
@@ -23,6 +16,16 @@
                     </button>
             </form>
         </div>
+        <% if(locals.anUser){ %>
+            <div class="name-user">
+                <a href="/usuario/<%=locals.userData.id  %>">
+                    <img class="fotoUser" src="/images/users/<%= locals.userData.image %>" alt="">
+                </a>
+                <a href="/usuario/<%=locals.userData.id  %>">
+                    <p class=" userName"> <%= locals.userData.name %></p> 
+                </a>
+            </div>
+        <% }else { %>
         <div class="user">
             <div class="botones burger-menu">
                 <div class="login">
@@ -35,7 +38,7 @@
                     <a href="/logOut">LogOut</a>
                 </div> -->
             </div>
-            
+        <% } %>
             <div class="usuario">
                 <i class="fas fa-bars burger"></i>
                 <i class="fa-solid fa-user user"></i>
@@ -46,6 +49,18 @@
                 <li>
                     <a href="/">Inicio</a>
                 </li>
+                <%if (locals.anUser) {%>
+                    <li>
+                        <a href="/usuario/<%=locals.userData.id  %>">Mi perfil</a>
+                    </li>
+                <%}else { %>
+                    <li class="login-bar">
+                        <a href="/login">Iniciar Sesión</a>
+                    </li>
+                    <li class="register-bar">
+                        <a href="/Register">Registrarse</a>
+                    </li>
+                <%}%>
                 <li>
                     <a href="/products">Todos los hospedajes</a>
                 </li>
@@ -53,12 +68,6 @@
                     <a href="/carrito/datos/1">Carrito</a>
                     <i class="fa-solid fa-cart-shopping"></i>
                 </li>
-                <%if (locals.anUser) {%>
-                    <li>
-                        <a href="/usuario/<%=locals.userData.id  %>">Mi perfil</a>
-                    </li>
-                <%}%>
-                
             </ul>
         </div>
     </div>

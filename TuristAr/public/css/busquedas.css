@@ -28,11 +28,12 @@ body {
 }
 .resultados {
     width: 90%;
-    border: red solid 1px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin: 0px auto 40px;
+    gap: 15px;
 }
 .card-search {
     width: 100%;
@@ -41,23 +42,176 @@ body {
     justify-content: center;
     align-items: flex-start;
     position: relative;
-    border: white solid 2px;
     border-radius: 25px;
+    overflow: hidden;
+    margin: 10px auto 40px;
+    background-color: #11517b38;
+    border:#222831 1px solid;
+    box-shadow: 15px 23px 31px -6px rgba(0,0,0,0.77);
+    -webkit-box-shadow: 15px 23px 31px -6px rgba(0,0,0,0.77);
+    -moz-box-shadow: 15px 23px 31px -6px rgba(0,0,0,0.77);
+    color: white;
+    max-width: 350px;
 }
-.img-container {
+.carousel-container {
     width: 100%;
     height: 300px;
-    overflow: hidden;
-    border-top-right-radius: 25px;
-    border-top-left-radius: 25px;
 }
 .img {
-    object-fit:contain;
+    object-fit:cover;
     width: 100%;
+    height: auto;
+    margin: 0;
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
+    z-index: -10;
 }
 .info {
     color: white;
-    padding: 0px 15px;
+    padding: 20px 0px;
+    width: 90%;
+    margin: 0px auto;
+}
+.productName {
+    font-size: 22px;
+    text-decoration: none;
+    margin: 0px auto 20px;
+    width: 100%;
+    text-align: center;
+    border-bottom: white solid 1px;
+}
+.productProvince, .productLocality{
+    font-size: 18px;
+}
+.productPrice {
+    font-size: 22px;
+}
+.prev-btn, .next-btn {
+    display: none;
+}
+
+.ver-mas {
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+    background-color: #2199ea;
+    color: #dee2e9;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Agrega otros estilos según tu diseño */
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-container a {
+    flex: 0 0 100%;
+}
+
+.carousel-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Otros estilos de la imagen */
+}
+
+/* Estilos para los botones de control */
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+.disculpa {
+    color: white;
+    font-size: 22px;
+    text-align: justify;
+}
+
+@media (min-width: 768px) {
+    .debajo-header {
+        margin-top: 108px;
+    }
+    .card-search {
+        max-width: 300px;
+    }
+}
+@media (min-width: 1024px) {
+    .debajo-header {
+        margin-top: 120px;
+    }
+    .card-search {
+        max-width: 250px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .carousel-container {
+        height: 300px;
+    }
+    .info {
+        position: absolute;
+        top: 240px;
+        left: 0px;
+        background-color: #14263be5;
+        width: 100%;
+        height: 100%;
+        padding: 5px 10px;
+        transition: all 0.7s ease;
+    }.productName {
+        margin-bottom: 30px;
+    }
+    .productProvince, .productLocality, .productPrice {
+        padding: 0px 5px;
+    }
+    .card-search:hover .info {
+        top: 60px;
+    }
+    .card-search:hover {
+        transform: translateY(-10px);
+        box-shadow: 27px 39px 53px 0px rgba(0,0,0,0.77);
+        -webkit-box-shadow: 27px 39px 53px 0px rgba(0,0,0,0.77);
+        -moz-box-shadow: 27px 39px 53px 0px rgba(0,0,0,0.77);
+    }
+    .ver-mas {
+        font-size: 16px;
+        padding: 5px 10px;
+        right: 20px;
+        bottom: 90px;
+        transition: all 0.3s;
+        cursor: pointer;
+        background-color: #315cfd;
+        color: white;
+    }
+    .ver-mas:hover {
+        background: #315cfd;
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        border: none;
+      }
+
 }

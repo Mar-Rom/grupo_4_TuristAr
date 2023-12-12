@@ -12,23 +12,41 @@
     <main class="main debajo-header">
         <p class="titulo">Resultados de la búsqueda</p>
         <div class="resultados">
-            <% for (let i = 0 ; i < busquedas.length ; i++) { %>
-                <article class="card-search">
-                    <div class="img-container">
-                        <img class="img" src="/images/products/<%=busquedas[i].images[i].name%>" alt="">
-                    </div>
-                    <div class="info">
-                        <h1><%= busquedas[i].name %></h1>
-                        <p><%= busquedas[i].province %></p>
-                        <p><%= busquedas[i].locality %></p>
-                        <p>$ <%= busquedas[i].price %></p>
-                    </div>
-                    <div class="ver-mas">
-                        <a href="/products/detail/<%= busquedas[i].id_lodging%>">Ver más</a>
-                    </div>
-                </article>
-            <% } %>
+
+            <% if(busquedas.length > 0){ %>
+
+                <% for (let i = 0 ; i < busquedas.length ; i++) { %>
+
+                    <article class="card-search">
+                        <div class="carousel">
+                            <div class="carousel-container">
+                                <% for (let j = 0; j < busquedas[i].images.length; j++) { %>
+                                    <a href="/products/detail/<%= busquedas[i].id_lodging %>">
+                                        <img class="img" src="/images/products/<%= busquedas[i].images[j].name %>" alt="Imagen <%= j + 1 %>">
+                                    </a>
+                                <% } %>
+                            </div>
+                            <button class="prev-btn">&lt;</button>
+                            <button class="next-btn">&gt;</button>
+                        </div>
+                        <div class="info">
+                            <!-- Información de la tarjeta -->
+                            <h2 class="productName"><%= busquedas[i].name %></h2>
+                            <p class="productLocality"><%= busquedas[i].locality %>,</p>
+                            <p class="productProvince"><%= busquedas[i].province %></p>
+                            <p class="productPrice">$ <%= busquedas[i].price %></p>
+                            <a class="ver-mas" href="/products/detail/<%= busquedas[i].id_lodging %>">Ver más</a>
+                        </div>
+                    </article>
+                <% } %>
+            <% }else { %>
+
+                    <p class="disculpa"> Lo lamento, no tenemos hospedajes en esa ubicación </p>
+
+                <% } %>
         </div>
+        <script src="/js/cardsProducts.js"></script>
     </main>
+    <%- include('./partials/footer.ejs')%>
 </body>
 </html>

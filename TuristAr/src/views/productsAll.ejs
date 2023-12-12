@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <%-include ('./partials/head.ejs') %>
+<!-- <link rel="stylesheet" href="/css/crear.css"> -->
+<link rel="stylesheet" href="/css/busquedas.css">
 
     <body>
         <%- include('./partials/header.ejs') %>
             <main class="mainprod debajo-header">
-                <h2>¡Todos los hospedajes!</h2>
-                <section class="cards">
-                    <% products.forEach((hosp) => { %>
-                        <div class="card" style="width: 18rem;">
-                            <img src="/images/products/<%= hosp.images[0].name %>" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"><%= hosp.name %></h5>
-                                <p class="card-text">
-                                     <%= hosp.province %> , <%= hosp.locality %>
-                                </p>
-                                <a href="/products/detail/<%= hosp.id_lodging%>" class="btn btn-primary">Ver más</a>
-                                
-                            </div>
-                        </div>
-                    <%})%>
-                    
-                   
-                </section>
+                <p class="titulo">Todos los Hospedajes</p>
+            <div class="resultados">
+                <% for (let i = 0 ; i < products.length ; i++) { %>
 
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-                    crossorigin="anonymous"></script>
+                    <article class="card-search">
+                        <div class="carousel">
+                            <div class="carousel-container">
+                                <% for (let j = 0; j < products[i].images.length; j++) { %>
+                                    <a href="/products/detail/<%= products[i].id_lodging %>">
+                                        <img class="img" src="/images/products/<%= products[i].images[j].name %>" alt="Imagen <%= j + 1 %>">
+                                    </a>
+                                <% } %>
+                            </div>
+                            <button class="prev-btn">&lt;</button>
+                            <button class="next-btn">&gt;</button>
+                        </div>
+                        <div class="info">
+                            <!-- Información de la tarjeta -->
+                            <h2 class="productName"><%= products[i].name %></h2>
+                            <p class="productLocality"><%= products[i].locality %>,</p>
+                            <p class="productProvince"><%= products[i].province %></p>
+                            <p class="productPrice">$ <%= products[i].price %></p>
+                            <a class="ver-mas" href="/products/detail/<%= products[i].id_lodging %>">Ver más</a>
+                        </div>
+                    </article>
+                <% } %>
+            </div>
+            <script src="/js/cardsProducts.js"></script>
             </main>
             <%- include('./partials/footer.ejs')%>
     </body>
