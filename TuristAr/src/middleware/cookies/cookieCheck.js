@@ -1,14 +1,14 @@
 // checkCookie.js
-module.exports = (req, res, next) => {
-    if (req.cookies.SesionUser) {
-        req.session.userLoged = req.cookies.SesionUser;
-    }
-    next();
-};
+// module.exports = (req, res, next) => {
+//     if (req.cookies.SesionUser) {
+//         req.session.userLoged = req.cookies.SesionUser;
+//     }
+//     next();
+// };
 module.exports = (req, res, next) => {
     const sessionUser = req.cookies.SesionUser;
 
-    // Comprobar si la cookie "todaviaSirve" existe
+    // Comprobar si la cookie "sessionUSer" existe
     if (sessionUser) {
         try {
             const userData = JSON.parse(sessionUser);

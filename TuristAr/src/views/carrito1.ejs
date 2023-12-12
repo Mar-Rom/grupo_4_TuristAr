@@ -24,7 +24,7 @@
         </div> -->
         <div class="conteiner">
                 <div class="conteiner-img">
-                    <img src="/images/products/<%= producto.image %>"alt="<%= producto.name %>" >
+                    <img src="/images/products/<%= producto.images[0].name %>" alt="<%= producto.name %>" >
                 </div>
                 <div class="dates">
                     <h4>Datos de tu reserva</h2>
@@ -80,7 +80,7 @@
                     <label>Nacionalidad</label>
                     <input type="text" placeholder="nacionalidad" required class="control">
                 </div>
-                <a class="buttom" href="/carrito/pago/<%= producto.id %>" target="_blank"> Siguiente</a>
+                <a class="buttom" href="/carrito/pago/<%= producto.id_lodging %>" target="_blank"> Siguiente</a>
                 
 
             </form>
