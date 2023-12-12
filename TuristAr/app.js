@@ -2,13 +2,17 @@ const express = require('express');
 const path = require('path');
 const methodOverride =  require('method-override');
 const app = express();
+
 const routesMain = require('./src/routes/main');
 const routesProduct = require('./src/routes/productDetail');
 const routesCarrito = require('./src/routes/carrito');
 const routesUsers = require('./src/routes/users');
-const PORT = 3030;
-const cookieParser = require('cookie-parser');
+const routesFav= require('./src/routes/favoritos');
 
+
+const PORT = 3030;
+
+const cookieParser = require('cookie-parser');
 const session= require("express-session")
 
 const logedMiddleware= require("./src/middleware/logedMiddleware")
@@ -48,4 +52,8 @@ app.use('/products', routesProduct);
 
 app.use('/carrito', routesCarrito);
 
-app.use('/usuario', routesUsers)
+app.use('/usuario', routesUsers);
+app.use('/favorite', routesFav);
+
+
+

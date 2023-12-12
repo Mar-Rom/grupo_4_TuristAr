@@ -12,9 +12,11 @@ module.exports = {
     profile: async (req, res) => {
         let userId = req.params.id;
         let usuario = await db.User.findByPk(userId);
-        console.log(res.locals.anUser);
-        console.log(res.locals.userData)
-        res.render('userProfile', {usuario})
+        // console.log(res.locals.anUser);
+        // console.log(res.locals.userData)
+        let producto= await db.Lodging.findAll({where: {id_user: usuario.id},
+        include:["images", "services"]})
+        res.render('userProfile', {usuario, producto})
     },
     edit: async(req, res) => {
         let userId = req.params.id;

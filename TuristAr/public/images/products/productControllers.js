@@ -32,28 +32,9 @@ module.exports = {
         let producto = await db.Lodging.findByPk(productoId,{
             include: ["images", "services"],
         });
-        let exist=false;
-        if(req.session && req.session.userLoged){
-            const fav= await db.Favorite.findOne({where:{id_user:req.session.userLoged.id, id_lodging: productoId}})
-            if(fav){
-                exist=true;
-            }
-        }
         
-        res.render('productDetail', {producto: producto,favExist:exist})
+        res.render('productDetail', {producto: producto})
     },
-
-    search: async (req, res) => {
-        /* console.log(req.query.destino); */
-        const destino = req.query.destino;
-        let productos = await db.Lodging.findAll({
-            include: ["images", "services"]
-        })
-        let busquedas = productos.filter((prod) => prod.locality.toLowerCase() == destino.toLowerCase() || prod.province.toLowerCase() == destino.toLowerCase());
-        /* console.log(busquedas[0].images[0].name); */
-        res.render('busquedas', {busquedas})
-    }, 
-    
     crear: (req, res) => {
         
         res.render('formCarga');
@@ -81,7 +62,6 @@ module.exports = {
                     id_lodging: hospedaje.id_lodging
                 });
             }
-
             //agregamos los includes 
             if (req.body.include && req.body.include.length > 0) {
                 for (let i = 0; i < req.body.include.length; i++) {
@@ -91,6 +71,7 @@ module.exports = {
                     });
                 }
             }
+            
         
     
             res.redirect("/products");
@@ -100,8 +81,8 @@ module.exports = {
     },
     edit:async (req,res)=>{
         const {id} = req.params;
-        const alojamiento = await db.Lodging.findByPk(id,{include: ["services","images"]});
-
+        const alojamiento = await db.Lodging.findByPk(id,{include:["services", "images"]});
+        // console.log(alojamiento)
         res.render('formEdit', {alojamiento});
     },
     guardarCambios: async (req, res) => {
@@ -161,18 +142,17 @@ module.exports = {
         await db.Lodging.update(editado, {where:{id_lodging: id}});
 
         res.redirect('/products'); //redireccionar al producto
-    },     
+    },    
     delete: async(req, res) => {
         const {id} = req.params;
-
-       // elimino regiatros en Include_Lodging asociados al id_lodging
-       await db.Include_Lodging.destroy({ where: { id_lodging: id } });
-       // Obtener imágenes asociadas al hospedaje
-       const images = await db.Image_lodging.findAll({where:{id_lodging:id}})
-       // Eliminar imágenes asociadas al hospedaje
-       await db.Image_lodging.destroy({where:{id_lodging: id}})
+        // elimino regiatros en Include_Lodging asociados al id_lodging
+        await db.Include_Lodging.destroy({ where: { id_lodging: id } });
+        // Obtener imágenes asociadas al hospedaje
+        const images = await db.Image_lodging.findAll({where:{id_lodging:id}})
+        // Eliminar imágenes asociadas al hospedaje
+        await db.Image_lodging.destroy({where:{id_lodging: id}})
         
-       
+        // Eliminar archivos físicos de imágenes (si es necesario)
         for (const image of images) {
             if (image.name != "default-img.webp") {
                 const imagePath = path.join(__dirname, '../../public/images/products', image.name);
@@ -189,11 +169,9 @@ module.exports = {
                 }
             }
         }
-
-         //elimino al hospedaje en si
-         await db.Lodging.destroy({where: {id_lodging: id}})
+        //elimino al hospedaje en si
+        await db.Lodging.destroy({where: {id_lodging: id}})
         
         res.redirect('/products')
-        
    }
 }

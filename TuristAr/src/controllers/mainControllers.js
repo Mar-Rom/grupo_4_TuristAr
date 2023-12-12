@@ -10,8 +10,14 @@ const {Op}= require("sequelize");
 
 module.exports = {
     home: async (req, res) => {
+<<<<<<< HEAD
         let products = await db.Lodging.findAll({
             include: ["images", "services"]
+=======
+        const dataProducts = await db.Lodging.findAll({include :["services", "images"]})
+        res.render('home', {
+            hospedajes: dataProducts
+>>>>>>> 1841c9bdb63dd8e80c7013fac052151359b56579
         });
         res.render('home', {products})
     },
