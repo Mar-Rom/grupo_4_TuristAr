@@ -12,7 +12,7 @@
             <form action="/register" method="POST" enctype="multipart/form-data">
                <h1 id="tittle">CREA TU CUENTA</h1>
                <label>Nombre</label>
-               <input type="text" name="name" value="<%= locals.old && old.name ? old.name : ''%>">
+               <input id="name" type="text" name="name" value="<%= locals.old && old.name ? old.name : ''%>">
                <% if(locals.errors && locals.errors.name){ %>
                   <div class="text-danger">
                       <p class="error"><%= errors.name.msg %></p>
@@ -21,7 +21,7 @@
 
 
                <label>Apellido</label>
-               <input type="text" name="last_name" value="<%= locals.old && old.last_name ? old.last_name : ''%>">
+               <input type="text" id="last_name" name="last_name" value="<%= locals.old && old.last_name ? old.last_name : ''%>">
                <% if(locals.errors && locals.errors.last_name){ %>
                   <div class="text-danger">
                       <p class="error"><%= errors.last_name.msg %></p>
@@ -29,7 +29,7 @@
               <% } %>
 
               <label>Telefono</label>
-              <input type="text" name="phone" value="<%= locals.old && old.phone ? old.phone : ''%>">
+              <input type="text" id="phone" name="phone" value="<%= locals.old && old.phone ? old.phone : ''%>">
               <% if(locals.errors && locals.errors.phone){ %>
                  <div class="text-danger">
                      <p class="error"><%= errors.phone.msg %></p>
@@ -39,7 +39,7 @@
              <input type="date" id="birth_day" name="birth_day" value="<%= locals.old && old.birth_day ? (new Date(old.birth_day)).toISOString().substring(0, 10) : '' %>"> 
 
                <label>E-mail</label>
-               <input type="email" name="email" value="<%= locals.old && old.email ? old.email : ''%>">
+               <input type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email : ''%>">
                <% if(locals.errors && locals.errors.email){ %>
                   <div class="text-danger">
                       <p class="error"><%= errors.email.msg %></p>
@@ -47,7 +47,7 @@
               <% } %>
 
                <label>Contraseña</label>
-               <input type="password" name="password">
+               <input type="password" id="password" name="password">
                <% if(locals.errors && locals.errors.password){ %>
                 <div class="text-danger">
                       <p class="error"><%= errors.password.msg %></p>
@@ -58,7 +58,7 @@
                   
                   <label>Confirmar Contraseña</label>
                   
-                  <input type="password" name="password2">
+                  <input id="password2" type="password" name="password2">
                   
                   <h6>debe coincidir con la Contraseña</h6>
                   <% if(locals.errors && locals.errors.password2){ %>
@@ -68,15 +68,15 @@
                     <% } %>
                     
                     
-                    <label for="genre">Sexo</label>
-                    <select name="genre">
-                        <option value="Mujer">Femenino</option>
+                <label for="genre">Sexo</label>
+                <select name="genre">
+                  <option value="Mujer">Femenino</option>
                   <option value="Hombre">Masculino</option>
                   <option value="-">Prefiero no decir</option>
                 </select>
                 
                 <label for="image">Agregar imagen</label>
-                <input type="file" name="image"  accept=".jpg, .png, .jpeg" class="image">
+                <input id="image" type="file" name="image"  accept=".jpg, .png, .jpeg" class="image">
                 
                 <button type="submit" class="buy-now-button">REGISTRARSE </button>
 
@@ -85,6 +85,7 @@
          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
         </main>
+    <script src="/js/front-register.js"></script>
 
    </body>
 
