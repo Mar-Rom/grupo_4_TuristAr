@@ -6,18 +6,30 @@ const bcrypt = require('bcryptjs');
 
 /////////BASE DE DATOS///////////
 const db= require("../database/models")
-const {Op}= require("sequelize");
+const {Op, Association}= require("sequelize");
 
 module.exports = {
     profile: async (req, res) => {
         let userId = req.params.id;
         let usuario = await db.User.findByPk(userId);
-        // console.log(res.locals.anUser);
-        // console.log(res.locals.userData)
-        let producto= await db.Lodging.findAll({where: {id_user: usuario.id},
-        include:["images", "services"]})
-        res.render('userProfile', {usuario, producto})
+        
+        let producto = await db.Lodging.findAll({
+            where: { id_user: usuario.id },
+            include: ["images", "services"]
+        });
+        
+        // Cargar los favoritos del usuario
+        let favoritosUsuario = await db.User.findByPk(userId, {
+            include: {
+                model: db.Lodging,
+                as: "favorites", // Utiliza el alias definido en la asociación
+            }
+        });
+        console.log(favoritosUsuario)
+    
+        res.render('userProfile', { usuario, producto, favoritosUsuario });
     },
+    
     edit: async(req, res) => {
         let userId = req.params.id;
         let usuario = await db.User.findByPk(userId);

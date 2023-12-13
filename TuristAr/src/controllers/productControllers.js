@@ -62,6 +62,7 @@ module.exports = {
         // console.log(req.session.userLoged)
         
         if (req.session.userLoged) {
+            if(req.session.userLoged.email == "admin")
             console.log(req.body)
             const hospedaje = await db.Lodging.create({...req.body, id_user: req.session.userLoged.id }); // id provisorio
     

@@ -160,7 +160,22 @@ select {
     text-decoration: none;
     color: white;
 }
-
+.is-valid {
+    color: #34b97b;
+    border: solid 3px #34b97b;
+  }
+  
+  .is-invalid {
+    color: #be222f;
+    border: solid 3px #be222f;
+  }
+  
+  .alert-warning{
+    color:#842029;
+    background-color: #F8D7DA;
+    text-align: center;
+    border-radius: 10px;
+  }
 @media(min-width: 768px) {
     .debajo-header {
         margin-top: 110px;

@@ -50,15 +50,23 @@
                 </section>
                 <section class="favoritos">
                     <h4>Favoritos: </h4>
-                    <div>Aqui van algunos de los hospedajes que el cliente ha marcado como favoritos</div>
+                    <% favoritosUsuario.favorites.forEach(prod => { %>
+                        <ul>
+                            <li>
+                                
+                                <a href="/products/detail/<%=prod.id_lodging %>"> <%= prod.name%></a>
+                    
+                            </li>
+                        </ul>
+
+                    <%})%>
                 </section>
                 <section class="favoritos">
                     <h4>Mis Hospedajes: </h4>
                     <% producto.forEach(prod => { %>
                         <ul>
                             <li>
-                                <!-- <img src="/images/products/<%= prod.images[0].name %>" alt="image" width="50px"> -->
-                                <!-- <span> - </span> -->
+                                
                                 <a href="/products/detail/<%=prod.id_lodging %>"> <%= prod.name%></a>
                                 <a href="/products/delete/<%=prod.id_lodging %>"><button>Eliminar</button></a> <span>  <button > <a href="/products/edit/<%=prod.id_lodging %>">Editar</a> </button> </span>
                             </li>
@@ -67,10 +75,7 @@
                     <%})%>
                     <!-- <div>Aqui van hospedajes del usuario</div> -->
                 </section>
-                <section class="historial">
-                    <h4>Historial de reservas</h4>
-                    <div>Aqui va un resumen de los hospedajes que el cliente ya ha reservado anteriormente</div>
-                </section>
+                
             </div>
         </div>
     </main>

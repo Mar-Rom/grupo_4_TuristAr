@@ -31,4 +31,5 @@ module.exports = (sequelize, dataTypes) => {
     const Favorite = sequelize.define(alias, cols, config) // aca hay que completar los 3 parametros 
 
     return Favorite
+    
 }

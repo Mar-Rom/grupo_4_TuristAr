@@ -81,7 +81,7 @@
                             <p class="error"><%= errors.persons.msg %></p>
                         </div>
                     <% } %>
-                    <label for="description">Descripción:</label>
+                    <label for="description">Descipción:</label>
                     <div class="input">
                     <textarea name="description" id="description" class="form-input" ><%= locals.old && old.description ? old.description : '' %></textarea>
                     </div>
@@ -152,6 +152,7 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         </main>
         <%- include('./partials/footer.ejs')%>
+<script src="/js/front-products.js"></script>
 </body>
 
 </html>
