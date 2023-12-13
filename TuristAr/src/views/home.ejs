@@ -23,14 +23,47 @@
       </div>
     </section>
     <section class="carrusel-home">
-      
+      <div class="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators-home">
+                <% for (let i = 0; i < 5; i++) { %>
+                <li class="identificador-carrusel" data-target="#carouselExampleIndicators" data-slide-to=<%= i %> <%= i === 0 ? 'class="active"' : '' %>></li>
+                <% } %>
+            </ol>
+            <div class="carousel-inner">
+                <% for (let i = 0; i < 5; i++) { %>
+                <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+                    <img src="/images/products/<%= products[i].images[0].name %>"
+                        class="d-block w-100" alt="Slide <%= i + 1 %>">
+                    <div class="info-carrusel">
+                      <h2 class="productName-carrusel"><%= products[i].name %></h2>
+                      <p class="productLocality-carrusel"><%= products[i].locality %>, <%= products[i].province %></p>
+                      <p class="productDescription-carrusel"><%= products[i].description %></p>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
     </section>
     <!-- <script src="/js/carruselHome.js"></script> -->
     <section class="products-home resultados">
+
+      <p class="hosp-home">Nuestros hospedajes</p>
       <% for (let i = 0 ; i < 8 ; i++) { %>
 
         <article class="card-search">
-            <div class="carousel">
+            <div class="carousel1">
                 <div class="carousel-container">
                     <% for (let j = 0; j < products[i].images.length; j++) { %>
                         <a href="/products/detail/<%= products[i].id_lodging %>">
@@ -52,6 +85,7 @@
         </article>
     <% } %>
     </section>
+    <a class="masProducts" href="/products">Más hospedajes</a>
    </main>
     <%- include('./partials/footer.ejs')%>
     

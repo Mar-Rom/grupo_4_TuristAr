@@ -7,10 +7,10 @@
    <body>
       <%-include ('./partials/header.ejs') %>
         <main class="debajo-header">
-
+            <h1 class="creaTuCuenta" id="tittle">Crea tu cuenta</h1>
+            
          <div class="Reg">
-            <form action="/register" method="POST" enctype="multipart/form-data">
-               <h1 id="tittle">CREA TU CUENTA</h1>
+            <form class="form-register" action="/register" method="POST" enctype="multipart/form-data">
                <label>Nombre</label>
                <input type="text" name="name" value="<%= locals.old && old.name ? old.name : ''%>">
                <% if(locals.errors && locals.errors.name){ %>
@@ -54,13 +54,13 @@
                   </div>
                   <% } %>
                   
-                  <h6>Usa entre 8 y 16 Caracteres</h6>
+                  <!-- <h6>Usa entre 8 y 16 Caracteres</h6> -->
                   
                   <label>Confirmar Contraseña</label>
                   
                   <input type="password" name="password2">
                   
-                  <h6>debe coincidir con la Contraseña</h6>
+                  <!-- <h6>debe coincidir con la Contraseña</h6> -->
                   <% if(locals.errors && locals.errors.password2){ %>
                     <div class="text-danger">
                         <p class="error"><%= errors.password2.msg %></p>
@@ -78,7 +78,7 @@
                 <label for="image">Agregar imagen</label>
                 <input type="file" name="image"  accept=".jpg, .png, .jpeg" class="image">
                 
-                <button type="submit" class="buy-now-button">REGISTRARSE </button>
+                <button class="confirm-register" type="submit" class="buy-now-button">Registrarse </button>
 
             </form>
          </div>
