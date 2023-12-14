@@ -28,33 +28,23 @@
                     <p>Teléfono:  <%= usuario.phone %> </p>
                     <p>Fecha de nacimiento: <%= usuario.birth_day %></p>
                 </section>
-                <ul class="burger-menu-user">
-                    <li class="item">
-                        <!-- revisar la direccion del formulario de creacion -->
-                        <a href="/products/create">Publicar Hospedaje</a>
-                    </li>
-                    <li class="item">
-                        <!-- revisar direccion del formulario de edicion de perfil -->
-                        <a href="/usuario/edit/<%= usuario.id %>">Editar Perfil</a>
-                    </li>
-                    <li class="item">
-                        <!-- Revisar funcionalidad de cerrar sesion -->
-                        <a href="/logOut">Cerrar sesión</a>
-                    </li>
-                </ul>
+                <div class="publiEdit">
+                    <a class="itemPubliEdit" href="/products/create">Publicar Hospedaje</a>
+                    <a class="itemPubliEdit" href="/usuario/edit/<%= usuario.id %>">Editar Perfil</a>
+                </div>
             </div>
             <div class="container2">
-                <section class="reservas">
+                <!-- <section class="reservas">
                     <h4>Reservas Actuales: </h4>
                     <div>Aqui va una imagen y descripcion de la reserva del usuario</div>
-                </section>
+                </section> -->
                 <section class="favoritos">
                     <h4>Favoritos: </h4>
                     <% favoritosUsuario.favorites.forEach(prod => { %>
-                        <ul>
-                            <li>
+                        <ul class="listFav">
+                            <li class="listItem">
                                 
-                                <a href="/products/detail/<%=prod.id_lodging %>"> <%= prod.name%></a>
+                                <a class="favoritos-item" href="/products/detail/<%=prod.id_lodging %>"> <%= prod.name%></a>
                     
                             </li>
                         </ul>
@@ -64,11 +54,12 @@
                 <section class="favoritos">
                     <h4>Mis Hospedajes: </h4>
                     <% producto.forEach(prod => { %>
-                        <ul>
-                            <li>
+                        <ul class="listItemContainer listFav">
+                            <li class="listItem">
                                 
-                                <a href="/products/detail/<%=prod.id_lodging %>"> <%= prod.name%></a>
-                                <a href="/products/delete/<%=prod.id_lodging %>"><button>Eliminar</button></a> <span>  <button > <a href="/products/edit/<%=prod.id_lodging %>">Editar</a> </button> </span>
+                                <a class="favoritos-item" href="/products/detail/<%=prod.id_lodging %>"> <%= prod.name%></a>
+                                <a class="deleteButton" href="/products/delete/<%=prod.id_lodging %>">Eliminar</a>
+                                <a class="editButton" href="/products/edit/<%=prod.id_lodging %>">Editar</a>
                             </li>
                         </ul>
 

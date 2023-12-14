@@ -64,10 +64,15 @@
                 <li>
                     <a href="/products">Todos los hospedajes</a>
                 </li>
-                <li class="carrito-header">
+                <!-- <li class="carrito-header">
                     <a href="/carrito/datos/1">Carrito</a>
                     <i class="fa-solid fa-cart-shopping"></i>
-                </li>
+                </li> -->
+                <%if (locals.anUser) {%>
+                    <li>
+                        <a href="/logOut">Cerrar sesión</a>
+                    </li>
+                <%}%>
             </ul>
         </div>
     </div>

@@ -68,26 +68,41 @@ body {
     -webkit-box-shadow: 15px 23px 31px -6px rgba(0,0,0,0.77);
     -moz-box-shadow: 15px 23px 31px -6px rgba(0,0,0,0.77);
 }
-/* .burger-menu-user {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-    height: 100vh;
-    padding: 15px 15px;
-    background-color: #22283170;
-    backdrop-filter: blur(5px);
-    z-index: 20;
-    position: absolute;
-    top: 60px;
-    right: -50%;
-    transition: right 0.5s;
+.listFav {
+    margin: 20px auto;
+    list-style: none;
 }
-.deslizar {
-    display: flex;
-    right: 0;
-    transition: right 0.5s;
-  } */
+.listItemContainer {
+    width: 100%;
+    margin: 0;
+}
+.listItem {
+    border: white solid 1px;
+    border-radius: 15px;
+    width: 90%;
+    margin: 0px auto;
+    padding: 5px 10px;
+}
+.favoritos-item {
+    color: white;
+    font-size: 18px;
+    width: 90%;
+    transition: all 0.5s ease;
+}
+.deleteButton {
+    background-color: #ce1818dc;
+    width: 30px;
+    color:white;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.editButton {
+    background-color: #2199ea;
+    width: 30px;
+    color:white;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
 .item {
     border-bottom: white solid 1px;
     padding: 15px 0px 15px;
@@ -97,6 +112,25 @@ body {
 }
 .container2 {
     margin-bottom: 30px;
+}
+.publiEdit {
+    list-style: none;
+    width: 90%;
+    margin: 15px 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+.itemPubliEdit {
+    width: 50%;
+    border: white solid 1px;
+    border-radius: 15px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #2199ea;
+    font-size: 18px;
 }
 
 @media (min-width: 768px) {
@@ -122,4 +156,22 @@ body {
     .reservas, .favoritos, .historial {
         width: 50vw;
     }
+    .favoritos-item:hover {
+        text-decoration: none;
+        letter-spacing: 0.5px;
+        color: #2199ea;
+    }
+    .itemPubliEdit {
+        padding: 10px 10px ;
+        border: none;
+        transition: all 0.5s ease;
+    }
+    .itemPubliEdit:hover {
+        background-color: #1e56a8;
+        font-size: 20px;
+        letter-spacing: 0.5px;
+        color: white;
+        text-decoration: none;
+    }
+    
 }

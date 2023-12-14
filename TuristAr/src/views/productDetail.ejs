@@ -60,6 +60,16 @@
                     <%= producto.description %>
                 </p>
             </div>
+            <div class="includes">
+                <p class="includeTitulo">El hospedaje incluye:</p>
+                <ul>
+                    <% for(let i = 0; i < producto.services.length; i++) { %>
+                        <li class="includeItem">
+                            <%= producto.services[i].name %>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
         </article>
         <section>
             <div class="precio">
@@ -77,30 +87,32 @@
                     Este precio incluye impuestos
                 </h6>
             </div>
-            <form action=""></form>
-            <div class="inputs">
-                <div class="check-in">
-                    <label for="Check-In">Check-In</label>
-                    <input class="check" id="Check-In" type="date" name= "fecha-entrada" placeholder="Check-In">
+            <form action="/carrito/reserve/<%= producto.id_lodging %>" method="post">
+                <div class="inputs">
+                    <div class="check-in">
+                        <label for="Check-In">Check-In</label>
+                        <input class="check" id="Check-In" type="date" name= "fechaEntrada" placeholder="Check-In">
+                    </div>
+                    <div class="check-out">
+                        <label for="Check-Out">Check-Out</label>
+                        <input class="check" id="Check-Out" type="date" name="fechaSalida" placeholder="Check-Out">
+                    </div>
                 </div>
-                <div class="check-out">
-                    <label for="Check-Out">Check-Out</label>
-                    <input class="check" id="Check-Out" type="date" name="fecha-salida" placeholder="Check-Out">
-                </div>
-            </div>
-            <input class="huespedes" type="number" placeholder="Cantidad de huéspedes">
-            <button class="button" ><a class="button1" href="/carrito/datos/<%= producto.id_lodging %>">Reservar</a></button>
-            <form action=""></form>
+                <input name="huespedes" class="huespedes" type="number" placeholder="Cantidad de huéspedes">
+                <button class="button button1" type="submit">Reservar</button>
+            </form>
             
-           
+            <!-- <a class="button1" href="/carrito/datos/<%= producto.id_lodging %>">Reservar</a> -->
             
         </section>
         
-        <form action="/products/delete/<%= producto.id_lodging %>?_method=DELETE" method="post">
+        <!-- <form action="/products/delete/<%= producto.id_lodging %>?_method=DELETE" method="post">
             <button type="submit">
                 borrar
             </button>
-        </form>
+        </form> -->
+
+        
     </main>
     <%- include('./partials/footer.ejs')%>
 </body>
