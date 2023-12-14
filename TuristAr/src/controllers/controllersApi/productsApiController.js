@@ -6,9 +6,19 @@ module.exports = {
     all: async (req, res) => {
         try {
             const products = await db.Lodging.findAll({
-                include: ["images", "services"]
-            });
-            res.json(products);
+                include: ["images", "services","user"]
+            })
+            .then(movies => {
+                let respuesta = {
+                    meta: {
+                        status : 200,
+                        total: movies.length,
+                        url: 'api/products'
+                    },
+                    data: movies
+                }
+                    res.json(respuesta);
+                })
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
@@ -19,8 +29,18 @@ module.exports = {
             const productoId = req.params.id;
             const producto = await db.Lodging.findByPk(productoId, {
                 include: ["images", "services"],
+            })
+            .then(movie => {
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        total: movie.length,
+                        url: '/api/movie/:id'
+                    },
+                    data: movie
+                }
+                res.json(respuesta);
             });
-            res.json(producto);
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
@@ -32,8 +52,18 @@ module.exports = {
             const productos = await db.Lodging.findAll({
                 include: ["images", "services"]
             });
-            const busquedas = productos.filter((prod) => prod.locality.toLowerCase() === destino.toLowerCase() || prod.province.toLowerCase() === destino.toLowerCase());
-            res.json(busquedas);
+            const busquedas = productos.filter((prod) => prod.locality.toLowerCase() === destino.toLowerCase() || prod.province.toLowerCase() === destino.toLowerCase())
+            .then(movie => {
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        total: movie.length,
+                        url: '/api/products/search'
+                    },
+                    data: movie
+                }
+                res.json(respuesta);
+            });
         } catch (error) {
             res.status(500).json({ error: error.message });
         }

@@ -60,7 +60,7 @@ const result = async (req, res, next) => {
                         // console.log(req.session.userLoged)
                         if(req.body.remember !== undefined){
                             res.cookie('SesionUser', req.session.userLoged, {
-                                maxAge: 1000 * 60
+                                maxAge: (1000 * 60) * 5
                             });
                         }
 
