@@ -200,9 +200,8 @@ main section .huespedes {
     border: none;
     font-size: 25px;
     font-weight: bold;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    width: 100%;
+    margin: 20px auto 30px; 
     padding: 10px 30px;
     border-radius: 10px;
     text-decoration: none;
@@ -272,6 +271,32 @@ footer section .redes {
 }
 footer section .redes a i {
     font-size: 30px;
+}
+.includeTitulo {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    border-bottom: white solid 1px;
+    width: 100%;
+}
+.includes {
+    list-style: none;
+    margin: auto;
+    font-size: 18px;
+    margin-top: 20px;
+    width: 95%;
+    padding: 20px 40px;
+    border-radius: 10px;
+    background-color: #11517b38;
+    border:#222831 1px solid;
+    box-shadow: 15px 23px 31px -6px rgba(0,0,0,0.77);
+    -webkit-box-shadow: 15px 23px 31px -6px rgba(0,0,0,0.77);
+    -moz-box-shadow: 15px 23px 31px -6px rgba(0,0,0,0.77);
+    color: white;
+}
+.includeItem {
+    margin: 15px 0px;
 }
 
 @media (min-width: 772px) {
@@ -413,6 +438,10 @@ footer section .redes a i {
         justify-content: space-around;
         width: 90vw;
         margin: auto;
+    }
+    .includes {
+        width: 100%;
+        margin-top: 40px;
     }
 }
 

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<link rel="stylesheet" href="/css/formEdit.css">
 <%-include ('./partials/head.ejs') %>
 
 <body>
     <%- include('./partials/header.ejs') %>
     
-        <main class="mainform">
+        <main class="mainform debajo-header">
             <section class="form">
-                <h2>¡Edita tu Hospedaje !</h2>
+                <h2 class="crearHosp">¡Edita tu Hospedaje !</h2>
 
-                <form action="/products/edit/<%= locals.old && old.id ? old.id : alojamiento.id_lodging %> ?_method=PUT" method="POST" class="formu" enctype="multipart/form-data" >
+                <form action="/products/edit/<%= locals.old && old.id ? old.id : alojamiento.id_lodging %> ?_method=PUT" method="POST" class="formCreateProduct" enctype="multipart/form-data" >
                     <label for="name">Nombre de su hospedaje:</label>
                     <div class="input">
                         <input type="text" id="name" name="name" placeholder="Ej: cabañas soñadas" value="<%= locals.old && old.name ? old.name : alojamiento.name %>" class="form-input">
@@ -99,41 +99,44 @@
                     
                     <label for="include">Que incluye:</label>
                     <div class="check" value="<%=locals.old && old.persons ? old.persons :alojamiento.persons%>">
-                        <div>
-                            <input type="checkbox" name="include" value="1" <%= alojamiento.services.some(service => service.id_include === 1) ? 'checked' : '' %>> <span>Cocina</span>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="include" value="2" <%= alojamiento.services.some(service => service.id_include === 2) ? 'checked' : '' %>> <span>Heladera</span>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="include" value="3" <%= alojamiento.services.some(service => service.id_include === 3) ? 'checked' : '' %>> <span>Freezer</span>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="include" value="4" <%= alojamiento.services.some(service => service.id_include === 4) ? 'checked' : '' %>> <span>Lavarropa</span>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="include" value="5" <%= alojamiento.services.some(service => service.id_include === 5) ? 'checked' : '' %>> <span>Wi-fi</span>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="include" value="6" <%= alojamiento.services.some(service => service.id_include === 6) ? 'checked' : '' %>> <span>Agua caliente</span>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="include" value="7" <%= alojamiento.services.some(service => service.id_include === 7) ? 'checked' : '' %>> <span>Baño privado</span>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="include" value="8" <%= alojamiento.services.some(service => service.id_include === 8) ? 'checked' : '' %>> <span>Baño compartido</span>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="include" value="9" <%= alojamiento.services.some(service => service.id_include === 9) ? 'checked' : '' %>> <span>Televisor</span>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="include" value="10" <%= alojamiento.services.some(service => service.id_include === 10) ? 'checked' : '' %>> <span>Estacionamiento</span>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="include" value="11" <%= alojamiento.services.some(service => service.id_include === 11) ? 'checked' : '' %>> <span>Garage</span>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="include" value="12" <%= alojamiento.services.some(service => service.id_include === 12) ? 'checked' : '' %>> <span>Pileta</span>
+
+                        <div class="check">
+                            <div class="checkContainer">
+                                <input type="checkbox" name="include" value=1 <%= locals.old && locals.old.include && locals.old.include.includes('1') ? 'checked' : '' %>> <span>Cocina</span>
+                            </div>
+                            <div class="checkContainer">
+                                <input type="checkbox" name="include" value=2 <%= locals.old && locals.old.include && locals.old.include.includes('2') ? 'checked' : '' %>> <span>Heladera</span>
+                            </div>
+                            <div class="checkContainer">
+                                <input type="checkbox" name="include" value=3 <%= locals.old && locals.old.include && locals.old.include.includes('3') ? 'checked' : '' %>> <span>Freezer</span>
+                            </div>
+                            <div class="checkContainer">
+                                <input type="checkbox" name="include" value=4 <%= locals.old && locals.old.include && locals.old.include.includes('4') ? 'checked' : '' %>> <span>Lavarropa</span>
+                            </div>
+                            <div class="checkContainer">
+                                <input type="checkbox" name="include" value=5 <%= locals.old && locals.old.include && locals.old.include.includes('5') ? 'checked' : '' %>> <span>Wi-fi</span>
+                            </div>
+                            <div class="checkContainer">
+                                <input type="checkbox" name="include" value=6 <%= locals.old && locals.old.include && locals.old.include.includes('6') ? 'checked' : '' %>> <span>Agua caliente</span>
+                            </div>
+                            <div class="checkContainer">
+                                <input type="checkbox" name="include" value=7 <%= locals.old && locals.old.include && locals.old.include.includes('7') ? 'checked' : '' %>> <span>Baño privado</span>
+                            </div>
+                            <div class="checkContainer">
+                                <input type="checkbox" name="include" value=8 <%= locals.old && locals.old.include && locals.old.include.includes('8') ? 'checked' : '' %>> <span>Baño compartido</span>
+                            </div>
+                            <div class="checkContainer">
+                                <input type="checkbox" name="include" value=9 <%= locals.old && locals.old.include && locals.old.include.includes('9') ? 'checked' : '' %>> <span>Televisor</span>
+                            </div>
+                            <div class="checkContainer">
+                                <input type="checkbox" name="include" value=10 <%= locals.old && locals.old.include && locals.old.include.includes('10') ? 'checked' : '' %>> <span>Estacionamiento</span>
+                            </div>
+                            <div class="checkContainer">
+                                <input type="checkbox" name="include" value=11 <%= locals.old && locals.old.include && locals.old.include.includes('11') ? 'checked' : '' %>> <span>Garage</span>
+                            </div>
+                            <div class="checkContainer">
+                                <input type="checkbox" name="include" value=12 <%= locals.old && locals.old.include && locals.old.include.includes('12') ? 'checked' : '' %>> <span>Pileta</span>
+                            </div>
                         </div>
                     </div>
                     
@@ -142,10 +145,10 @@
                     <div class="input">
                     <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg" multiple>
                     </div>
-                    <p style="text-align: center;font-style: italic;">¡Si agregas nuevas imagenes las anteriores se borrarán!</p>
+                    <p class="msj" style="text-align: center;font-style: italic;">¡Si agregas nuevas imagenes las anteriores se borrarán!</p>
 
                     <div>
-                    <button type="submit" class="buy-now-button">Guardar Cambios</button>
+                    <button type="submit" class="buy-now-button buttonCreate">Guardar Cambios</button>
                     </div>
 
 

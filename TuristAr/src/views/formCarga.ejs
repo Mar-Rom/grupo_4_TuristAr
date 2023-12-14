@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<link rel="stylesheet" href="/css/formCarga.css">
 <%-include ('./partials/head.ejs') %>
 
 <body>
     <%- include('./partials/header.ejs') %>
     
-        <main class="mainform">
+        <main class="mainform debajo-header">
             <section class="form">
-                <h2>¡Agrega un Hospedaje ya!</h2>
-                <form action="/products" method="POST" class="formu" enctype="multipart/form-data" >
+                <h2 class="crearHosp">Agrega tu hospedaje</h2>
+                <form action="/products" method="POST" class="formCreateProduct" enctype="multipart/form-data" >
                     <label for="name">Nombre de su hospedaje:</label>
                     <div class="input">
                         <input type="text" id="name" name="name" placeholder="Ej: cabañas soñadas" class="form-input" value="<%= locals.old && old.name ? old.name : '' %>" >
@@ -94,40 +94,40 @@
                     
                     <label for="include">Que incluye:</label>
                     <div class="check">
-                        <div>
+                        <div class="checkContainer">
                             <input type="checkbox" name="include" value=1 <%= locals.old && locals.old.include && locals.old.include.includes('1') ? 'checked' : '' %>> <span>Cocina</span>
                         </div>
-                        <div>
+                        <div class="checkContainer">
                             <input type="checkbox" name="include" value=2 <%= locals.old && locals.old.include && locals.old.include.includes('2') ? 'checked' : '' %>> <span>Heladera</span>
                         </div>
-                        <div>
+                        <div class="checkContainer">
                             <input type="checkbox" name="include" value=3 <%= locals.old && locals.old.include && locals.old.include.includes('3') ? 'checked' : '' %>> <span>Freezer</span>
                         </div>
-                        <div>
+                        <div class="checkContainer">
                             <input type="checkbox" name="include" value=4 <%= locals.old && locals.old.include && locals.old.include.includes('4') ? 'checked' : '' %>> <span>Lavarropa</span>
                         </div>
-                        <div>
+                        <div class="checkContainer">
                             <input type="checkbox" name="include" value=5 <%= locals.old && locals.old.include && locals.old.include.includes('5') ? 'checked' : '' %>> <span>Wi-fi</span>
                         </div>
-                        <div>
+                        <div class="checkContainer">
                             <input type="checkbox" name="include" value=6 <%= locals.old && locals.old.include && locals.old.include.includes('6') ? 'checked' : '' %>> <span>Agua caliente</span>
                         </div>
-                        <div>
+                        <div class="checkContainer">
                             <input type="checkbox" name="include" value=7 <%= locals.old && locals.old.include && locals.old.include.includes('7') ? 'checked' : '' %>> <span>Baño privado</span>
                         </div>
-                        <div>
+                        <div class="checkContainer">
                             <input type="checkbox" name="include" value=8 <%= locals.old && locals.old.include && locals.old.include.includes('8') ? 'checked' : '' %>> <span>Baño compartido</span>
                         </div>
-                        <div>
+                        <div class="checkContainer">
                             <input type="checkbox" name="include" value=9 <%= locals.old && locals.old.include && locals.old.include.includes('9') ? 'checked' : '' %>> <span>Televisor</span>
                         </div>
-                        <div>
+                        <div class="checkContainer">
                             <input type="checkbox" name="include" value=10 <%= locals.old && locals.old.include && locals.old.include.includes('10') ? 'checked' : '' %>> <span>Estacionamiento</span>
                         </div>
-                        <div>
+                        <div class="checkContainer">
                             <input type="checkbox" name="include" value=11 <%= locals.old && locals.old.include && locals.old.include.includes('11') ? 'checked' : '' %>> <span>Garage</span>
                         </div>
-                        <div>
+                        <div class="checkContainer">
                             <input type="checkbox" name="include" value=12 <%= locals.old && locals.old.include && locals.old.include.includes('12') ? 'checked' : '' %>> <span>Pileta</span>
                         </div>
                     </div>
@@ -141,7 +141,7 @@
                    
 
                     <div>
-                    <button type="submit" class="buy-now-button">Guardar Hospedaje</button>
+                    <button class="buttonCreate" type="submit" class="buy-now-button">Guardar Hospedaje</button>
                     </div>
 
                     

@@ -39,6 +39,7 @@ module.exports = {
                 exist=true;
             }
         }
+        /* console.log(producto.services); */
         
         res.render('productDetail', {producto: producto,favExist:exist})
     },
